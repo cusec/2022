@@ -46,7 +46,7 @@ const normalButton = css`
         border-radius: 100%;
         background-color: ${props => COLOUR_SCHEME[props.colourScheme || "primary"].secondary};
         
-        z-index: -1;
+        z-index: -2;
 
         transition: transform .5s;
     }
@@ -57,6 +57,11 @@ const normalButton = css`
 
         ::before {
             transform: scale(100);
+        }
+
+        ::after {
+            transform: scale(16);
+            border: 0.25px solid ${props => COLOUR_SCHEME[props.colourScheme || "primary"].primary};
         }
     }
 `;

@@ -1,4 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
   --primary: #f9de2c;
@@ -13,7 +16,7 @@
   --dark: #1e1e1e;
 
   --disabled: #1e1e1e80;
-  
+
   font-size: 16px;
 }
 
@@ -40,4 +43,17 @@ button {
 
 h1 {
   font-size: 6rem;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.5rem
+}
+
+figcaption {
+  font-size: 1.25rem
 }

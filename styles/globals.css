@@ -9,8 +9,12 @@
 
   --shadow: rgba(29, 29, 29, 0.5);
 
-  --background: #f0f0f0;
-  --foreground: #1e1e1e;
+  --light: #f0f0f0;
+  --dark: #1e1e1e;
+
+  --disabled: #1e1e1e80;
+  
+  font-size: 16px;
 }
 
 html,
@@ -27,4 +31,13 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+button {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 6rem;
 }

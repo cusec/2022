@@ -39,7 +39,7 @@ export default function Home() {
 
       <Button style={{boxShadow: "0px 4px 12px rgba(30, 30, 30, 0.15)"}}>Custom shadow test</Button>
 
-      aaa
+      <div style={{width: "50px", height: "15px"}}></div>
     </div>
   )
 }

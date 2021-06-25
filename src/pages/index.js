@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
-import { Button, Action } from './components/elements';
+import { Button, Action } from '../components/elements';
 
 export default function Home() {
   return (
@@ -18,7 +18,7 @@ export default function Home() {
 
       <h3>Header 2</h3>
 
-      <figure>
+      <figure>\
         <img src="/logo.svg" style={{width: "50px", height: "50px"}}/>
         <figcaption>Subtitle</figcaption>
       </figure>

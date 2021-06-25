@@ -19,7 +19,7 @@ export default function Home() {
       <h3>Header 2</h3>
 
       <figure>
-        <img src="/logo.svg"/>
+        <img src="/logo.svg" style={{width: "50px", height: "50px"}}/>
         <figcaption>Subtitle</figcaption>
       </figure>
 
@@ -33,11 +33,9 @@ export default function Home() {
       <Button colourScheme="secondary">secondary</Button>
       <Button colourScheme="secondary" disabled>disabled</Button>
 
-      <Button className="shadow">Tailwind shadow test</Button>
-
       <div style={{width: "50px", height: "15px"}}></div>
 
-      <Button style={{boxShadow: "0px 4px 12px rgba(30, 30, 30, 0.15)"}}>Custom shadow test</Button>
+      <Button className="custom-shadow">Shadow test</Button>
 
       <div style={{width: "50px", height: "15px"}}></div>
     </div>

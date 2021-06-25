@@ -50,11 +50,6 @@ const normalButton = css`
         ::before {
             transform: scale(100);
         }
-
-        ::after {
-            transform: scale(16);
-            border: 0.25px solid ${props => COLOUR_SCHEME[props.colourScheme || "primary"].primary};
-        }
     }
 `;
 

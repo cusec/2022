@@ -13,7 +13,7 @@ const A = styled.a`
         background-color: var(--dark);
         opacity: 0;
 
-        transition: transform .5s, opacity 0.25s;
+        transition: transform .5s, opacity 0s linear .5s;
         transform-origin: right;
     }
 
@@ -21,6 +21,7 @@ const A = styled.a`
         ::after {
             opacity: 1;
             transform: scaleX(100);
+            transition: transform .5s, opacity 0s;
         }
     }
 `;

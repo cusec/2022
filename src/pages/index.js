@@ -5,6 +5,7 @@ import styles from '../styles/Home.module.css'
 import tw from 'twin.macro';
 import { Button, Action, Subtitle } from '../components/elements';
 import Nav from '../components/nav';
+import Logo from '../components/logo';
 
 const Main = styled.main`
   width: 80vw;
@@ -13,10 +14,11 @@ const Main = styled.main`
 const Title = styled.div`
   ${tw`flex leading-none h-24`}
 
-  *:not(:first-child) {
+  *:last-child {
       ${tw`ml-4`}
   }
 `;
+
 
 export default function Home() {
   return (
@@ -32,7 +34,7 @@ export default function Home() {
 
         <header className="h-screen flex flex-col justify-center">
           <Title>
-            <img src="/logo.svg" style={{height: "100%"}}/>
+            <Logo></Logo>
             <h1>CUSEC</h1>
           </Title>
           

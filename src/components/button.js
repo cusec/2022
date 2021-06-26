@@ -51,6 +51,10 @@ const normalButton = css`
             transform: scale(100);
         }
     }
+
+    :active {
+        ${tw`opacity-75`}
+    }
 `;
 
 const disabledButton = css`

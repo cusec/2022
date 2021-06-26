@@ -18,7 +18,7 @@ export default function Home() {
 
       <h3>Header 2</h3>
 
-      <figure>\
+      <figure>
         <img src="/logo.svg" style={{width: "50px", height: "50px"}}/>
         <figcaption>Subtitle</figcaption>
       </figure>

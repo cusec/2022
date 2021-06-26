@@ -25,15 +25,12 @@ body {
   padding: 0;
   margin: 0;
   font-family: 'DM Sans', sans-serif;
+  scroll-behavior: smooth;
 }
 
 a {
   color: inherit;
   text-decoration: none;
-}
-
-* {
-  box-sizing: border-box;
 }
 
 button {
@@ -56,4 +53,8 @@ h3 {
 
 .custom-shadow {
   box-shadow: 0 0.25rem 0.75rem rgba(30, 30, 30, 0.15);
+}
+
+br {
+  height: 1rem;
 }

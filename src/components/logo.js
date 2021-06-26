@@ -29,7 +29,7 @@ export default function Logo() {
     return (
         <>
             <img src="/logo.svg" style={{height: "100%"}}/>
-            <div className="h-full w-full overflow-hidden absolute top-0 left-0">
+            <div className="h-full w-full overflow-hidden absolute top-0 left-0 -z-10">
                 <Background></Background>
             </div>
         </>

@@ -5,7 +5,7 @@ import Image from 'next/image'
 //import logoColourless from '../../public/logo.svg';
 
 const NavBase = styled.nav`
-    ${tw`fixed w-full top-0 left-0 py-4 flex`}
+    ${tw`fixed w-full top-0 left-0 py-4 flex z-50`}
     border-bottom: 1px solid var(--dark);
     backdrop-filter: blur(5px);
 

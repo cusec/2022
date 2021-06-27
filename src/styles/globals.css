@@ -20,6 +20,10 @@
   font-size: 16px;
 }
 
+* {
+  cursor: url("/cursorInnerDefault.svg") 4 4, default;
+}
+
 html,
 body {
   padding: 0;

@@ -18,11 +18,17 @@ const A = styled.a`
     }
 
     :hover {
+        cursor: url("/cursorInnerPointer.svg") 8 8, pointer;
+
         ::after {
             opacity: 1;
             transform: scaleX(100);
             transition: transform .5s, opacity 0s;
         }
+    }
+
+    :active {
+        cursor: url("/cursorInnerClick.svg") 2 2, pointer;
     }
 `;
 

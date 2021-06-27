@@ -46,6 +46,7 @@ const normalButton = css`
         ${tw`cursor-pointer`}
 
         color: ${props => COLOUR_SCHEME[props.colourScheme || "primary"].primary};
+        cursor: url("/cursorInnerPointer.svg") 8 8, pointer;
 
         ::before {
             transform: scale(100);
@@ -54,6 +55,7 @@ const normalButton = css`
 
     :active {
         ${tw`opacity-75`}
+        cursor: url("/cursorInnerClick.svg") 2 2, pointer;
     }
 `;
 

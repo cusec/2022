@@ -12,13 +12,11 @@ const enlarge = keyframes`
 `;
 
 const Background = styled.div`
-    ${tw`absolute`}
+    ${tw`relative`}
     height: 200vw;
     width: 200vw;
     border-radius: 100vw;
     background: radial-gradient(circle at center, #F9DE2C 0%, #E8A248 100%);
-    top: 50%
-    left: 50%;
     transform: translate(-50%, -50%);
     transform-origin: top left;
     z-index: -50;
@@ -28,8 +26,8 @@ const Background = styled.div`
 export default function Logo() {
     return (
         <>
-            <img src="/logo.svg" style={{height: "100%"}}/>
-            <div className="h-full w-full overflow-hidden absolute top-0 left-0 -z-10">
+            <img src="/logo.svg" className="h-full"/>
+            <div className="w-full overflow-hidden absolute top-0 left-0 -z-10">
                 <Background></Background>
             </div>
         </>

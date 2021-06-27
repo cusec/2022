@@ -5,9 +5,14 @@ import Image from 'next/image'
 //import logoColourless from '../../public/logo.svg';
 
 const NavBase = styled.nav`
-    ${tw`fixed w-full top-0 left-0 py-4 flex z-50`}
+    ${tw`fixed w-full top-0 left-0 py-4 z-50`}
     border-bottom: 1px solid var(--dark);
     backdrop-filter: blur(5px);
+`;
+
+const NavInner = styled.div`
+    ${tw`flex mx-auto`}
+    width: 80%;
 
     img {
         ${tw`mr-auto`}
@@ -21,11 +26,13 @@ const NavBase = styled.nav`
 export default function Nav() {
     return (
         <NavBase>
-            <img src="/logoColourless.svg" />
-            <A href="#about">About</A>
-            <A href="#sponsors">Sponsors</A>
-            <A href="#pricing">Pricing</A>
-            <A href="#faq">FAQ</A>
+            <NavInner>
+                <img src="/logoColourless.svg" />
+                <A href="#about">About</A>
+                <A href="#sponsors">Sponsors</A>
+                <A href="#pricing">Pricing</A>
+                <A href="#faq">FAQ</A>
+            </NavInner>
         </NavBase>
     )
 }

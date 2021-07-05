@@ -33,13 +33,28 @@ const normalButton = css`
     ::before {
         content: '';
         ${tw`inline-block absolute w-4 h-4 rounded-full`}
-        top: 10.5px;
+        transform: translate(0, -50%);
+        top: 50%;
         right: 12px;
         background-color: ${props => COLOUR_SCHEME[props.colourScheme || "primary"].secondary};
         
         z-index: -10;
 
         transition: transform .5s;
+        transform-origin: top;
+    }
+
+    ::after {
+        content: '';
+        ${tw`inline-block absolute w-4 h-4 rounded-full`}
+        transform: scale(0.01) translate(0, -50%);
+        top: 50%;
+        right: 12px;
+        opacity: 0;
+        background-color: ${props => COLOUR_SCHEME[props.colourScheme || "primary"].primary};
+        
+        transition: transform .1s;
+        transform-origin: top;
     }
 
     :hover {
@@ -49,13 +64,18 @@ const normalButton = css`
         cursor: url("/cursorInnerPointer.svg") 8 8, pointer;
 
         ::before {
-            transform: scale(100);
+            transform: scale(100) translate(0, -50%);
         }
     }
 
     :active {
-        ${tw`opacity-75`}
+        /*${tw`opacity-75`}*/
         cursor: url("/cursorInnerClick.svg") 2 2, pointer;
+
+        ::after {
+            opacity: 1;
+            transform: scale(1) translate(0, -50%);
+        }
     }
 `;
 

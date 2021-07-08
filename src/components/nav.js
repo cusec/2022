@@ -24,7 +24,6 @@ const NavInner = styled.div`
 `;
 
 let prevScrollPosition = 0;
-let ticking = false;
 
 const throttled =  throttle(rotateLogo, 500, { trailing: false });
 
@@ -48,9 +47,9 @@ export default function Nav() {
             <NavInner>
                 <img id="navLogo" src="/logoColourless.svg" style={{ transition: "transform .5s" }} />
                 <A href="#about">About</A>
-                <A href="#sponsors">Sponsors</A>
+                {/*<A href="#sponsors">Sponsors</A>
                 <A href="#pricing">Pricing</A>
-                <A href="#faq">FAQ</A>
+                <A href="#faq">FAQ</A>*/}
             </NavInner>
         </NavBase>
     )

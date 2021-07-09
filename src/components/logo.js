@@ -14,8 +14,8 @@ const enlarge = keyframes`
 
 const Background = styled.div`
     ${tw`relative`}
-    height: 250vw;
-    width: 250vw;
+    height: max(250vw, 250vh);
+    width: max(250vw, 250vh);
     border-radius: 125vw;
     background: radial-gradient(circle at center, #F9DE2C 0%, #E8A248 100%);
     transform-origin: center;

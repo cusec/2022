@@ -1,9 +1,8 @@
 import Head from 'next/head'
-import Image from 'next/image'
 import styled from 'styled-components';
 import styles from '../styles/Home.module.css'
 import tw from 'twin.macro';
-import { Button, Action, Subtitle } from '../components/elements';
+import { Button, Subtitle } from '../components/elements';
 import Nav from '../components/nav';
 import Logo from '../components/logo';
 import Cursor from '../components/cursor';
@@ -31,9 +30,10 @@ export default function Home() {
       </Head>
 
       <Cursor></Cursor>
+      
+      <Nav></Nav>
 
       <Main>
-        <Nav></Nav>
 
         <header className="h-screen flex flex-col justify-center">
           <Title>
@@ -64,34 +64,6 @@ export default function Home() {
             </p>
           </div>
         </section>
-        
-
-        {/*<h1>Display</h1>
-
-        <h2>Header 1</h2>
-
-        <h3>Header 2</h3>
-
-        <figure>
-          <img src="/logo.svg" style={{width: "50px", height: "50px"}}/>
-          <figcaption>Subtitle</figcaption>
-        </figure>
-
-        Body
-
-        <Action>Action</Action>
-
-        <small>Detail</small>
-
-        <Button>primary</Button>
-        <Button colourScheme="secondary">secondary</Button>
-        <Button colourScheme="secondary" disabled>disabled</Button>
-
-        <div style={{width: "50px", height: "15px"}}></div>
-
-        <Button className="custom-shadow">Shadow test</Button>
-
-        <div style={{width: "50px", height: "15px"}}></div>*/}
         
       </Main>
     </div>

@@ -20,6 +20,12 @@
     "eslint-plugin-react": "^7.24.0",
     "postcss": "^8.3.0",
     "postcss-nesting": "^8.0.1",
-    "tailwindcss": "^2.1.2"
+    "tailwindcss": "^2.1.2",
+    "twin.macro": "^2.5.0"
+  },
+  "babelMacros": {
+    "twin": {
+      "preset": "styled-components"
+    }
   }
 }

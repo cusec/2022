@@ -58,9 +58,14 @@ export default function Email() {
                                     <img style={{width: "20px"}} src="/email/instagram.png" />
                                 </a>
                             </td>
-                            <td>
+                            <td style={{paddingRight: "10px"}}>
                                 <a href="https://www.linkedin.com/company/cusec/">
                                     <img style={{width: "20px"}} src="/email/linkedin.png" />
+                                </a>
+                            </td>
+                            <td>
+                                <a href="https://www.youtube.com/channel/UCZ7j8F6h1CxD-uC0od9rHBw">
+                                    <img style={{width: "20px"}} src="/email/youtube.png" />
                                 </a>
                             </td>
                         </tr>

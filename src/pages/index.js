@@ -6,7 +6,7 @@ import { Button, Subtitle } from "../components/elements";
 import Nav from "../components/nav";
 import Logo from "../components/logo";
 import Cursor from "../components/cursor";
-import CitySVG from "../svgs/city";
+import TitleSVG from "../svgs/title";
 
 const Main = styled.main`
     width: 80vw;
@@ -38,7 +38,7 @@ export default function Home() {
                 <header className="h-screen flex flex-col justify-center">
                     <Title>
                         <Logo></Logo>
-                        <h1 className="foo bar">CUSEC</h1>
+                        <h1>CUSEC</h1>
                     </Title>
                     
                     <h2>Canadian University Software Engineering Conference</h2>
@@ -48,7 +48,7 @@ export default function Home() {
                         <Button className="custom-shadow"> sign up!</Button>
                     </div>
 
-                    <CitySVG className="animate-on-load"/>
+                    <TitleSVG className="animate-on-load"/>
                 </header>
 
                 <section id="about" className="h-screen flex flex-col justify-center">

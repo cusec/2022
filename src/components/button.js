@@ -1,5 +1,5 @@
-import styled, { css } from 'styled-components';
-import tw from 'twin.macro';
+import styled, { css } from "styled-components";
+import tw from "twin.macro";
 
 const PRIMARY = "var(--primary)";
 const SECONDARY = "var(--dark)";
@@ -13,7 +13,7 @@ const COLOUR_SCHEME = {
         primary: SECONDARY,
         secondary: PRIMARY
     }
-}
+};
 
 const baseButton = css`
     ${tw`py-2 px-3 font-bold rounded-full`}
@@ -23,10 +23,11 @@ const normalButton = css`
     ${baseButton}
     padding-right: 36px;
 
-    ${tw`relative z-10 overflow-hidden`}
+    ${tw`relative overflow-hidden`}
     background-color: ${props => COLOUR_SCHEME[props.colourScheme || "primary"].primary};
     border: 1px solid ${SECONDARY};
     color: ${props => COLOUR_SCHEME[props.colourScheme || "primary"].secondary};
+    z-index: var(--z-button);
 
     transition: color .5s; 
 
@@ -38,7 +39,7 @@ const normalButton = css`
         right: 12px;
         background-color: ${props => COLOUR_SCHEME[props.colourScheme || "primary"].secondary};
         
-        z-index: -10;
+        z-index: var(--z-button-inner);
 
         transition: transform .5s;
         transform-origin: top;

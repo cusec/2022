@@ -1,6 +1,6 @@
-import { useEffect, useRef } from 'react';
-import styled, { keyframes } from 'styled-components';
-import tw from 'twin.macro';
+import { useEffect, useRef } from "react";
+import styled, { keyframes } from "styled-components";
+import tw from "twin.macro";
 
 const enlarge = keyframes`
     0% {
@@ -37,9 +37,9 @@ export default function Logo() {
     return (
         <>
             <img ref={logo} src="/logo.svg" className="h-full"/>
-            <div className="w-full overflow-hidden absolute top-0 left-0 -z-10" style={{ height: "200vh "}}>
+            <div className="w-full overflow-hidden absolute top-0 left-0" style={{ height: "200vh", zIndex: "var(--z-bubble-bg)"}}>
                 <Background ref={gradient}></Background>
             </div>
         </>
-    )
+    );
 }

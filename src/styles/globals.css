@@ -18,6 +18,14 @@
     --disabled: #1e1e1e80;
 
     font-size: 16px;
+
+    /* z-indices */
+    --z-bubble-bg: -100;
+    --z-title-illus: -90;
+    --z-nav: 100;
+
+    --z-button: 10;
+    --z-button-inner: -10;
 }
 
 * {
@@ -63,12 +71,6 @@ br {
     height: 1rem;
 }
 
-.foo {
-    color: blue;
-    &.bar { color: red; }
-}
-
-
 @keyframes outline {
     to {
         opacity: 0;
@@ -83,17 +85,9 @@ br {
 }
 
 @keyframes color {
-    0% {
-        fill-opacity: 0;
-    }
 
     50% {
         stroke-dashoffset: 0;
-        fill-opacity: 0;
-    }
-
-    75% {
-        fill-opacity: 0.75;
     }
 
     100% {
@@ -102,6 +96,9 @@ br {
 }
 
 .animate-on-load {
+    opacity: 0;
+    animation: fade .5s linear forwards;
+
     & > .outline {
         & > circle, & > rect, & > path {
             stroke-dasharray: 1000;

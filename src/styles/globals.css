@@ -18,6 +18,8 @@
     --disabled: #1e1e1e80;
 
     font-size: 16px;
+
+    --z-detail-box-bg: -1;
 }
 
 * {

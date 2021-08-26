@@ -9,7 +9,7 @@ const Box = styled.div`
 `;
 
 const Text = styled.div`
-    ${tw`flex gap-8 items-center relative`}
+    ${tw`flex gap-4 items-center relative`}
     width: 80vw;
 `;
 
@@ -41,7 +41,12 @@ export default function DetailBox({ title, topText, bottomText }) {
     let textChange = null;
 
     useEffect(() => {
-        textChange = gsap.timeline({ paused: true })
+        textChange = gsap.timeline({
+            paused: true,
+            defaults: {
+                duration: 0.25
+            }
+        })
             .to([topTextRef.current, topBgRef.current], { opacity: 0 })
             .to(bottomTextRef.current, { opacity: 1 });
     }, []);

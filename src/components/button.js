@@ -1,5 +1,5 @@
-import styled, { css } from 'styled-components';
-import tw from 'twin.macro';
+import styled, { css } from "styled-components";
+import tw from "twin.macro";
 
 const PRIMARY = "var(--primary)";
 const SECONDARY = "var(--dark)";
@@ -13,7 +13,7 @@ const COLOUR_SCHEME = {
         primary: SECONDARY,
         secondary: PRIMARY
     }
-}
+};
 
 const baseButton = css`
     ${tw`py-2 px-3 font-bold rounded-full`}

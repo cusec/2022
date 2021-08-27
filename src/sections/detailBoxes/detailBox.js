@@ -3,9 +3,12 @@ import styled from "styled-components";
 import tw from "twin.macro";
 import gsap from "gsap";
 
+import { Button } from "components/elements";
+
 const Box = styled.div`
     ${tw`w-full flex-1 flex justify-center relative`}
-    background-image: url("/testimg.jpg");
+    background-image: url("${props => props.backgroundUrl}");
+    background-size: cover;
 `;
 
 const Text = styled.div`
@@ -33,10 +36,11 @@ const TopBackground = styled.div`
     background: var(--dark);
 `;
 
-export default function DetailBox({ title, topText, bottomText }) {
+export default function DetailBox({ title, topText, bottomText, backgroundUrl }) {
     const topTextRef = useRef();
     const bottomTextRef = useRef();
     const topBgRef = useRef();
+    const bottomButton = useRef();
 
     let textChange = null;
 
@@ -48,11 +52,12 @@ export default function DetailBox({ title, topText, bottomText }) {
             }
         })
             .to([topTextRef.current, topBgRef.current], { opacity: 0 })
-            .to(bottomTextRef.current, { opacity: 1 });
+            .to([bottomTextRef.current, bottomButton.current], { opacity: 1 });
     }, []);
 
     return (
         <Box
+            backgroundUrl={backgroundUrl}
             onMouseEnter={() =>{ textChange && textChange.play(); }}
             onMouseLeave={() => { textChange && textChange.reverse(); }}
         >
@@ -63,6 +68,7 @@ export default function DetailBox({ title, topText, bottomText }) {
                     <TopText ref={topTextRef}>{topText}</TopText>
                     <BottomText ref={bottomTextRef}>{bottomText}</BottomText>
                 </div>
+                <Button className="opacity-0" ref={bottomButton}>CTA</Button>
             </Text>
         </Box>
     );

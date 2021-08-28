@@ -1,34 +1,38 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useImperativeHandle, forwardRef } from "react";
+import styled from "styled-components";
+import tw from "twin.macro";
 
-function moveCursorOuter(e) {
-    const x = e.clientX;
-    const y = e.clientY;
+const CircleImg = styled.img`
+    ${tw`absolute top-0 left-0 fixed`}
+    transition: transform 0.1s ease 0s;
+    z-index: var(--z-cursor);
+    pointer-events: none;
+`;
 
-    window.requestAnimationFrame(() => {
-        document.getElementById("cursorOuter").style.left = `${x - 12}px`;
-        document.getElementById("cursorOuter").style.top = `${y - 12}px`;
-    });
-}
+const Circle = forwardRef((_, ref) => {
+    const el = useRef();
+    useImperativeHandle(ref, () => ({
+        moveTo: (x, y) => {
+            el.current.style.transform = `translate(${x}px, ${y}px)`;
+        }
+    }), []);
+    return <CircleImg src="/cursorOuterDefault.svg" ref={el} />;
+});
 
 export default function Cursor() {
-    //const [position, setPosition] = useState({x: 0, y: 0});
+    const circleRef = useRef();
 
     useEffect(() => {
+        const moveCursorOuter = ({ clientX, clientY }) => {
+            circleRef.current.moveTo(clientX - 12, clientY - 12);
+        };
+
         window.addEventListener("mousemove", moveCursorOuter);
 
         return () => window.removeEventListener("mousemove", moveCursorOuter);
     }, []);
 
-    /*function moveCursorOuter2(e) {
-        setPosition({x: e.clientX, y: e.clientY});
-    }*/
-    
-    return (
-        /*<img id="cursorOuter" src="/cursorOuterDefault.svg" className="absolute" style={{ left: `${position.x - 12}px`, top: `${position.y - 12}px`, transition: "left .1s, top .1s", position: "fixed", zIndex: "100" }} ></img>*/
-        <>
-            <img id="cursorOuter" src="/cursorOuterDefault.svg" className="absolute" aria-hidden="true" style={{ transition: "left .1s, top .1s", position: "fixed", zIndex: "100", pointerEvents: "none" }} ></img>
-        </>
-    )
+    return <Circle id="cursorOuter" ref={circleRef} aria-hidden="true" />;
 }
 
 

@@ -1,8 +1,8 @@
-import { useEffect } from 'react';
-import styled from 'styled-components';
-import tw from 'twin.macro';
-import { throttle } from 'lodash';
-import { A } from '../components/elements';
+import { useEffect } from "react";
+import styled from "styled-components";
+import tw from "twin.macro";
+import { throttle } from "lodash";
+import { A } from "../components/elements";
 
 const NavBase = styled.nav`
     ${tw`fixed w-full top-0 left-0 py-4 z-50`}
@@ -52,5 +52,5 @@ export default function Nav() {
                 <A href="#faq">FAQ</A>*/}
             </NavInner>
         </NavBase>
-    )
+    );
 }

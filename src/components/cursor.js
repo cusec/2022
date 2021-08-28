@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from "react";
 
 function moveCursorOuter(e) {
     const x = e.clientX;
@@ -28,7 +28,7 @@ export default function Cursor() {
         <>
             <img id="cursorOuter" src="/cursorOuterDefault.svg" className="absolute" aria-hidden="true" style={{ transition: "left .1s, top .1s", position: "fixed", zIndex: "100", pointerEvents: "none" }} ></img>
         </>
-    )
+    );
 }
 
 

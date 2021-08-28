@@ -1,11 +1,11 @@
-import Head from 'next/head'
-import styled from 'styled-components';
-import styles from '../styles/Home.module.css'
-import tw from 'twin.macro';
-import { Button, Subtitle } from '../components/elements';
-import Nav from '../components/nav';
-import Logo from '../components/logo';
-import Cursor from '../components/cursor';
+import Head from "next/head";
+import styled from "styled-components";
+import styles from "../styles/Home.module.css";
+import tw from "twin.macro";
+import { Button, Subtitle } from "../components/elements";
+import Nav from "../components/nav";
+import Logo from "../components/logo";
+import Cursor from "../components/cursor";
 
 const Main = styled.main`
     width: 80vw;
@@ -66,5 +66,5 @@ export default function Home() {
                 </section>
             </Main>
         </div>
-    )
+    );
 }

@@ -1,6 +1,6 @@
-import { useEffect, useRef } from 'react';
-import styled, { keyframes } from 'styled-components';
-import tw from 'twin.macro';
+import { useEffect, useRef } from "react";
+import styled, { keyframes } from "styled-components";
+import tw from "twin.macro";
 
 const enlarge = keyframes`
     0% {
@@ -41,5 +41,5 @@ export default function Logo() {
                 <Background ref={gradient}></Background>
             </div>
         </>
-    )
+    );
 }

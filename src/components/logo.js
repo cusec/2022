@@ -36,7 +36,7 @@ export default function Logo() {
 
     return (
         <>
-            <img ref={logo} src="/logo.svg" className="h-full"/>
+            <img ref={logo} src="/logo.svg" className="h-24"/>
             <div className="w-full overflow-hidden absolute top-0 left-0 -z-10" style={{ height: "200vh "}}>
                 <Background ref={gradient}></Background>
             </div>

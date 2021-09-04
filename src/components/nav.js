@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useImperativeHandle, forwardRef, useRef } from "react";
 import styled from "styled-components";
 import tw from "twin.macro";
 import { throttle } from "lodash";
@@ -23,20 +23,21 @@ const NavInner = styled.div`
     }
 `;
 
-let prevScrollPosition = 0;
+const NavLogo = forwardRef((_, ref) => {
+    const el = useRef();
+    useImperativeHandle(ref, () => ({
+        rotate: (deg) => {
+            el.current.style.transform = `rotate(${deg}deg)`;
+        }
+    }));
 
-const throttled =  throttle(rotateLogo, 500, { trailing: false });
-
-function rotateLogo(e) {
-    const scrollPosition = window.scrollY;
-    const scrollDiff = scrollPosition - prevScrollPosition;
-    const multiplier = scrollDiff === 0 ? 0 : Math.max(-Math.log(Math.abs(scrollDiff)) + 3, 1);
-    document.getElementById("navLogo").style.transform = `rotate(${scrollDiff * multiplier}deg)`;
-    prevScrollPosition = scrollPosition;
-}
+    return <img id="navLogo" src="/logoColourless.svg" ref={el} style={{ transition: "transform .5s" }} />;
+});
 
 export default function Nav() {
+    const logoRef = useRef();
     useEffect(() => {
+        const throttled = throttle(() => logoRef.current.rotate(window.scrollY), 200, { trailing: true });
         window.addEventListener("scroll", throttled);
 
         return () => window.removeEventListener("scroll", throttled);
@@ -45,7 +46,7 @@ export default function Nav() {
     return (
         <NavBase>
             <NavInner>
-                <img id="navLogo" src="/logoColourless.svg" style={{ transition: "transform .5s" }} />
+                <NavLogo ref={logoRef} />
                 <A href="#about">About</A>
                 {/*<A href="#sponsors">Sponsors</A>
                 <A href="#pricing">Pricing</A>

@@ -3,7 +3,10 @@
         "browser": true,
         "es2021": true
     },
-    "extends": [],
+    "extends": [
+        "eslint:recommended",
+        "plugin:react/recommended"
+    ],
     "parserOptions": {
         "ecmaFeatures": {
             "jsx": true
@@ -24,6 +27,10 @@
             "double"
         ],
         "semi": [
+            "error",
+            "always"
+        ],
+        "object-curly-spacing": [
             "error",
             "always"
         ]

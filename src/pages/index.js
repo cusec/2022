@@ -1,12 +1,12 @@
 import Head from "next/head";
 import styled from "styled-components";
-import tw from "twin.macro";
 import styles from "../styles/Home.module.css";
 import Nav from "../components/nav";
 import Cursor from "../components/cursor";
 
 import Descriptions from "sections/descriptions";
 import Splash from "sections/splash";
+import Faq from "sections/faq/faq";
 
 
 const Main = styled.main`
@@ -30,6 +30,7 @@ export default function Home() {
             <Main>
                 <Splash />
                 <Descriptions />
+                <Faq />
             </Main>
         </div>
     );

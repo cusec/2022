@@ -9,24 +9,19 @@ const Question = styled.span`
 `;
 
 const Answer = styled.div`
-    ${tw`relative h-0`}
+    ${tw`relative h-0 pt-2`}
     color: var(--light);
 
     .answer-line {
         ${tw`w-full h-full block absolute`}
-        content: "";
         border-top: 1px var(--light) solid;
-
-        /*transform: translateY(${props => props.isOpen ? "100%" : "0"});
-
-        transition: transform .5s;*/
+        border-color: ${props => props.isOpen ? "var(--primary)" : "var(--light)"};
+        pointer-events: none;
     }
 
     .answer-text {
         opacity: 0;
-        /*opacity: ${props => props.isOpen ? "1" : "0"};
-
-        transition: transform .5s, opacity .5s;*/
+        transform: scaleY(0);
     }
 `;
 
@@ -43,8 +38,10 @@ export default function FaqBox({ question, answer, customClassName }) {
             paused: true,
             defaults: {
                 duration: 0.25
-            }
+            },
+            yoyo: true
         })
+            .to([answerTextRef.current], { scale: 1, duration: 0 })
             .to([answerLineRef.current], { y: "100%" })
             .to([answerTextRef.current], { opacity: 1 }, "-=0.25")
             .to([answerWrapperRef.current], { height: "auto" }, "-0.25");

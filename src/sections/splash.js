@@ -13,9 +13,14 @@ const Title = styled.div`
     }
 `;
 
+const Header = styled.header`
+    ${tw`h-screen flex flex-col justify-center`}
+    width: 80vw;
+`;
+
 export default function Splash() {
     return (
-        <header className="h-screen flex flex-col justify-center">
+        <Header>
             <Title>
                 <Logo></Logo>
                 <h1>CUSEC</h1>
@@ -27,6 +32,6 @@ export default function Splash() {
             <div className="flex justify-end">
                 <Button className="custom-shadow"> sign up!</Button>
             </div>
-        </header>
+        </Header>
     );
 }

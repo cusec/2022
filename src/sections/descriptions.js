@@ -1,3 +1,5 @@
+import React from "react";
+
 export default function Descriptions() {
     return (
         <section id="about" className="h-screen flex flex-col justify-center">

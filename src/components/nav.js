@@ -1,4 +1,6 @@
-import { useEffect, useImperativeHandle, forwardRef, useRef } from "react";
+
+
+import React, { useEffect, useImperativeHandle, forwardRef, useRef } from "react";
 import styled from "styled-components";
 import tw from "twin.macro";
 import { throttle } from "lodash";
@@ -33,6 +35,8 @@ const NavLogo = forwardRef((_, ref) => {
 
     return <img id="navLogo" src="/logoColourless.svg" ref={el} style={{ transition: "transform .5s" }} />;
 });
+
+NavLogo.displayName = "NavLogo";
 
 export default function Nav() {
     const logoRef = useRef();

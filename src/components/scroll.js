@@ -3,14 +3,14 @@ import { throttle } from "lodash";
 
 const scrollScreen = isScrolledDown => {
     const scrollMod = isScrolledDown ? 1 : -1;
-    window.scrollBy(0, window.innerHeight * scrollMod);
-    scrollY = window.scrollY;
+    window.scrollTo(0, window.scrollY + window.innerHeight * scrollMod);
 };
 
 const scrollScreenWheel = throttle(e => {
     if (e.deltaY === 0) return;
+    e.preventDefault();
     scrollScreen(e.deltaY > 0);
-}, 200, { trailing: false });
+}, 200, { trailing: true });
 
 let scrollY;
 
@@ -32,18 +32,27 @@ const screenSwipeMove = throttle(e => {
 
 export default function Scroll() {
     useEffect(() => {
-        scrollY = window.scrollY;
-
-        window.addEventListener("wheel", scrollScreenWheel, { passive: true });
+        window.addEventListener("wheel", scrollScreenWheel);
         window.addEventListener("touchstart", screenSwipeStart, { passive: true });
         window.addEventListener("touchmove", screenSwipeMove, { passive: true });
 
         return () => {
-            window.removeEventListener("scroll", scrollScreenWheel, 200, { trailing: false });
+            window.removeEventListener("wheel", scrollScreenWheel);
             window.removeEventListener("touchstart", screenSwipeStart);
             window.removeEventListener("touchmove", screenSwipeMove);
         };
     }, []);
 
-    return null;
+    return (
+        <div className="fixed top-0 left-0 h-screen w-screen">
+            <div
+                className="absolute top-0 left-0 h-1/4 w-screen bg-red-400"
+                onClick={() => scrollScreen(false)}
+            ></div>
+            <div
+                className="absolute bottom-0 left-0 h-1/4 w-screen bg-red-400"
+                onClick={() => scrollScreen(true)}
+            ></div>
+        </div>
+    );
 }

@@ -42,7 +42,7 @@ export default function Nav() {
     const logoRef = useRef();
     useEffect(() => {
         const throttled = throttle(() => logoRef.current.rotate(window.scrollY), 200, { trailing: true });
-        window.addEventListener("scroll", throttled);
+        window.addEventListener("scroll", throttled, { passive: true });
 
         return () => window.removeEventListener("scroll", throttled);
     }, []);

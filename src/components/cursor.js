@@ -7,6 +7,10 @@ const CircleImg = styled.img`
     transition: transform 0.1s ease 0s;
     z-index: var(--z-cursor);
     pointer-events: none;
+
+    @media (hover: none) {
+        display: none;
+    }
 `;
 
 const Circle = forwardRef((_, ref) => {

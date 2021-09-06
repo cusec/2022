@@ -1,8 +1,15 @@
 import React from "react";
+import styled from "styled-components";
+import tw from "twin.macro";
+
+const Section = styled.section`
+    ${tw`h-screen flex flex-col justify-center`}
+    width: 80vw;
+`;
 
 export default function Descriptions() {
     return (
-        <section id="about" className="h-screen flex flex-col justify-center">
+        <Section id="about">
             <div className="mb-8">
                 <h2>Canada’s annual software engineering conference</h2>
                 <p>
@@ -16,6 +23,6 @@ export default function Descriptions() {
                     CUSEC is an annual software engineering conference organized for students by students. It was founded in 2002 by a small team of tech enthusiasts on a mission to educate and expose students to a diverse range of areas in software engineering and computer science. The conference enables attendees to discover knowledgeable speakers, connect with sponsoring companies, and make lifelong friends, all in a safe and comfortable space.
                 </p>
             </div>
-        </section>
+        </Section>
     );
 }

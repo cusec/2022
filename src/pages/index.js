@@ -1,7 +1,6 @@
 import React from "react";
 import Head from "next/head";
-import styled from "styled-components";
-import styles from "../styles/Home.module.css";
+
 import Nav from "../components/nav";
 import Cursor from "../components/cursor";
 
@@ -23,7 +22,7 @@ export default function Home() {
             
             <Nav></Nav>
 
-            <main className={styles.container}>
+            <main className="flex flex-col justify-center items-center min-h-screen">
                 <Splash />
                 <Descriptions />
                 <Faq />

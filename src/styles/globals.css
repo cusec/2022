@@ -45,6 +45,7 @@ button {
 h1 {
     font-size: 6rem;
     font-weight: bold;
+    line-height: normal;
 }
 
 h2 {

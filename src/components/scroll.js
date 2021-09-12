@@ -1,16 +1,26 @@
 import React, { useEffect } from "react";
 import { throttle } from "lodash";
 
-const scrollScreen = isScrolledDown => {
-    const scrollMod = isScrolledDown ? 1 : -1;
-    window.scrollTo(0, window.scrollY + window.innerHeight * scrollMod);
-};
+let currScreen = 0;
+const minScreen = 0;
+const maxScreen = 4; // todo: unhardcode?
 
-const scrollScreenWheel = throttle(e => {
-    if (e.deltaY === 0) return;
+const scrollScreen = throttle(isScrolledDown => {
+    const scrollMod = isScrolledDown ? 1 : -1;
+
+    console.log(currScreen + scrollMod);
+    if (currScreen + scrollMod < minScreen || currScreen + scrollMod > maxScreen) return;
+
+    console.log((currScreen + scrollMod) * window.innerHeight);
+    window.scrollTo(0, (currScreen + scrollMod) * window.innerHeight);
+    currScreen += scrollMod;
+}, 1500, { leading: true, trailing: false });
+
+const scrollScreenWheel = e => {
     e.preventDefault();
+    if (e.deltaY === 0) return;
     scrollScreen(e.deltaY > 0);
-}, 200, { trailing: true });
+};
 
 let scrollY;
 
@@ -32,9 +42,9 @@ const screenSwipeMove = throttle(e => {
 
 export default function Scroll() {
     useEffect(() => {
-        window.addEventListener("wheel", scrollScreenWheel);
-        window.addEventListener("touchstart", screenSwipeStart, { passive: true });
-        window.addEventListener("touchmove", screenSwipeMove, { passive: true });
+        window.addEventListener("wheel", scrollScreenWheel, { passive: false });
+        window.addEventListener("touchstart", screenSwipeStart);
+        window.addEventListener("touchmove", screenSwipeMove);
 
         return () => {
             window.removeEventListener("wheel", scrollScreenWheel);
@@ -45,14 +55,14 @@ export default function Scroll() {
 
     return (
         <div className="fixed top-0 left-0 h-screen w-screen">
-            <div
+            {/*<div
                 className="absolute top-0 left-0 h-1/4 w-screen bg-red-400"
                 onClick={() => scrollScreen(false)}
             ></div>
             <div
                 className="absolute bottom-0 left-0 h-1/4 w-screen bg-red-400"
                 onClick={() => scrollScreen(true)}
-            ></div>
+            ></div>*/}
         </div>
     );
 }

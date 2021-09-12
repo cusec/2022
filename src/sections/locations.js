@@ -6,8 +6,10 @@ import Canada from "svgs/canada";
 
 import { CITIES } from "constants/cities";
 
+// Todo: move z-index to globals.css
 const Section = styled.section`
-    ${tw`h-screen flex flex-col justify-center relative overflow-hidden`}
+    ${tw`h-screen flex flex-col justify-center relative overflow-hidden z-0`}
+    background-color: var(--secondary);
 
     .map {
         ${tw`absolute`}
@@ -31,6 +33,7 @@ const Cities = styled.section`
 
 const Subsection = styled.div`
     margin: 0 10vw;
+    z-index: 0;
 `;
 
 export default function Locations() {

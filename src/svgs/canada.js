@@ -7,8 +7,12 @@ import { PROVINCES } from "constants/cities";
 
 const Svg = styled.svg`
     .hasInPerson {
+        path {
+            fill: var(--shadow);
+        }
+
         &.hovered path {
-            fill: red;
+            fill: var(--dark);
         }
     }
 `;

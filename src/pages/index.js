@@ -4,7 +4,7 @@ import Head from "next/head";
 import Nav from "../components/nav";
 import Cursor from "../components/cursor";
 
-import Descriptions from "sections/descriptions";
+import Descriptions from "sections/descriptions/descriptions";
 import Splash from "sections/splash";
 
 export default function Home() {

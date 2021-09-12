@@ -1,16 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import tw from "twin.macro";
 
 import Canada from "svgs/canada";
 
-const CITIES = [
-    "Ottawa, ON",
-    "Waterloo, ON",
-    "Montreal, QC",
-    "Calgary, AB",
-    "Winnipeg, MB"
-];
+import { CITIES } from "constants/cities";
 
 const Section = styled.section`
     ${tw`h-screen flex flex-col justify-center relative overflow-hidden`}
@@ -40,12 +34,15 @@ const Subsection = styled.div`
 `;
 
 export default function Locations() {
+    const [hovered, setHovered] = useState(null);
+
     return (
         <Section>
-            <Canada className="map" />
+            <Canada className="map" hovered={hovered} />
             <Subsection>
-                <h1>Join us this year in person or virtually</h1>
-                <Cities>{CITIES.map(city => <span key={city} className="city-name">{city}</span>)}</Cities>
+                <h1>This year, join us in person and virtually</h1>
+                <Cities>{Object.values(CITIES).map(({ name: city, province }) => <span key={city} className="city-name" onMouseOver={() => setHovered(province)} onMouseLeave={() => setHovered(null)}>{city}</span>)}</Cities>
+                <span>Online</span>
             </Subsection>
         </Section>
     );

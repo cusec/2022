@@ -1,4 +1,4 @@
-import { useEffect, useRef, useImperativeHandle, forwardRef } from "react";
+import React, { useEffect, useRef, useImperativeHandle, forwardRef } from "react";
 import styled from "styled-components";
 import tw from "twin.macro";
 
@@ -22,6 +22,8 @@ const Circle = forwardRef((_, ref) => {
     }), []);
     return <CircleImg src="/cursorOuterDefault.svg" ref={el} />;
 });
+
+Circle.displayName = "Circle";
 
 export default function Cursor() {
     const circleRef = useRef();

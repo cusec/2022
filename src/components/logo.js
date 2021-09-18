@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import styled, { keyframes } from "styled-components";
 import tw from "twin.macro";
 
@@ -37,7 +37,7 @@ export default function Logo() {
     return (
         <>
             <img ref={logo} src="/logo.svg" className="h-full"/>
-            <div className="w-full overflow-hidden absolute top-0 left-0" style={{ height: "200vh", zIndex: "var(--z-bubble-bg)"}}>
+            <div className="w-full overflow-hidden absolute top-0 left-0" style={{ height: "200vh", zIndex: "var(--z-bubble-bg)" }}>
                 <Background ref={gradient}></Background>
             </div>
         </>

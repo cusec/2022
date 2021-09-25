@@ -11,7 +11,7 @@ export default function Descriptions() {
     return (
         <Section id="about">
             <div className="mb-8">
-                <h2>Canada’s annual software engineering conference</h2>
+                <h2>Canada's annual software engineering conference</h2>
                 <p>
                     Join thousands of students from across Canada for a weekend full of interactive knowledge sharing, mentoring, career opportunities and more as we explore the endless possibilities of the future of tech.
                 </p>

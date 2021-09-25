@@ -3,7 +3,6 @@ import styled from "styled-components";
 import tw from "twin.macro";
 
 import { Button, Subtitle } from "components/elements";
-import Logo from "components/logo";
 import TitleSVG from "../svgs/title/title";
 
 const Title = styled.div`
@@ -19,7 +18,7 @@ export default function Splash() {
     return (
         <Header>
             <Title>
-                <Logo></Logo>
+                <img src="/logo.svg" className="h-24"/>
                 <h1>CUSEC</h1>
             </Title>
                     
@@ -29,6 +28,7 @@ export default function Splash() {
             <div className="flex justify-end">
                 <Button className="custom-shadow"> sign up!</Button>
             </div>
+
             <TitleSVG/>
         </Header>
     );

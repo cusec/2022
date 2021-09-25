@@ -18,9 +18,34 @@ export const Svg = styled.svg`
     }
 `;
 
+const Background = styled.div`
+    ${tw`absolute left-0 top-0 w-full h-full overflow-hidden`}
+    z-index: var(--z-title-illus);
+
+    background: var(--secondary);
+
+    &::after {
+        ${tw`absolute w-full h-full`}
+        content: '';
+        background: radial-gradient(circle at bottom, var(--primary) 0%, transparent 60%);
+        transform-origin: bottom;
+
+        @keyframes sunrise {
+            from {
+                transform: scale(0);
+            }
+            to { 
+                transform: scale(1);
+            }
+        }
+
+        animation: sunrise 1s;
+    }
+`;
+
 export default function TitleSVG(props) {
     useEffect(() => {
-        const screenSizeSelector = window.matchMedia("(min-width: 768px)") ? ".desktop" : ".mobile";
+        const screenSizeSelector = window.matchMedia("(min-width: 768px)").matches ? ".desktop" : ".mobile";
 
         gsap.timeline({
             defaults: {
@@ -30,7 +55,8 @@ export default function TitleSVG(props) {
             .fromTo(`${screenSizeSelector} .cmhr`, {
                 y: "100%"
             }, {
-                y: "0%"
+                y: "0%",
+                delay: "0.5"
             })
             .fromTo(`${screenSizeSelector} .toronto`, {
                 y: "100%"
@@ -48,6 +74,7 @@ export default function TitleSVG(props) {
 
     return (
         <>
+            <Background />
             <TitleDesktop {...props} className="hidden md:block" />
             <TitleMobile {...props} className="block md:hidden" />
         </>

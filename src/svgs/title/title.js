@@ -20,23 +20,25 @@ export const Svg = styled.svg`
 
 export default function TitleSVG(props) {
     useEffect(() => {
+        const screenSizeSelector = window.matchMedia("(min-width: 768px)") ? ".desktop" : ".mobile";
+
         gsap.timeline({
             defaults: {
                 duration: 1.5
             }
         })
-            .fromTo(".block .cmhr", {
+            .fromTo(`${screenSizeSelector} .cmhr`, {
                 y: "100%"
             }, {
                 y: "0%"
             })
-            .fromTo(".block .toronto", {
+            .fromTo(`${screenSizeSelector} .toronto`, {
                 y: "100%"
             }, {
                 y: "0%",
                 delay: "-1"
             })
-            .fromTo(".block .parliament", {
+            .fromTo(`${screenSizeSelector} .parliament`, {
                 y: "100%"
             }, {
                 y: "0%",

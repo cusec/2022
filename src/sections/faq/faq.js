@@ -8,9 +8,8 @@ import FaqBox from "./faqBox";
 import { FaqQuestions } from "constants/faqQuestions";
 
 const Container = styled.section`
-    ${tw`h-screen flex flex-col justify-center`}
+    ${tw`h-screen flex flex-col justify-center overflow-hidden gap-12`}
     color: var(--light);
-    gap: 5.25rem;
     padding: 0 10vw;
 
     background-color: var(--dark);
@@ -18,7 +17,12 @@ const Container = styled.section`
 
 const FaqBoxes = styled.div`
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
+
+    @media (min-width: 640px) {
+        grid-template-columns: 1fr 1fr;
+    }
+
     gap: 1rem;
 `;
 
@@ -27,15 +31,17 @@ export default function Faq() {
 
     return (
         <Container id="faq">
-            <h2>Got questions?</h2>
+            <div>
+                <h2>Got questions?</h2>
+                <p className="flex-initial">
+                Can't find what you're looking for? Send us an email to <A href={`mailto:${INFO_EMAIL}`}>{INFO_EMAIL}</A>
+                </p>
+            </div>
             <FaqBoxes>
                 {FaqQuestions.map(({ question, answer }) => (
                     <FaqBox key={question} question={question} answer={answer} />
                 ))}
             </FaqBoxes>
-            <p>
-                Can't find what you're looking for? Send us an email to <A href={`mailto:${INFO_EMAIL}`}>{INFO_EMAIL}</A>
-            </p>
 
         </Container>
     );

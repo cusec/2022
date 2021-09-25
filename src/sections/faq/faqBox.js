@@ -67,6 +67,6 @@ export default function FaqBox({ question, answer, customClassName }) {
 
 FaqBox.propTypes = {
     question: PropTypes.string.isRequired,
-    answer: PropTypes.string.isRequired,
+    answer: PropTypes.oneOfType([PropTypes.string, PropTypes.element]).isRequired,
     customClassName: PropTypes.string
 };

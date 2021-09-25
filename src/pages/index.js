@@ -3,7 +3,6 @@ import Head from "next/head";
 
 import Nav from "../components/nav";
 import Cursor from "../components/cursor";
-import TitleSVG from "../svgs/title";
 
 import Descriptions from "sections/descriptions";
 import Splash from "sections/splash";

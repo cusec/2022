@@ -4,10 +4,10 @@ import tw from "twin.macro";
 
 import { Button, Subtitle } from "components/elements";
 import Logo from "components/logo";
-import TitleSVG from "../svgs/title";
+import TitleSVG from "../svgs/title/title";
 
 const Title = styled.div`
-    ${tw`flex flex-col md:flex-row leading-none gap-4`}
+    ${tw`flex flex-col md:flex-row leading-none gap-4 items-center`}
 `;
 
 const Header = styled.main`
@@ -29,7 +29,7 @@ export default function Splash() {
             <div className="flex justify-end">
                 <Button className="custom-shadow"> sign up!</Button>
             </div>
-            <TitleSVG className="animate-on-load"/>
+            <TitleSVG/>
         </Header>
     );
 }

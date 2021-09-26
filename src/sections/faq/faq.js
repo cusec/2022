@@ -8,9 +8,9 @@ import FaqBox from "./faqBox";
 import { FaqQuestions } from "constants/faqQuestions";
 
 const Container = styled.section`
-    ${tw`h-screen flex flex-col justify-center overflow-hidden gap-12`}
+    ${tw`min-h-screen flex flex-col justify-center overflow-hidden gap-12`}
     color: var(--light);
-    padding: 0 10vw;
+    padding: 5rem 10vw;
 
     background-color: var(--dark);
 `;

@@ -26,7 +26,7 @@ export default function Splash() {
         <Header>
             <Content>
                 <Title>
-                    <img src="/logo.svg" className="h-24"/>
+                    <img src="/logo.svg" alt="" className="h-24"/>
                     <h1>CUSEC</h1>
                 </Title>
                         

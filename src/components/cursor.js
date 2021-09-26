@@ -20,7 +20,7 @@ const Circle = forwardRef((_, ref) => {
             el.current.style.transform = `translate(${x}px, ${y}px)`;
         }
     }), []);
-    return <CircleImg src="/cursorOuterDefault.svg" ref={el} />;
+    return <CircleImg src="/cursorOuterDefault.svg" alt="" ref={el} />;
 });
 
 Circle.displayName = "Circle";

@@ -10,7 +10,7 @@ const A = styled.a`
         content: '';
         width: 100%;
         height: 1px;
-        background-color: var(--dark);
+        background-color: ${props => props.lineColour || "var(--dark)"};
         opacity: 0;
 
         transition: transform .5s, opacity 0s linear .5s;

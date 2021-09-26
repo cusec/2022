@@ -32,9 +32,9 @@ export default function Faq() {
     return (
         <Container id="faq">
             <div>
-                <h2>Got questions?</h2>
-                <p className="flex-initial">
-                Can't find what you're looking for? Send us an email to <A href={`mailto:${INFO_EMAIL}`}>{INFO_EMAIL}</A>
+                <h2 className="primary-coloured">Got questions?</h2>
+                <p>
+                Can't find what you're looking for? Send us an email to <A href={`mailto:${INFO_EMAIL}`} lineColour="var(--primary)" className="primary-coloured">{INFO_EMAIL}</A>
                 </p>
             </div>
             <FaqBoxes>

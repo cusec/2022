@@ -54,8 +54,14 @@ export default function FaqBox({ question, answer, customClassName }) {
         isOpen ? openBox.play() : openBox.reverse();
     }, [isOpen]);
 
+    const handleKeyPress = (e) => {
+        if (e.key !== "Enter") return;
+
+        setIsOpen(!isOpen);
+    };
+
     return (
-        <div className={customClassName} onClick={() => setIsOpen(!isOpen)}>
+        <div className={customClassName} onClick={() => setIsOpen(!isOpen)} onKeyDown={handleKeyPress} tabIndex="0">
             <Question isOpen={isOpen}>{question}</Question>
             <Answer isOpen={isOpen} ref={answerWrapperRef}>
                 <div className="answer-line" ref={answerLineRef}></div>

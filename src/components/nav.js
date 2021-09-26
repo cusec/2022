@@ -33,7 +33,7 @@ const NavLogo = forwardRef((_, ref) => {
         }
     }));
 
-    return <img id="navLogo" src="/logoColourless.svg" ref={el} style={{ transition: "transform .5s" }} />;
+    return <img id="navLogo" src="/logoColourless.svg" alt="" ref={el} style={{ transition: "transform .5s" }} />;
 });
 
 NavLogo.displayName = "NavLogo";

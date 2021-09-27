@@ -9,7 +9,7 @@ const Title = styled.div`
     ${tw`flex flex-col md:flex-row leading-none gap-4`}
 `;
 
-const Header = styled.main`
+const Header = styled.header`
     ${tw`h-screen flex flex-col justify-center`}
     width: 80vw;
 `;

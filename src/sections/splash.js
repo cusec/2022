@@ -6,7 +6,7 @@ import { Button, Subtitle } from "components/elements";
 import TitleSVG from "../svgs/title/title";
 
 const Title = styled.div`
-    ${tw`flex flex-col md:flex-row leading-none gap-4 items-center`}
+    ${tw`flex flex-col sm:flex-row leading-none gap-4 items-center`}
 `;
 
 const Header = styled.header`
@@ -14,7 +14,7 @@ const Header = styled.header`
 `;
 
 const Content = styled.div`
-    ${tw`p-12 h-screen md:h-auto`}
+    ${tw`p-12 h-screen sm:h-auto`}
     max-width: 100vw;
     background: rgba(249, 222, 44, 0.25);
     box-shadow: 0px 0px 8px var(--shadow);

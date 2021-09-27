@@ -47,6 +47,7 @@ export default function TitleSVG(props) {
     useEffect(() => {
         const screenSizeSelector = window.matchMedia("(min-width: 768px)").matches ? ".desktop" : ".mobile";
 
+        // Todo: Figure out scrolltrigger
         gsap.timeline({
             defaults: {
                 duration: 1.5

@@ -8,16 +8,20 @@ import { CITIES } from "constants/cities";
 
 // Todo: move z-index to globals.css
 const Section = styled.section`
-    ${tw`h-screen flex flex-col justify-center relative overflow-hidden z-0`}
+    ${tw`min-h-screen w-full flex flex-col justify-center relative overflow-hidden z-0`}
     background-color: var(--secondary-highlight);
 
     .map {
         ${tw`absolute`}
         transform: rotate(-15deg);
         bottom: -15vh;
-        right: 0vw;
         z-index: -10;
         height: 90vh;
+
+        right: -50vw;
+        @media (min-width: 768px) {
+            right: 0vw;
+        }
     }
 `;
 
@@ -43,9 +47,11 @@ export default function Locations() {
         <Section>
             <Canada className="map" hovered={hovered} />
             <Subsection>
-                <h1>This year, join us in person and virtually</h1>
+                <h2>This year, join us in person...</h2>
                 <Cities>{Object.values(CITIES).map(({ name: city, province }) => <span key={city} className="city-name" onMouseOver={() => setHovered(province)} onMouseLeave={() => setHovered(null)}>{city}</span>)}</Cities>
-                <span>Online</span>
+                <br/>
+                <h2>...and virtually</h2>
+                <span>Hopin</span>
             </Subsection>
         </Section>
     );

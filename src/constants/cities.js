@@ -10,10 +10,6 @@ export const CITIES = {
         name: "Ottawa, ON",
         province: PROVINCES.ONTARIO
     },
-    WATERLOO: {
-        name: "Waterloo, ON",
-        province: PROVINCES.ONTARIO
-    },
     MONTREAL: {
         name: "Montreal, QC",
         province: PROVINCES.QUEBEC

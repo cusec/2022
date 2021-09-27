@@ -6,11 +6,7 @@ import { Button, Subtitle } from "components/elements";
 import Logo from "components/logo";
 
 const Title = styled.div`
-    ${tw`flex leading-none h-24`}
-
-    *:last-child {
-        ${tw`ml-4`}
-    }
+    ${tw`flex flex-col md:flex-row leading-none gap-4`}
 `;
 
 const Header = styled.main`

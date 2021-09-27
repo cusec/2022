@@ -7,7 +7,7 @@ import { throttle } from "lodash";
 import { A } from "../components/elements";
 
 const NavBase = styled.nav`
-    ${tw`fixed w-full top-0 left-0 py-4 z-50`}
+    ${tw`fixed w-full top-0 left-0 py-4 z-50 hidden md:block`}
     border-bottom: 1px solid var(--dark);
     backdrop-filter: blur(0.75rem);
 `;
@@ -33,7 +33,7 @@ const NavLogo = forwardRef((_, ref) => {
         }
     }));
 
-    return <img id="navLogo" src="/logoColourless.svg" ref={el} style={{ transition: "transform .5s" }} />;
+    return <img id="navLogo" src="/logoColourless.svg" alt="" ref={el} style={{ transition: "transform .5s" }} />;
 });
 
 NavLogo.displayName = "NavLogo";

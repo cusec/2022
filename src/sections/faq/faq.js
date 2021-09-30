@@ -31,7 +31,7 @@ export default function Faq() {
     return (
         <Container id="faq">
             <div>
-                <h2 className="primary-coloured text-xl">Got questions?</h2>
+                <h2 className="primary-coloured text-xl mb-6">Got questions?</h2>
                 <p>
                 Can't find what you're looking for? Send us an email to {" "}
                     <A
@@ -46,7 +46,7 @@ export default function Faq() {
                         className="primary-coloured"
                     >
                         Facebook
-                    </A> {" "}
+                    </A>
                 , {" "}
                     <A
                         href={INSTAGRAM}

@@ -1,4 +1,4 @@
-import { useRef, useEffect } from "react";
+import React, { useRef, useEffect } from "react";
 import styled from "styled-components";
 import tw from "twin.macro";
 import gsap from "gsap";
@@ -9,6 +9,7 @@ const Box = styled.div`
     ${tw`w-full flex-1 flex justify-center relative`}
     background-image: url("${props => props.backgroundUrl}");
     background-size: cover;
+    background-position: center;
 `;
 
 const Text = styled.div`
@@ -21,7 +22,7 @@ const Title = styled.h1`
 `;
 
 const TopText = styled.h2`
-    ${tw`absolute`}
+    ${tw`absolute text-xl`}
     color: var(--primary);
     top: 50%;
 `;
@@ -40,7 +41,6 @@ export default function DetailBox({ title, topText, bottomText, backgroundUrl })
     const topTextRef = useRef();
     const bottomTextRef = useRef();
     const topBgRef = useRef();
-    const bottomButton = useRef();
 
     let textChange = null;
 
@@ -52,7 +52,7 @@ export default function DetailBox({ title, topText, bottomText, backgroundUrl })
             }
         })
             .to([topTextRef.current, topBgRef.current], { opacity: 0 })
-            .to([bottomTextRef.current, bottomButton.current], { opacity: 1 });
+            .to(bottomTextRef.current, { opacity: 1 });
     }, []);
 
     return (
@@ -63,12 +63,11 @@ export default function DetailBox({ title, topText, bottomText, backgroundUrl })
         >
             <TopBackground ref={topBgRef} />
             <Text>
-                <Title>{title}</Title>
+                <Title className="display">{title}</Title>
                 <div className="flex-1 relative h-full">
                     <TopText ref={topTextRef}>{topText}</TopText>
                     <BottomText ref={bottomTextRef}>{bottomText}</BottomText>
                 </div>
-                <Button className="opacity-0" ref={bottomButton}>CTA</Button>
             </Text>
         </Box>
     );

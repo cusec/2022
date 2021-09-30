@@ -1,12 +1,12 @@
+import React from "react";
 import DetailBox from "./detailBox";
-import styled from "styled-components";
 
 const BOX_TEXT = [
     {
         title: "Connect",
         topText: "with like-minded students.",
         bottomText: "with 500+ students from across Canada",
-        backgroundUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Rotating_earth_%28large%29.gif/300px-Rotating_earth_%28large%29.gif"
+        backgroundUrl: "/connect_processed.gif"
     },
     {
         title: "Learn",
@@ -25,7 +25,7 @@ const BOX_TEXT = [
 export default function DetailBoxes() {
     return (
         <section className="h-screen w-full flex flex-col justify-center">
-            {BOX_TEXT.map(section => <DetailBox { ...section } />)}
+            {BOX_TEXT.map(section => <DetailBox key={section.title} { ...section } />)}
         </section>
     );
 }

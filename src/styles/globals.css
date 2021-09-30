@@ -50,13 +50,13 @@ button {
     font-size: inherit;
 }
 
-h1 {
+.display {
     font-size: 6rem;
     font-weight: bold;
     line-height: normal;
 }
 
-h2 {
+.header1 {
     font-size: 1.5rem;
 
     @media(min-width: 768px) {
@@ -64,7 +64,7 @@ h2 {
     }
 }
 
-h3 {
+.header2 {
     font-size: 1.5rem;
 }
 

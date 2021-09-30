@@ -6,6 +6,7 @@ import { A } from "components/elements";
 import FaqBox from "./faqBox";
 
 import { FaqQuestions } from "constants/faqQuestions";
+import { EMAIL, FACEBOOK, INSTAGRAM, LINKEDIN } from "constants/socialMediaLinks";
 
 const Container = styled.section`
     ${tw`min-h-screen flex flex-col justify-center overflow-hidden gap-12`}
@@ -27,14 +28,42 @@ const FaqBoxes = styled.div`
 `;
 
 export default function Faq() {
-    const INFO_EMAIL = "info@cusec.com";
+    
 
     return (
         <Container id="faq">
             <div>
-                <h2 className="primary-coloured">Got questions?</h2>
+                <h2 className="primary-coloured text-xl">Got questions?</h2>
                 <p>
-                Can't find what you're looking for? Send us an email to <A href={`mailto:${INFO_EMAIL}`} lineColour="var(--primary)" className="primary-coloured">{INFO_EMAIL}</A>
+                Can't find what you're looking for? Send us an email to {" "}
+                    <A
+                        href={`mailto:${EMAIL}`}
+                        lineColour="var(--primary)"
+                        className="primary-coloured"
+                    >{EMAIL}</A> {" "}
+                or contact us through our official {" "}
+                    <A
+                        href={FACEBOOK}
+                        lineColour="var(--primary)"
+                        className="primary-coloured"
+                    >
+                        Facebook
+                    </A> {" "}
+                , {" "}
+                    <A
+                        href={INSTAGRAM}
+                        lineColour="var(--primary)"
+                        className="primary-coloured"
+                    >
+                        Instagram
+                    </A> {" "} or {" "}
+                    <A
+                        href={LINKEDIN}
+                        lineColour="var(--primary)"
+                        className="primary-coloured"
+                    >
+                        LinkedIn
+                    </A> {" "} accounts!
                 </p>
             </div>
             <FaqBoxes>

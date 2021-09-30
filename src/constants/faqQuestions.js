@@ -19,28 +19,7 @@ export const FaqQuestions = [
         </>
     },
     {
-        question: "How do I register?",
-        answer: "tbd"
-    },
-    {
         question: "Can I attend?",
         answer: "Students of all education levels are welcome to attend. Get in touch with your school's head delegate to find out more!"
-    },
-    {
-        question: "What is the VIP ticket tier?",
-        answer: "idt this exists this year but idk"
-    },
-    {
-        question: "When should I register?",
-        answer: <>
-            Feel free to register as soon as possible!
-            <br/>
-            <br/>
-            Ticket sales for VIP tickets will end on December 10th 2020, so that we can ensure you get your perks in time for the conference.
-        </>
-    },
-    {
-        question: "I have more questions 🤔",
-        answer: "Please email us at info@cusec.net, or contact us through our official Facebook, Instagram or Twitter accounts. We would love to help out with any questions or concerns!"
     }
 ];

@@ -60,6 +60,10 @@ button {
     text-shadow: 0 0.25rem 0.75rem rgba(30, 30, 30, 0.15);
 }
 
+.primary-coloured {
+    color: var(--primary);
+}
+
 br {
     height: 1rem;
 }

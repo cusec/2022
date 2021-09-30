@@ -23,10 +23,11 @@ const normalButton = css`
     ${baseButton}
     padding-right: 36px;
 
-    ${tw`relative z-10 overflow-hidden`}
+    ${tw`relative overflow-hidden`}
     background-color: ${props => COLOUR_SCHEME[props.colourScheme || "primary"].primary};
     border: 1px solid ${SECONDARY};
     color: ${props => COLOUR_SCHEME[props.colourScheme || "primary"].secondary};
+    z-index: var(--z-button);
 
     transition: color .5s; 
 
@@ -38,7 +39,7 @@ const normalButton = css`
         right: 12px;
         background-color: ${props => COLOUR_SCHEME[props.colourScheme || "primary"].secondary};
         
-        z-index: -10;
+        z-index: var(--z-button-inner);
 
         transition: transform .5s;
         transform-origin: top;

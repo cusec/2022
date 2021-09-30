@@ -1,13 +1,17 @@
-import { useEffect } from 'react';
-import styled from 'styled-components';
-import tw from 'twin.macro';
-import { throttle } from 'lodash';
-import { A } from '../components/elements';
+
+
+import React, { useEffect, useImperativeHandle, forwardRef, useRef } from "react";
+import styled from "styled-components";
+import tw from "twin.macro";
+import { throttle } from "lodash";
+import { A } from "../components/elements";
 
 const NavBase = styled.nav`
-    ${tw`fixed w-full top-0 left-0 py-4 z-50`}
+    ${tw`fixed w-full top-0 left-0 py-4 hidden md:block`}
+    z-index: var(--z-nav);
     border-bottom: 1px solid var(--dark);
     backdrop-filter: blur(0.75rem);
+
 `;
 
 const NavInner = styled.div`
@@ -23,20 +27,23 @@ const NavInner = styled.div`
     }
 `;
 
-let prevScrollPosition = 0;
+const NavLogo = forwardRef((_, ref) => {
+    const el = useRef();
+    useImperativeHandle(ref, () => ({
+        rotate: (deg) => {
+            el.current.style.transform = `rotate(${deg}deg)`;
+        }
+    }));
 
-const throttled =  throttle(rotateLogo, 500, { trailing: false });
+    return <img id="navLogo" src="/logoColourless.svg" alt="" ref={el} style={{ transition: "transform .5s" }} />;
+});
 
-function rotateLogo(e) {
-    const scrollPosition = window.scrollY;
-    const scrollDiff = scrollPosition - prevScrollPosition;
-    const multiplier = scrollDiff === 0 ? 0 : Math.max(-Math.log(Math.abs(scrollDiff)) + 3, 1);
-    document.getElementById("navLogo").style.transform = `rotate(${scrollDiff * multiplier}deg)`;
-    prevScrollPosition = scrollPosition;
-}
+NavLogo.displayName = "NavLogo";
 
 export default function Nav() {
+    const logoRef = useRef();
     useEffect(() => {
+        const throttled = throttle(() => logoRef.current.rotate(window.scrollY), 200, { trailing: true });
         window.addEventListener("scroll", throttled);
 
         return () => window.removeEventListener("scroll", throttled);
@@ -45,12 +52,12 @@ export default function Nav() {
     return (
         <NavBase>
             <NavInner>
-                <img id="navLogo" src="/logoColourless.svg" style={{ transition: "transform .5s" }} />
+                <NavLogo ref={logoRef} />
                 <A href="#about">About</A>
                 {/*<A href="#sponsors">Sponsors</A>
                 <A href="#pricing">Pricing</A>
                 <A href="#faq">FAQ</A>*/}
             </NavInner>
         </NavBase>
-    )
+    );
 }

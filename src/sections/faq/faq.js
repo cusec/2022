@@ -17,17 +17,16 @@ const Container = styled.section`
 `;
 
 const FaqBoxes = styled.div`
-    display: grid;
-    grid-template-columns: 1fr;
-
-    @media (min-width: 640px) {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    gap: 1rem;
+    ${tw`flex flex-col gap-4 flex-1`}
 `;
 
 export default function Faq() {
+    const QuestionEls = FaqQuestions.map(({ question, answer }) => (
+        <FaqBox key={question} question={question} answer={answer} />
+    ));
+    const leftHalf = QuestionEls.slice(0, Math.ceil(FaqQuestions.length / 2));
+    const rightHalf = QuestionEls.slice(Math.ceil(FaqQuestions.length / 2));
+
     return (
         <Container id="faq">
             <div>
@@ -64,12 +63,14 @@ export default function Faq() {
                     </A> {" "} accounts!
                 </p>
             </div>
-            <FaqBoxes>
-                {FaqQuestions.map(({ question, answer }) => (
-                    <FaqBox key={question} question={question} answer={answer} />
-                ))}
-            </FaqBoxes>
-
+            <div className="flex flex-col md:flex-row gap-4">
+                <FaqBoxes>
+                    {leftHalf}
+                </FaqBoxes>
+                <FaqBoxes>
+                    {rightHalf}
+                </FaqBoxes>
+            </div>
         </Container>
     );
 }

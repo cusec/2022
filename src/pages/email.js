@@ -10,7 +10,7 @@ export default function Email() {
                     </a>
                 </td>
                 <td style={{ paddingLeft: "1rem", lineHeight: "1.1" }}>
-                    <h3 style={{ fontWeight: "bold" }}>Your Name</h3>
+                    <h3 className="text-lg" style={{ fontWeight: "bold" }}>Your Name</h3>
                     <p style={{ fontStyle: "italic" }}>Your Title</p>
                     <table style={{ fontSize: "14px", lineHeight:"1.1" }}>
                         <tr>

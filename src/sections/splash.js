@@ -27,10 +27,10 @@ export default function Splash() {
             <Content>
                 <Title>
                     <img src="/logo.svg" alt="" className="h-24"/>
-                    <h1>CUSEC</h1>
+                    <h1 className="display">CUSEC</h1>
                 </Title>
                         
-                <h2>Canadian University Software Engineering Conference</h2>
+                <h2 className="text-lg md:text-xl">Canadian University Software Engineering Conference</h2>
                 <Subtitle>January | virtual x in person experience</Subtitle>
 
                 <div className="flex justify-end">

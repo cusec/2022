@@ -18,6 +18,14 @@
     --disabled: #1e1e1e80;
 
     font-size: 16px;
+
+    /* z-indices */
+    --z-title-illus: -90;
+    --z-nav: 100;
+    --z-cursor: 200;
+
+    --z-button: 10;
+    --z-button-inner: -10;
 }
 
 * {
@@ -42,16 +50,20 @@ button {
     font-size: inherit;
 }
 
-h1 {
+.display {
     font-size: 6rem;
     font-weight: bold;
 }
 
-h2 {
-    font-size: 2rem;
+.header1 {
+    font-size: 1.5rem;
+
+    @media(min-width: 768px) {
+        font-size: 2rem;
+    }
 }
 
-h3 {
+.header2 {
     font-size: 1.5rem;
 }
 
@@ -65,4 +77,49 @@ h3 {
 
 br {
     height: 1rem;
+}
+
+@keyframes outline {
+    to {
+        opacity: 0;
+    }
+}
+
+
+@keyframes fade {
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes color {
+
+    50% {
+        stroke-dashoffset: 0;
+    }
+
+    100% {
+        stroke: 1;
+    }
+}
+
+.animate-on-load {
+    opacity: 0;
+    animation: fade .5s linear forwards;
+
+    & > .outline {
+        & > circle, & > rect, & > path {
+            stroke-dasharray: 1000;
+            stroke-dashoffset: 1000;
+            stroke: black;
+            stroke-width: 1;
+            animation: color 5s linear forwards;
+        }
+        animation: outline 5s linear forwards;
+    }
+
+    & > .shadows > * {
+        opacity: 0;
+        animation: fade 5s linear forwards;
+    }
 }

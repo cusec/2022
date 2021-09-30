@@ -7,9 +7,11 @@ import { throttle } from "lodash";
 import { A } from "../components/elements";
 
 const NavBase = styled.nav`
-    ${tw`fixed w-full top-0 left-0 py-4 z-50 hidden md:block`}
+    ${tw`fixed w-full top-0 left-0 py-4 hidden md:block`}
+    z-index: var(--z-nav);
     border-bottom: 1px solid var(--dark);
     backdrop-filter: blur(0.75rem);
+
 `;
 
 const NavInner = styled.div`

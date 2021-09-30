@@ -3,31 +3,42 @@ import styled from "styled-components";
 import tw from "twin.macro";
 
 import { Button, Subtitle } from "components/elements";
-import Logo from "components/logo";
+import TitleSVG from "../svgs/title/title";
 
 const Title = styled.div`
-    ${tw`flex flex-col md:flex-row leading-none gap-4`}
+    ${tw`flex flex-col sm:flex-row leading-none gap-4 items-center`}
 `;
 
-const Header = styled.main`
+const Header = styled.header`
     ${tw`h-screen flex flex-col justify-center`}
-    width: 80vw;
+`;
+
+const Content = styled.div`
+    ${tw`p-12 h-screen sm:h-auto`}
+    max-width: 100vw;
+    background: rgba(249, 222, 44, 0.25);
+    box-shadow: 0px 0px 8px var(--shadow);
+    backdrop-filter: blur(0.5rem);
 `;
 
 export default function Splash() {
     return (
         <Header>
-            <Title>
-                <Logo></Logo>
-                <h1>CUSEC</h1>
-            </Title>
-                    
-            <h2>Canadian University Software Engineering Conference</h2>
-            <Subtitle>January | virtual x in person experience</Subtitle>
+            <Content>
+                <Title>
+                    <img src="/logo.svg" alt="" className="h-24"/>
+                    <h1>CUSEC</h1>
+                </Title>
+                        
+                <h2>Canadian University Software Engineering Conference</h2>
+                <Subtitle>January | virtual x in person experience</Subtitle>
 
-            <div className="flex justify-end">
-                <Button className="custom-shadow"> sign up!</Button>
-            </div>
+                <div className="flex justify-end">
+                    <Button className="custom-shadow"> sign up!</Button>
+                </div>
+            </Content>
+
+            <TitleSVG/>
         </Header>
     );
 }

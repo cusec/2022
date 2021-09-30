@@ -7,6 +7,7 @@ import { A } from "components/elements";
 import Blurb from "./blurb";
 import Stats from "./stats";
 import Testimonials from "./testimonials";
+import WithSlideDecoration from "./WithSlideDecoration";
 
 import "pure-react-carousel/dist/react-carousel.es.css";
 
@@ -38,16 +39,16 @@ export default function Descriptions() {
                 totalSlides={3}
                 isIntrinsicHeight={true}
             >
-                <div className="flex flex-col h-full justify-between">
+                <div className="flex flex-col h-full justify-between gap-4">
                     <Dots>
                         <Dot slide={0}><A>Stats from last year</A></Dot>
                         <Dot slide={1}><A>What is CUSEC?</A></Dot>
                         <Dot slide={2}><A>Testimonials</A></Dot>
                     </Dots>
-                    <Slider>
-                        <Slide index={0}><Stats /></Slide>
-                        <Slide index={1}><Blurb /></Slide>
-                        <Slide index={2}><Testimonials /></Slide>
+                    <Slider className="h-full flex items-center" classNameTray="h-full w-full">
+                        <Slide index={0}>{WithSlideDecoration(Stats)}</Slide>
+                        <Slide index={1}>{WithSlideDecoration(Blurb)}</Slide>
+                        <Slide index={2}>{WithSlideDecoration(Testimonials)}</Slide>
                     </Slider>
                 </div>
             </CarouselProvider>

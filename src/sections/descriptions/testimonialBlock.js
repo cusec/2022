@@ -11,8 +11,8 @@ const Photo = ({ name, photoUrl, className }) => {
 
     return (
         <div className={classNames("relative inline-block h-32 w-32", className)}>
-            <Decagon colour="var(--primary)" className="absolute h-32 w-32 top-4 right-4" />
-            <img src={photo} alt={name} className="relative"/>
+            <Decagon colour="var(--secondary-highlight)" className="absolute h-32 w-32 top-4 right-4" />
+            <img src={photo} alt={name} className="relative h-32 w-32 rounded-full"/>
         </div>
     );
 };
@@ -27,6 +27,11 @@ const Block = styled.div`
     display: grid;
     grid-template-columns: 1fr min-content;
     column-gap: 1rem;
+
+    width: 100%;
+    @media(min-width: 768px) {
+        width: 50vw;
+    }
 
     .quotation {
         ${tw`flex items-end`}

@@ -53,22 +53,11 @@ button {
 .display {
     font-size: 6rem;
     font-weight: bold;
-}
-
-.header1 {
-    font-size: 1.5rem;
-
-    @media(min-width: 768px) {
-        font-size: 2rem;
-    }
-}
-
-.header2 {
-    font-size: 1.5rem;
+    line-height: normal;
 }
 
 .custom-shadow {
-    box-shadow: 0 0.25rem 0.75rem rgba(30, 30, 30, 0.15);
+    text-shadow: 0 0.25rem 0.75rem rgba(30, 30, 30, 0.15);
 }
 
 .primary-coloured {

@@ -9,7 +9,7 @@ import { FaqQuestions } from "constants/faqQuestions";
 import { EMAIL, FACEBOOK, INSTAGRAM, LINKEDIN } from "constants/socialMediaLinks";
 
 const Container = styled.section`
-    ${tw`min-h-screen flex flex-col justify-center overflow-hidden gap-12`}
+    ${tw`min-h-screen flex flex-col justify-start overflow-hidden gap-12`}
     color: var(--light);
     padding: 5rem 10vw;
 
@@ -28,8 +28,6 @@ const FaqBoxes = styled.div`
 `;
 
 export default function Faq() {
-    
-
     return (
         <Container id="faq">
             <div>

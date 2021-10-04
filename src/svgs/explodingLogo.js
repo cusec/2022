@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
+import { gsap } from "gsap";
 
 const Svg = styled.svg`
     @keyframes top1 {
@@ -251,16 +252,38 @@ const Svg = styled.svg`
         }
     }
 
-    #rotate {
+    /*#rotate {
         transform-origin: center center;
-        animation: rotate 600ms ease forwards;
-    }
+        animation: rotate 600ms linear;
+    }*/
 `;
 
-export default function ExplodingLogo({ className }) {
+export default function ExplodingLogo(props) {
+    const { className, setIsLogoPlaying } = props;
+    const rotateRef = useRef(null);
+    const [a, setA] = useState(null);
+
+    useEffect(() => {
+        const tempA = gsap.timeline()
+            .to("#rotate", {
+                rotation: "+=360",
+                transformOrigin: "50% 50%",
+                onComplete: setIsLogoPlaying,
+                onCompleteParams: [false]
+            });
+        setA(tempA);
+    }, []);
+
+    useEffect(() => {
+        if (!a) return;
+        console.log(props.isLogoPlaying, "passed");
+        if (!props.isLogoPlaying) return;
+        a.restart();
+    }, [props.isLogoPlaying]);
+
     return (
-        <Svg width="164" height="164" viewBox="0 0 164 164" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
-            <g id="rotate">
+        <Svg width="164" height="164" viewBox="0 0 164 164" fill="none" xmlns="http://www.w3.org/2000/svg" className={className} isLogoPlaying={props.isLogoPlaying}>
+            <g id="rotate" ref={rotateRef} onAnimationEnd={() => setIsLogoPlaying(false)}>
                 <path
                     d="M81.8577 57.2152L96.9524 62.2891L106.178 75.3146L105.993 91.3243L96.4656 104.186L81.2529 108.988L66.1582 103.914L56.9324 90.8884L57.1178 74.8787L66.645 62.0173L81.8577 57.2152ZM81.8756 55.3452L65.5471 60.4996L55.334 74.287L55.1359 91.4414L65.0297 105.411L81.236 110.859L97.5646 105.704L107.778 91.917L107.976 74.7637L98.0819 60.7943L81.8756 55.3452Z"
                     fill="#1E1E1E" />
@@ -369,5 +392,7 @@ export default function ExplodingLogo({ className }) {
 }
 
 ExplodingLogo.propTypes = {
-    className: PropTypes.string
+    className: PropTypes.string,
+    isLogoPlaying: PropTypes.bool,
+    setIsLogoPlaying: PropTypes.func
 };

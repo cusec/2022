@@ -57,7 +57,7 @@ export default function TestimonialBlock({ quotation, name, title, photoUrl }) {
         <Block>
             <div className="quotation">{quotation}</div>
             <div className="person">- {name}, {title}</div>
-            <Photo className="photo" photoUrl={photoUrl} />
+            <Photo className="photo" name={name} photoUrl={photoUrl} />
         </Block>
     );
 }

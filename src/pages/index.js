@@ -4,8 +4,9 @@ import Head from "next/head";
 import Nav from "../components/nav";
 import Cursor from "../components/cursor";
 
-import Descriptions from "sections/descriptions/descriptions";
 import Splash from "sections/splash";
+import Descriptions from "sections/descriptions/descriptions";
+import Testimonials from "sections/testimonials/testimonials";
 
 export default function Home() {
     return (
@@ -23,6 +24,7 @@ export default function Home() {
             <main className="flex flex-col justify-center items-center min-h-screen">
                 <Splash />
                 <Descriptions />
+                <Testimonials />
             </main>
         </>
     );

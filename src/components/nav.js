@@ -55,8 +55,8 @@ export default function Nav() {
                 <NavLogo ref={logoRef} />
                 <A href="#about">About</A>
                 {/*<A href="#sponsors">Sponsors</A>
-                <A href="#pricing">Pricing</A>
-                <A href="#faq">FAQ</A>*/}
+                <A href="#pricing">Pricing</A>*/}
+                <A href="#faq">FAQ</A>
             </NavInner>
         </NavBase>
     );

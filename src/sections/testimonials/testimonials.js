@@ -3,56 +3,68 @@ import styled from "styled-components";
 import tw from "twin.macro";
 
 import { CarouselProvider, Slider, Slide, Dot } from "pure-react-carousel";
-import { A } from "components/elements";
 import TestimonialBlock from "./testimonialBlock";
+import Decagon from "svgs/decagon";
 
-const Section = styled.section`
-    ${tw`h-screen w-full flex flex-col justify-center items-center`}
-    background-color: var(--dark);
+import { testimonialsText } from "constants/testimonialText";
+
+const Carousel = styled.div`
+    ${tw`min-h-screen w-full relative py-4 flex flex-col justify-center items-center`}
+    background-color: rgba(30, 30, 30, 0.9);
     color: var(--light);
+    backdrop-filter: blur(0.25rem) grayscale(100%);
 
     .carousel {
         width: 80vw;
-        height: 80vh;
+        min-height: 80vh;
     } 
 `;
 
-const testimonialsText = [
-    {
-        quotation: "this is pretty cool",
-        name: "me",
-        title: "ultimate cool dude",
-        photoUrl: "https://i.stack.imgur.com/qaX6q.jpg?s=64&g=1"
+const Img = styled.img`
+    ${tw`absolute`}
+    height: 115vh;
+    bottom: -30vh;
+
+    right: -10vw;
+    @media (min-width: 640px) {
+        right: -5vw;
     }
-];
+`;
 
 const Dots = styled.div`
-    ${tw`flex gap-8`}
+    ${tw`flex gap-8 justify-center`}
 
-    .carousel__dot--selected {
-        color: var(--primary);
+    .testimonialDot {
+        stroke-width: 15;
+
+        &:hover {
+            fill: var(--dark);
+        }
     }
+
+    .carousel__dot--selected * {
+        fill: var(--secondary);
+    }
+
 `;
 
 export default function Testimonials() {
     return (
-        <Section>
-            <CarouselProvider
-                naturalSlideWidth={100}
-                naturalSlideHeight={100}
-                totalSlides={3}
-                isIntrinsicHeight={true}
-            >
-                <div className="flex flex-col h-full justify-between gap-4">
-                    <Dots>
-                        <Dot slide={0}><A>Stats from last year</A></Dot>
-                        <Dot slide={1}><A>What is CUSEC?</A></Dot>
-                        <Dot slide={2}><A>Testimonials</A></Dot>
-                    </Dots>
-                    <Slider className="h-full flex items-center" classNameTray="h-full w-full">
+        <section className="w-full relative overflow-hidden">
+            <Img src="/logo.svg" alt="" />
+            <Carousel>
+                <CarouselProvider
+                    naturalSlideWidth={100}
+                    naturalSlideHeight={100}
+                    totalSlides={testimonialsText.length}
+                    isIntrinsicHeight={true}
+                    className="flex flex-col justify-between gap-4"
+                >
+                    <h2 className="text-xl mx-8">Hear from our past attendees</h2>
+                    <Slider className="flex items-center" classNameTray="w-full" classNameTrayWrap="w-full">
                         {
                             testimonialsText.map(({ quotation, name, title, photoUrl }, i) => 
-                                <Slide index={i} key={name}>
+                                <Slide index={i} key={name} innerClassName="flex justify-center items-center h-auto">
                                     <TestimonialBlock
                                         quotation={quotation}
                                         name={name}
@@ -62,8 +74,15 @@ export default function Testimonials() {
                                 </Slide>)
                         }
                     </Slider>
-                </div>
-            </CarouselProvider>
-        </Section>
+                    <Dots>
+                        {
+                            Array.from(
+                                { length: testimonialsText.length }, 
+                                (_, i) => <Dot slide={i}><Decagon colour="white" width="1rem" pathClassName="testimonialDot" /></Dot>)
+                        }
+                    </Dots>
+                </CarouselProvider>
+            </Carousel>
+        </section>
     );
 }

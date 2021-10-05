@@ -1,15 +1,22 @@
 import React from "react";
 import PropTypes from "prop-types";
+import classNames from "classnames";
 
-export default function Decagon({ colour, className }) {
+export default function Decagon({ colour, width, className, pathClassName }) {
     return (
-        <svg viewBox="0 0 366 387" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
-            <path d="M184.621 13.7496L288.941 49.0303L352.712 139.669L351.402 251.112L285.592 340.587L180.471 373.976L76.1511 338.696L12.4524 248.13L13.7628 136.686L79.5726 47.2117L184.621 13.7496ZM184.766 0.728516L71.9288 36.5912L1.38708 132.54L0.00390625 251.912L68.3616 349.098L180.326 386.998L293.163 351.135L363.705 255.186L365.088 135.814L296.73 38.628L184.766 0.728516Z" fill={colour}/>
+        <svg width={width} height={width} viewBox="0 0 148 154" fill="none" xmlns="http://www.w3.org/2000/svg" className={classNames(className, "overflow-visible")}>
+            <path d="M3.0426 53.1231L30.5444 16.3708L74.5281 2.62678L118.176 17.1547L144.812 54.383L144.279 100.091L116.777 136.843L72.7933 150.588L29.1451 136.062L2.50938 98.8342L3.0426 53.1231Z" stroke={colour} strokeWidth="5" className={pathClassName}/>
         </svg>
+
     );
 }
 
 Decagon.propTypes = {
     colour: PropTypes.string.isRequired,
-    className: PropTypes.string
+    width: PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.number
+    ]),
+    className: PropTypes.string,
+    pathClassName: PropTypes.string,
 };

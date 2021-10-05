@@ -24,14 +24,10 @@ Photo.propTypes = {
 };
 
 const Block = styled.div`
+    ${tw`w-full sm:w-9/12`}
     display: grid;
     grid-template-columns: 1fr min-content;
     column-gap: 1rem;
-
-    width: 100%;
-    @media(min-width: 768px) {
-        width: 50vw;
-    }
 
     .quotation {
         ${tw`flex items-end`}

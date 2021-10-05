@@ -18,7 +18,7 @@ const Section = styled.section`
     .carousel {
         width: 80vw;
         height: 80vh;
-    } 
+    }
 `;
 
 const Dots = styled.div`

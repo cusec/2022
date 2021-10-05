@@ -25,27 +25,49 @@ Photo.propTypes = {
 
 const Block = styled.div`
     ${tw`w-full sm:w-9/12`}
-    display: grid;
-    grid-template-columns: 1fr min-content;
-    column-gap: 1rem;
 
-    .quotation {
-        ${tw`flex items-end`}
+    display: grid;
+    grid-template-columns: 1fr;
+
+    .photo {
+        ${tw`mb-8 justify-self-center`}
+
         grid-column: 1;
         grid-row: 1;
     }
 
+    .quotation {
+        ${tw`flex items-end`}
+        grid-row: 2
+    }
+
     .person {
         grid-column: 1;
-        grid-row: 2;
+        grid-row: 3;
 
         color: var(--secondary-highlight);
     }
 
-    .photo {
-        grid-column: 2;
-        grid-row: 1 / 2;
+    @media (min-width: 768px) {
+        grid-template-columns: 1fr min-content;
+        column-gap: 1rem;
+
+        .quotation {
+            grid-column: 1;
+            grid-row: 1;
+        }
+
+        .person {
+            grid-column: 1;
+            grid-row: 2;
+        }
+
+        .photo {
+            grid-column: 2;
+            grid-row: 1 / 2;
+        }
     }
+    
 `;
 
 export default function TestimonialBlock({ quotation, name, title, photoUrl }) {

@@ -58,7 +58,7 @@ export default function Testimonials() {
                     naturalSlideHeight={100}
                     totalSlides={testimonialsText.length}
                     isIntrinsicHeight={true}
-                    className="flex flex-col justify-between gap-4"
+                    className="flex flex-col justify-between lg:gap-4"
                 >
                     <h2 className="text-xl mx-8">Hear from our past attendees</h2>
                     <Slider className="flex items-center" classNameTray="w-full" classNameTrayWrap="w-full">

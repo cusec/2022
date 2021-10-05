@@ -7,6 +7,8 @@ import Cursor from "../components/cursor";
 import Splash from "sections/splash";
 import DetailBoxes from "../sections/detailBoxes/detailBoxes";
 import Descriptions from "sections/descriptions";
+import Locations from "sections/locations";
+import Faq from "sections/faq/faq";
 
 export default function Home() {
     return (
@@ -24,7 +26,9 @@ export default function Home() {
             <main className="flex flex-col justify-center items-center min-h-screen">
                 <Splash />
                 <DetailBoxes />
+                <Locations />
                 <Descriptions />
+                <Faq />
             </main>
         </>
     );

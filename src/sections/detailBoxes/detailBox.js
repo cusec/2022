@@ -59,7 +59,8 @@ export default function DetailBox({ title, topText, bottomText, backgroundUrl })
                 duration: 0.25
             }
         })
-            .to([topTextRef.current, topBgRef.current], { opacity: 0 })
+            .to([topTextRef.current], { opacity: 0 })
+            .to([topBgRef.current], { opacity: 0.75 }, "-=0.25")
             .to(bottomTextRef.current, { opacity: 1 });
         console.log(textChange.reversed());
     }, []);

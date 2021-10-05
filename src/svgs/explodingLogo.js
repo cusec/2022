@@ -276,7 +276,6 @@ export default function ExplodingLogo(props) {
 
     useEffect(() => {
         if (!a) return;
-        console.log(props.isLogoPlaying, "passed");
         if (!props.isLogoPlaying) return;
         a.restart();
     }, [props.isLogoPlaying]);

@@ -78,7 +78,7 @@ export default function Testimonials() {
                         {
                             Array.from(
                                 { length: testimonialsText.length }, 
-                                (_, i) => <Dot slide={i}><Decagon colour="white" width="1rem" pathClassName="testimonialDot" /></Dot>)
+                                (_, i) => <Dot slide={i} key={i}><Decagon colour="white" width="1rem" pathClassName="testimonialDot" /></Dot>)
                         }
                     </Dots>
                 </CarouselProvider>

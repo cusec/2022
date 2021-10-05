@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import tw from "twin.macro";
 
-import { CarouselProvider, Slider, Slide, Dot } from "pure-react-carousel";
+import { CarouselProvider, Slider, Slide, Dot, DotGroup } from "pure-react-carousel";
 import { A } from "components/elements";
 import Blurb from "./blurb";
 import Stats from "./stats";
@@ -41,12 +41,19 @@ export default function Descriptions() {
                 isIntrinsicHeight={true}
             >
                 <div className="flex flex-col h-full justify-between gap-4">
-                    <Dots>
-                        <Dot slide={0} onClick={() => setIsLogoPlaying(true)}><A>Stats from last year</A></Dot>
-                        <Dot slide={1} onClick={() => setIsLogoPlaying(true)}><A>What is CUSEC?</A></Dot>
-                    </Dots>
-                    <Slider className="h-full flex items-center" classNameTray="h-full w-full">
-                        <Slide index={0}><Stats /></Slide>
+                    <DotGroup renderDots={props =>
+                        <Dots>
+                            <Dot slide={0} onClick={() => setIsLogoPlaying(true)}>
+                                <A lineColour="var(--light)">Stats from last year</A>
+                            </Dot>
+                            <Dot slide={1} onClick={() => setIsLogoPlaying(true)}>
+                                <A lineColour="var(--light)">What is CUSEC?</A>
+                            </Dot>
+                        </Dots>
+                    } />
+                    
+                    <Slider className="h-full flex items-center" classNameTray="h-full w-full" classNameTrayWrap="h-full">
+                        <Slide index={0} onFocus={() => console.log("focus")}><Stats /></Slide>
                         <Slide index={1}><Blurb /></Slide>
                     </Slider>
                     <ExplodingLogo className="exploding-logo self-end" isLogoPlaying={isLogoPlaying} setIsLogoPlaying={setIsLogoPlaying} />

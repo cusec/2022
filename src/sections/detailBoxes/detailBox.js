@@ -1,9 +1,8 @@
 import React, { useRef, useEffect } from "react";
+import PropTypes from "prop-types";
 import styled from "styled-components";
 import tw from "twin.macro";
 import gsap from "gsap";
-
-import { Button } from "components/elements";
 
 const Box = styled.div`
     ${tw`w-full flex-1 flex justify-center relative`}
@@ -13,22 +12,30 @@ const Box = styled.div`
 `;
 
 const Text = styled.div`
-    ${tw`flex gap-4 items-center relative`}
+    ${tw`flex flex-col md:flex-row md:gap-4 md:items-center relative`}
     width: 80vw;
 `;
 
 const Title = styled.h1`
+    ${tw`text-xl lg:text-2xl font-bold my-4 md:m-0`}
     color: var(--light);
 `;
 
 const TopText = styled.h2`
-    ${tw`absolute text-xl`}
+    ${tw`absolute text-lg md:text-xl md:top-2/4`}
     color: var(--primary);
-    top: 50%;
+
+    @media (min-width: 768px) {
+        transform: translateY(-50%);
+    }
+
+    @media (min-width: 1024px) {
+        transform: translateY(0);
+    }
 `;
 
 const BottomText = styled.p`
-    ${tw`absolute opacity-0 my-8`}
+    ${tw`absolute opacity-0 md:my-8`}
     color: var(--light);
 `;
 
@@ -47,12 +54,14 @@ export default function DetailBox({ title, topText, bottomText, backgroundUrl })
     useEffect(() => {
         textChange = gsap.timeline({
             paused: true,
+            reversed: true,
             defaults: {
                 duration: 0.25
             }
         })
             .to([topTextRef.current, topBgRef.current], { opacity: 0 })
             .to(bottomTextRef.current, { opacity: 1 });
+        console.log(textChange.reversed());
     }, []);
 
     return (
@@ -60,11 +69,12 @@ export default function DetailBox({ title, topText, bottomText, backgroundUrl })
             backgroundUrl={backgroundUrl}
             onMouseEnter={() =>{ textChange && textChange.play(); }}
             onMouseLeave={() => { textChange && textChange.reverse(); }}
+            onTouchEnd={() =>{ textChange && textChange.reversed() ? textChange.play() : textChange.reverse(); }}
         >
             <TopBackground ref={topBgRef} />
             <Text>
-                <Title className="display">{title}</Title>
-                <div className="flex-1 relative h-full">
+                <Title>{title}</Title>
+                <div className="flex-1 relative h-full w-full">
                     <TopText ref={topTextRef}>{topText}</TopText>
                     <BottomText ref={bottomTextRef}>{bottomText}</BottomText>
                 </div>
@@ -72,3 +82,10 @@ export default function DetailBox({ title, topText, bottomText, backgroundUrl })
         </Box>
     );
 }
+
+DetailBox.propTypes = {
+    title: PropTypes.string.isRequired,
+    topText: PropTypes.string.isRequired,
+    bottomText: PropTypes.string.isRequired,
+    backgroundUrl: PropTypes.string.isRequired
+};

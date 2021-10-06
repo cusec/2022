@@ -51,7 +51,7 @@ const Dots = styled.div`
 export default function Testimonials() {
     return (
         <section className="w-full relative overflow-hidden">
-            <Img src="/logo.svg" alt="" />
+            <Img src="/logo.svg" alt="" aria-hidden="true" />
             <Carousel>
                 <CarouselProvider
                     naturalSlideWidth={100}

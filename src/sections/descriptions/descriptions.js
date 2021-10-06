@@ -11,9 +11,10 @@ import ExplodingLogo from "svgs/explodingLogo";
 import "pure-react-carousel/dist/react-carousel.es.css";
 
 const Section = styled.section`
-    ${tw`min-h-screen w-full flex flex-col justify-center items-center`}
+    ${tw`min-h-screen md:h-screen w-full flex flex-col justify-center items-center`}
     background-color: var(--dark);
     color: var(--light);
+    padding-top: 10vh;
 
     .carousel {
         width: 80vw;

@@ -26,6 +26,7 @@ const Dots = styled.div`
 
     .carousel__dot--selected {
         color: var(--primary);
+        text-shadow: 0px 0px 12px rgba(249, 222, 44, 0.5);
     }
 `;
 

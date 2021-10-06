@@ -1,8 +1,8 @@
-import React from "react";
+import React, { forwardRef } from "react";
 
-export default function Blurb() {
+const Blurb = forwardRef((_, ref) => {
     return (
-        <>
+        <div ref={ref}>
             <div className="mb-8">
                 <h2 className="text-xl">Canada’s annual software engineering conference</h2>
                 <p>
@@ -16,6 +16,10 @@ export default function Blurb() {
                     CUSEC is an annual software engineering conference organized for students by students. It was founded in 2002 by a small team of tech enthusiasts on a mission to educate and expose students to a diverse range of areas in software engineering and computer science. The conference enables attendees to discover knowledgeable speakers, connect with sponsoring companies, and make lifelong friends, all in a safe and comfortable space.
                 </p>
             </div>
-        </>
+        </div>
     );
-}
+});
+
+Blurb.displayName = "Blurb";
+
+export default Blurb;

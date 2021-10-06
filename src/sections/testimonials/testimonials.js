@@ -58,6 +58,7 @@ export default function Testimonials() {
                     naturalSlideHeight={100}
                     totalSlides={testimonialsText.length}
                     isIntrinsicHeight={true}
+                    isPlaying={true}
                     className="flex flex-col justify-between lg:gap-4"
                 >
                     <h2 className="text-xl mx-8">Hear from our past attendees</h2>
@@ -78,7 +79,7 @@ export default function Testimonials() {
                         {
                             Array.from(
                                 { length: testimonialsText.length }, 
-                                (_, i) => <Dot slide={i} key={i}><Decagon colour="white" width="1rem" pathClassName="testimonialDot" /></Dot>)
+                                (_, i) => <Dot slide={i} key={i}><Decagon colour="white" width="16" pathClassName="testimonialDot" /></Dot>)
                         }
                     </Dots>
                 </CarouselProvider>

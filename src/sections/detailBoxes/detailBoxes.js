@@ -3,26 +3,7 @@ import DetailBox from "./detailBox";
 import styled from "styled-components";
 import tw from "twin.macro";
 
-const BOX_TEXT = [
-    {
-        title: "Connect",
-        topText: "with like-minded students.",
-        bottomText: "with 500+ students from across Canada",
-        backgroundUrl: "/detailBoxes/connect.webp"
-    },
-    {
-        title: "Learn",
-        topText: "from world-renowned experts.",
-        bottomText: "from etc etc",
-        backgroundUrl: "/detailBoxes/learn.webp"
-    },
-    {
-        title: "Discover",
-        topText: "career opportunities",
-        bottomText: "test text",
-        backgroundUrl: "/detailBoxes/discover.webp"
-    }
-];
+import { BOX_TEXT } from "constants/detailBoxesText";
 
 const Section = styled.section`
     ${tw`h-screen w-full flex flex-col justify-center`}

@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import tw from "twin.macro";
 
-import { Button, Subtitle } from "components/elements";
+import { Button, Subtitle, A } from "components/elements";
 import TitleSVG from "../svgs/title/title";
 
 const Title = styled.div`
@@ -14,12 +14,14 @@ const Header = styled.header`
 `;
 
 const Content = styled.div`
-    ${tw`p-12 h-screen sm:h-auto`}
+    ${tw`p-12 h-screen sm:h-auto flex flex-col`}
     max-width: 100vw;
     background: rgba(249, 222, 44, 0.25);
     box-shadow: 0px 0px 8px var(--shadow);
     backdrop-filter: blur(0.5rem);
 `;
+
+const SPEAKERS_URL = "https://u023sc7h30b.typeform.com/to/KJe3hACf";
 
 export default function Splash() {
     return (
@@ -31,10 +33,11 @@ export default function Splash() {
                 </Title>
                         
                 <h2 className="text-lg md:text-xl">Canadian University Software Engineering Conference</h2>
-                <Subtitle>January | virtual x in person experience</Subtitle>
+                <Subtitle>January 14-16 | Virtual and in person experience</Subtitle>
 
-                <div className="flex justify-end">
-                    <Button className="custom-shadow"> sign up!</Button>
+                <div className="flex justify-end items-center gap-4 mt-auto">
+                    <A href={SPEAKERS_URL} className="font-bold">Speak at CUSEC</A>
+                    <Button className="custom-shadow">Sponsor us</Button>
                 </div>
             </Content>
 

@@ -6,8 +6,9 @@ import Cursor from "../components/cursor";
 
 import Splash from "sections/splash";
 import DetailBoxes from "../sections/detailBoxes/detailBoxes";
-import Descriptions from "sections/descriptions";
 import Locations from "sections/locations";
+import Descriptions from "sections/descriptions/descriptions";
+import Testimonials from "sections/testimonials/testimonials";
 import Faq from "sections/faq/faq";
 
 export default function Home() {
@@ -28,6 +29,7 @@ export default function Home() {
                 <DetailBoxes />
                 <Locations />
                 <Descriptions />
+                <Testimonials />
                 <Faq />
             </main>
         </>

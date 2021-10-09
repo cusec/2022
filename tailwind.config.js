@@ -9,6 +9,14 @@ module.exports = {
             "lg": "1.5rem",
             "xl": "2rem",
             "2xl": ["6rem", "normal"]
+        },
+        colors: {
+            "primary": "var(--primary)",
+            "primary-highlight": "var(--primary-highlight)",
+            "secondary": "var(--secondary)",
+            "secondary-highlight": "var(--secondary-highlight)",
+            "dark": "var(--dark)",
+            "light": "var(--light)"
         }
     },
     variants: {

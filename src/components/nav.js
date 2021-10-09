@@ -11,7 +11,7 @@ const NavBase = styled.nav`
     z-index: var(--z-nav);
     border-bottom: 1px solid var(--dark);
     backdrop-filter: blur(0.75rem);
-
+    background-color: rgba(232, 162, 72, 0.5);
 `;
 
 const NavInner = styled.div`

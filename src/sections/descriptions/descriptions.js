@@ -11,7 +11,7 @@ import ExplodingLogo from "svgs/explodingLogo";
 import "pure-react-carousel/dist/react-carousel.es.css";
 
 const Section = styled.section`
-    ${tw`min-h-screen md:h-screen w-full flex flex-col justify-center items-center`}
+    ${tw`min-h-screen lg:h-screen w-full flex flex-col justify-center items-center`}
     background-color: var(--dark);
     color: var(--light);
     padding-top: 10vh;
@@ -24,8 +24,8 @@ const Section = styled.section`
 
 const Dots = styled.div`
     ${tw`flex gap-8`}
-
     .carousel__dot--selected {
+        ${tw`text-lg`}
         color: var(--primary);
         text-shadow: 0px 0px 12px rgba(249, 222, 44, 0.5);
     }
@@ -57,18 +57,16 @@ export default function Descriptions() {
                 totalSlides={2}
                 isIntrinsicHeight={true}
             >
-                <div className="flex flex-col h-full justify-between gap-4">
-                    <DotGroup renderDots={props =>
-                        <Dots>
-                            <Dot slide={0}>
-                                <A lineColour="var(--light)">Stats from last year</A>
-                            </Dot>
-                            <Dot slide={1}>
-                                <A lineColour="var(--light)">What is CUSEC?</A>
-                            </Dot>
-                        </Dots>
-                    } />
-                    
+                <div className="flex flex-col h-full justify-between gap-20">
+                    <Dots>
+                        <Dot slide={0}>
+                            <A lineColour="var(--light)">Stats from last year</A>
+                        </Dot>
+                        <Dot slide={1}>
+                            <A lineColour="var(--light)">What is CUSEC?</A>
+                        </Dot>
+                    </Dots>
+                
                     <Slider className="h-full flex items-center" classNameTray="h-full w-full" classNameTrayWrap="h-full">
                         <Slide index={0}><Stats ref={statsRef} /></Slide>
                         <Slide index={1}><Blurb ref={blurbRef} /></Slide>

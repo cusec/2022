@@ -8,7 +8,7 @@ module.exports = {
             "base": "1rem",
             "lg": "1.5rem",
             "xl": "2rem",
-            "2xl": ["6rem", "normal"]
+            "2xl": ["min(6rem, 2rem + 15vw)", "normal"]
         },
         colors: {
             "primary": "var(--primary)",

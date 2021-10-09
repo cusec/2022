@@ -45,9 +45,9 @@ export default function Locations() {
 
     return (
         <Section>
-            <Canada className="map" hovered={hovered} />
+            <Canada className="map opacity-25 md:opacity-100" hovered={hovered} />
             <Subsection>
-                <h2 className="text-xl md:text-2xl font-bold custom-shadow">This year, join us in person...</h2>
+                <h2 className="text-xl md:text-2xl font-bold custom-shadow">This year, join us in-person...</h2>
                 <Cities>{Object.values(CITIES).map(({ name: city, province }) => <span key={city} className="city-name" onMouseOver={() => setHovered(province)} onMouseLeave={() => setHovered(null)}>{city}</span>)}</Cities>
                 <br/>
                 <h2 className="text-xl md:text-2xl font-bold custom-shadow">...and virtually</h2>

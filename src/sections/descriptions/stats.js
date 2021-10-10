@@ -10,12 +10,16 @@ const SecStat = styled.span`
     ${tw`text-lg text-primary`}
 `;
 
+const Div = styled.div`
+    padding: 0 10%;
+`;
+
 const Stats = forwardRef((_, ref) => {
     return (
-        <div ref={ref}>
+        <Div ref={ref}>
             <p>We hosted <MainStat>800+ students</MainStat> from <SecStat>40+ schools</SecStat> across North America. </p>
             <p>Helped over students connect and interview with <MainStat>14+ companies</MainStat>.</p>
-        </div>
+        </Div>
     );
 });
 

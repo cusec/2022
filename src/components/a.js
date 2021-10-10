@@ -4,6 +4,10 @@ import tw from "twin.macro";
 const A = styled.a`
     ${tw`relative`}
 
+    @media (hover: none) {
+        text-decoration: ${props => props.disabled ? "none" : "underline"};
+    }
+
     ::after {
         ${tw`absolute bottom-0 right-0 inline-block`}
         display: ${props => props.disabled ? "none" : "inline-block"};
@@ -16,10 +20,6 @@ const A = styled.a`
 
         transition: transform .5s, opacity 0s linear .5s;
         transform: scaleX(0);
-        @media (hover: none) {
-            opacity: 1;
-            transform: scaleX(1);
-        }
         transform-origin: right;
     }
 

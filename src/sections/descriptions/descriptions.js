@@ -17,13 +17,14 @@ const Section = styled.section`
     padding-top: 10vh;
 
     .carousel {
-        width: 80vw;
+        ${tw`w-full`}
         min-height: 80vh;
     }
 `;
 
 const Dots = styled.div`
-    ${tw`flex flex-col sm:flex-row gap-8`}
+    ${tw`flex flex-col sm:flex-row gap-4 sm:gap-8`}
+    padding: 0 10vw;
     .carousel__dot--selected {
         ${tw`text-lg`}
         color: var(--primary);

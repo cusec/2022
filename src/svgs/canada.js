@@ -41,7 +41,8 @@ export default function Canada({ className, hovered }) {
                 strokeDashoffset: 0
             }).from(".hasInPerson path", {
                 duration: 1,
-                opacity: 0
+                opacity: 0,
+                ease: "power2.in"
             });
     }, []);
     

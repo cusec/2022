@@ -35,7 +35,7 @@ const TopText = styled.h2`
 `;
 
 const BottomText = styled.p`
-    ${tw`absolute opacity-0 md:my-8`}
+    ${tw`absolute opacity-0 md:py-8 h-full flex items-center`}
     color: var(--light);
 `;
 

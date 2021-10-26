@@ -14,6 +14,7 @@ const Content = styled.div`
 `;
 
 const SPEAKERS_URL = "https://u023sc7h30b.typeform.com/to/KJe3hACf";
+const DELEGATE_URL = "https://u023sc7h30b.typeform.com/cusec2022";
 
 export default function Splash() {
     return (
@@ -29,7 +30,11 @@ export default function Splash() {
 
                 <div className="flex flex-col-reverse sm:flex-row justify-end items-center gap-4 mt-auto">
                     <A href={SPEAKERS_URL} className="font-bold">Speak at CUSEC</A>
-                    <Button className="custom-shadow w-full sm:w-auto">Sponsor us</Button>
+                    <Button className="custom-shadow w-full sm:w-auto">
+                        <a href={DELEGATE_URL}>
+                        Join us for 2022
+                        </a>
+                    </Button>
                 </div>
             </Content>
 

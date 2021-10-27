@@ -4,8 +4,13 @@ import tw from "twin.macro";
 const A = styled.a`
     ${tw`relative`}
 
+    @media (hover: none) {
+        text-decoration: ${props => props.disabled ? "none" : "underline"};
+    }
+
     ::after {
         ${tw`absolute bottom-0 right-0 inline-block`}
+        display: ${props => props.disabled ? "none" : "inline-block"};
 
         content: '';
         width: 100%;

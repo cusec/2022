@@ -17,13 +17,14 @@ const Section = styled.section`
     padding-top: 10vh;
 
     .carousel {
-        width: 80vw;
+        ${tw`w-full`}
         min-height: 80vh;
     }
 `;
 
 const Dots = styled.div`
-    ${tw`flex gap-8`}
+    ${tw`flex flex-col sm:flex-row gap-4 sm:gap-8`}
+    padding: 0 10vw;
     .carousel__dot--selected {
         ${tw`text-lg`}
         color: var(--primary);
@@ -58,14 +59,18 @@ export default function Descriptions() {
                 isIntrinsicHeight={true}
             >
                 <div className="flex flex-col h-full justify-between gap-20">
-                    <Dots>
-                        <Dot slide={0}>
-                            <A lineColour="var(--light)">Stats from last year</A>
-                        </Dot>
-                        <Dot slide={1}>
-                            <A lineColour="var(--light)">What is CUSEC?</A>
-                        </Dot>
-                    </Dots>
+                    <DotGroup renderDots={props =>
+                        <Dots>
+                            <Dot slide={0}>
+                                {/* eslint-disable-next-line react/prop-types */}
+                                <A lineColour="var(--light)" disabled={props.currentSlide === 0}>Stats from last year</A>
+                            </Dot>
+                            <Dot slide={1}>
+                                {/* eslint-disable-next-line react/prop-types */}
+                                <A lineColour="var(--light)" disabled={props.currentSlide === 1}>What is CUSEC?</A>
+                            </Dot>
+                        </Dots>
+                    } />
                 
                     <Slider className="h-full flex items-center" classNameTray="h-full w-full" classNameTrayWrap="h-full">
                         <Slide index={0}><Stats ref={statsRef} /></Slide>

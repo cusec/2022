@@ -15,7 +15,7 @@ const Container = styled.section`
 
 export default function Tickets() {
     return (
-        <Container>
+        <Container id="pricing">
             <h2 className="text-xl md:text-2xl md:font-bold">Attend CUSEC 2022!</h2>
             <div className="flex flex-col md:flex-row gap-12 h-min">
                 <TicketBox content={TICKET_INFO.basic} />

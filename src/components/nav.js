@@ -7,11 +7,10 @@ import { throttle } from "lodash";
 import { A } from "../components/elements";
 
 const NavBase = styled.nav`
-    ${tw`fixed w-full top-0 left-0 py-4 hidden md:block`}
+    ${tw`fixed w-full top-0 left-0 py-4 hidden md:block text-primary font-bold`}
+    border-bottom: 1px solid var(--primary);
     z-index: var(--z-nav);
-    border-bottom: 1px solid var(--dark);
     backdrop-filter: blur(0.75rem);
-    background-color: rgba(232, 162, 72, 0.5);
 `;
 
 const NavInner = styled.div`
@@ -40,6 +39,25 @@ const NavLogo = forwardRef((_, ref) => {
 
 NavLogo.displayName = "NavLogo";
 
+const SECTIONS = [
+    {
+        id: "#about",
+        display: "About"
+    },
+    /*{
+        id: "#sponsors",
+        display: "Sponsors"
+    },*/
+    {
+        id: "#pricing",
+        display: "Pricing"
+    },
+    {
+        id: "#faq",
+        display: "FAQ"
+    }
+];
+
 export default function Nav() {
     const logoRef = useRef();
     useEffect(() => {
@@ -53,10 +71,9 @@ export default function Nav() {
         <NavBase>
             <NavInner>
                 <NavLogo ref={logoRef} />
-                <A href="#about">About</A>
-                {/*<A href="#sponsors">Sponsors</A>
-                <A href="#pricing">Pricing</A>*/}
-                <A href="#faq">FAQ</A>
+                {SECTIONS.map(section => (
+                    <A href={section.id} key={section.id} lineColour="var(--primary)">{section.display}</A>
+                ))}
             </NavInner>
         </NavBase>
     );

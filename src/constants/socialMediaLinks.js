@@ -1,4 +1,4 @@
-export const EMAIL = "info@cusec.com";
+export const EMAIL = "info@cusec.net";
 export const FACEBOOK = "https://www.facebook.com/cusecofficial/";
 export const INSTAGRAM = "https://www.instagram.com/cusecofficial/";
 export const LINKEDIN = "https://www.linkedin.com/company/cusec/";

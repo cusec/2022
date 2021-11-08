@@ -26,7 +26,7 @@ const Container = styled.section`
         grid-row: 1;
 
         & img {
-            ${tw`w-6 h-6`}
+            ${tw`w-6 h-6 mb-1`}
         }
     }
 
@@ -63,18 +63,18 @@ export default function Footer() {
                     <img src="/logoColourless.svg" alt="" className="inline" /> CUSEC 2022
                 </span>
                 <span className="social-media flex gap-6 items-center justify-end">
-                    <a href={FACEBOOK}>
+                    <A href={FACEBOOK} lineColour="var(--light)">
                         <img src="/footer/facebook.svg" />
-                    </a>
-                    <a href={YOUTUBE}>
+                    </A>
+                    <A href={YOUTUBE} lineColour="var(--light)">
                         <img src="/footer/youtube.svg" />
-                    </a>
-                    <a href={INSTAGRAM}>
+                    </A>
+                    <A href={INSTAGRAM} lineColour="var(--light)">
                         <img src="/footer/instagram.svg" />
-                    </a>
-                    <a href={LINKEDIN}>
+                    </A>
+                    <A href={LINKEDIN} lineColour="var(--light)">
                         <img src="/footer/linkedin.svg" />
-                    </a>
+                    </A>
                 </span>
                 <span className="code-of-conduct flex gap-4 items-center justify-end">
                     {/*<A lineColour="var(--light)">Open Source</A>

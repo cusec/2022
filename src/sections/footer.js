@@ -42,6 +42,12 @@ export default function Footer() {
 
     Modal.setAppElement("#__next");
 
+    const handleKeyPress = (e) => {
+        if (e.key !== "Enter") return;
+
+        setIsModalOpen(true);
+    };
+
     return (
         <>
             <Modal
@@ -64,22 +70,29 @@ export default function Footer() {
                 </span>
                 <span className="social-media flex gap-6 items-center justify-end">
                     <A href={FACEBOOK} lineColour="var(--light)">
-                        <img src="/footer/facebook.svg" />
+                        <img src="/footer/facebook.svg" alt="Facebook" />
                     </A>
                     <A href={YOUTUBE} lineColour="var(--light)">
-                        <img src="/footer/youtube.svg" />
+                        <img src="/footer/youtube.svg" alt="Youtube" />
                     </A>
                     <A href={INSTAGRAM} lineColour="var(--light)">
-                        <img src="/footer/instagram.svg" />
+                        <img src="/footer/instagram.svg" alt="Instagram" />
                     </A>
                     <A href={LINKEDIN} lineColour="var(--light)">
-                        <img src="/footer/linkedin.svg" />
+                        <img src="/footer/linkedin.svg" alt="LinkedIn" />
                     </A>
                 </span>
                 <span className="code-of-conduct flex gap-4 items-center justify-end">
                     {/*<A lineColour="var(--light)">Open Source</A>
                 <A lineColour="var(--light)">Attributions</A>*/}
-                    <A lineColour="var(--light)" onClick={() => setIsModalOpen(true)}>Code of Conduct</A>
+                    <A
+                        lineColour="var(--light)"
+                        onClick={() => setIsModalOpen(true)}
+                        onKeyDown={handleKeyPress}
+                        tabIndex="0"
+                    >
+                        Code of Conduct
+                    </A>
                 </span>
             </Container>
         </>

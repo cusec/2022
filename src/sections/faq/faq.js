@@ -6,7 +6,7 @@ import { A } from "components/elements";
 import FaqBox from "./faqBox";
 
 import { FaqQuestions } from "constants/faqQuestions";
-import { EMAIL, FACEBOOK, INSTAGRAM, LINKEDIN } from "constants/socialMediaLinks";
+import { EMAIL } from "constants/socialMediaLinks";
 
 const Container = styled.section`
     ${tw`min-h-screen flex flex-col justify-start overflow-hidden gap-12`}
@@ -37,30 +37,8 @@ export default function Faq() {
                         href={`mailto:${EMAIL}`}
                         lineColour="var(--primary)"
                         className="text-primary"
-                    >{EMAIL}</A> {" "}
-                or contact us through our official {" "}
-                    <A
-                        href={FACEBOOK}
-                        lineColour="var(--primary)"
-                        className="text-primary"
-                    >
-                        Facebook
-                    </A>
-                , {" "}
-                    <A
-                        href={INSTAGRAM}
-                        lineColour="var(--primary)"
-                        className="text-primary"
-                    >
-                        Instagram
-                    </A> {" "} or {" "}
-                    <A
-                        href={LINKEDIN}
-                        lineColour="var(--primary)"
-                        className="text-primary"
-                    >
-                        LinkedIn
-                    </A> {" "} accounts!
+                    >{EMAIL}</A>
+                !
                 </p>
             </div>
             <div className="flex flex-col md:flex-row gap-4">

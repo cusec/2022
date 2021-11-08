@@ -10,6 +10,7 @@ import Locations from "sections/locations";
 import Descriptions from "sections/descriptions/descriptions";
 import Testimonials from "sections/testimonials/testimonials";
 import Faq from "sections/faq/faq";
+import Footer from "sections/footer";
 
 export default function Home() {
     return (
@@ -31,6 +32,7 @@ export default function Home() {
                 <Descriptions />
                 <Testimonials />
                 <Faq />
+                <Footer />
             </main>
         </>
     );

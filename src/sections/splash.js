@@ -20,10 +20,10 @@ export default function Splash() {
     return (
         <header className="h-screen flex flex-col justify-center diffWithNav">
             <Content>
-                <title className="flex flex-col sm:flex-row leading-none sm:gap-4 items-center">
+                <div className="flex flex-col sm:flex-row leading-none sm:gap-4 items-center">
                     <img src="/logo.svg" alt="" className="h-24"/>
                     <h1 className="text-2xl font-bold">CUSEC</h1>
-                </title>
+                </div>
                         
                 <h2 className="text-lg md:text-xl">Canadian University Software Engineering Conference</h2>
                 <Subtitle>January 14-16 | Virtual and in-person experience</Subtitle>

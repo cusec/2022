@@ -36,7 +36,7 @@ const Cities = styled.section`
 `;
 
 const Subsection = styled.div`
-    margin: 0 10vw;
+    margin: 10vw;
     z-index: 0;
 `;
 

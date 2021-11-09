@@ -34,6 +34,10 @@
     cursor: url("/cursorInnerDefault.svg") 4 4, default;
 }
 
+*:focus {
+    outline: 2px dashed var(--primary-highlight);
+}
+
 html,
 body {
     padding: 0;

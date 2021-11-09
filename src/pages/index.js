@@ -5,11 +5,12 @@ import Nav from "../components/nav";
 import Cursor from "../components/cursor";
 
 import Splash from "sections/splash";
-import DetailBoxes from "../sections/detailBoxes/detailBoxes";
+import DetailBoxes from "sections/detailBoxes/detailBoxes";
 import Locations from "sections/locations";
 import Descriptions from "sections/descriptions/descriptions";
 import Testimonials from "sections/testimonials/testimonials";
 import Faq from "sections/faq/faq";
+import Tickets from "sections/tickets/tickets";
 import Footer from "sections/footer";
 
 export default function Home() {
@@ -31,6 +32,7 @@ export default function Home() {
                 <Locations />
                 <Descriptions />
                 <Testimonials />
+                <Tickets/>
                 <Faq />
                 <Footer />
             </main>

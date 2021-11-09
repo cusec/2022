@@ -17,6 +17,11 @@ module.exports = {
             "secondary-highlight": "var(--secondary-highlight)",
             "dark": "var(--dark)",
             "light": "var(--light)"
+        },
+        extend: {
+            height: {
+                "min": "min-content"
+            }
         }
     },
     variants: {

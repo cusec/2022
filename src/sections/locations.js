@@ -8,7 +8,7 @@ import { CITIES } from "constants/cities";
 
 // Todo: move z-index to globals.css
 const Section = styled.section`
-    ${tw`min-h-screen w-full flex flex-col justify-center relative overflow-hidden z-0`}
+    ${tw`min-h-screen w-full flex flex-col justify-center relative overflow-hidden`}
     background-color: var(--secondary-highlight);
 
     .map {
@@ -44,7 +44,7 @@ export default function Locations() {
     const [hovered, setHovered] = useState(null);
 
     return (
-        <Section>
+        <Section className="diffWithNav">
             <Canada className="map opacity-40 md:opacity-100" hovered={hovered} />
             <Subsection>
                 <h2 className="text-xl md:text-2xl font-bold custom-shadow">This year, join us in-person...</h2>

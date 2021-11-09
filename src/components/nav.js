@@ -5,6 +5,7 @@ import styled from "styled-components";
 import tw from "twin.macro";
 import { throttle } from "lodash";
 import { A } from "../components/elements";
+import ColourlessLogo from "../svgs/colourlessLogo";
 
 const NavBase = styled.nav`
     ${tw`fixed w-full top-0 left-0 py-4 hidden md:block text-primary font-bold`}
@@ -34,7 +35,7 @@ const NavLogo = forwardRef((_, ref) => {
         }
     }));
 
-    return <img id="navLogo" src="/logoColourless.svg" alt="" ref={el} style={{ transition: "transform .5s" }} />;
+    return <ColourlessLogo colour="var(--primary)" ref={el} style={{ transition: "transform .5s" }} />;
 });
 
 NavLogo.displayName = "NavLogo";

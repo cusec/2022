@@ -4,6 +4,8 @@ import styled from "styled-components";
 import tw from "twin.macro";
 
 import { A } from "components/elements";
+import ColourlessLogo from "../svgs/colourlessLogo";
+
 import { CODE_OF_CONDUCT } from "constants/footerTexts";
 
 import { FACEBOOK, INSTAGRAM, LINKEDIN, YOUTUBE } from "constants/socialMediaLinks";
@@ -65,8 +67,8 @@ export default function Footer() {
                 {modalContent}
             </Modal>
             <Container>
-                <span className="name">
-                    <img src="/logoColourless.svg" alt="" className="inline" /> CUSEC 2022
+                <span className="name flex items-center gap-2">
+                    <ColourlessLogo /> CUSEC 2022
                 </span>
                 <span className="social-media flex gap-6 items-center justify-end">
                     <A href={FACEBOOK} lineColour="var(--light)">

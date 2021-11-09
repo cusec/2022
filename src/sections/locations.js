@@ -44,7 +44,7 @@ export default function Locations() {
     const [hovered, setHovered] = useState(null);
 
     return (
-        <Section className="diffWithNav">
+        <Section>
             <Canada className="map opacity-40 md:opacity-100" hovered={hovered} />
             <Subsection>
                 <h2 className="text-xl md:text-2xl font-bold custom-shadow">This year, join us in-person...</h2>

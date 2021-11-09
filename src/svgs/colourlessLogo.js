@@ -19,7 +19,7 @@ ColourlessLogo.displayName = "ColourlessLogo";
 
 ColourlessLogo.propTypes = {
     colour: PropTypes.string,
-    style: PropTypes.string
+    style: PropTypes.object
 };
 
 export default ColourlessLogo;

@@ -18,7 +18,7 @@ const DELEGATE_URL = "https://u023sc7h30b.typeform.com/cusec2022";
 
 export default function Splash() {
     return (
-        <header className="h-screen flex flex-col justify-center diffWithNav">
+        <header className="h-screen flex flex-col justify-center">
             <Content>
                 <div className="flex flex-col sm:flex-row leading-none sm:gap-4 items-center">
                     <img src="/logo.svg" alt="" className="h-24"/>

@@ -66,8 +66,3 @@ button {
 .glow {
     text-shadow: 0px 0px 12px rgba(249, 222, 44, 0.5);
 }
-
-.diffWithNav {
-    z-index: var(--z-nav);
-    mix-blend-mode: difference;
-}

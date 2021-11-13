@@ -1,5 +1,6 @@
 import React from "react";
 import Nav from "components/nav";
+import Splash from "sections/splash";
 
 export default function Shapes() {
     return (
@@ -10,6 +11,7 @@ export default function Shapes() {
             </svg>
             <Nav />
             <div className="fixed" style={{ color: "yellow" }}>header text</div>
+            <Splash/>
             <div className="flex items-center content-center h-screen w-full p-12" style={{ backgroundColor: "#1800ff", mixBlendMode: "darken" }}>
                 <p className="text-2xl font-bold text-light">Here is some really big text</p>
             </div>

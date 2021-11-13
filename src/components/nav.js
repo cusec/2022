@@ -11,20 +11,16 @@ const NavBase = styled.nav`
     ${tw`fixed w-full top-0 left-0 py-4 hidden md:block text-primary font-bold`}
     border-bottom: 1px solid var(--primary);
     z-index: var(--z-nav);
-    backdrop-filter: blur(0.75rem);
+    mix-blend-mode: difference;
+
+    @supports not (-moz-appearance:none) {
+        backdrop-filter: blur(0.75rem);
+    }
 `;
 
 const NavInner = styled.div`
-    ${tw`flex mx-auto`}
+    ${tw`flex justify-between mx-auto`}
     width: 80%;
-
-    img {
-        ${tw`mr-auto`}
-    }
-
-    a :not(:first-child) {
-        ${tw`ml-6`}
-    }
 `;
 
 const NavLogo = forwardRef((_, ref) => {
@@ -72,9 +68,12 @@ export default function Nav() {
         <NavBase>
             <NavInner>
                 <NavLogo ref={logoRef} />
-                {SECTIONS.map(section => (
-                    <A href={section.id} key={section.id} lineColour="var(--primary)">{section.display}</A>
-                ))}
+                <span className="flex gap-4">
+                    {SECTIONS.map(section => (
+                        <A href={section.id} key={section.id} lineColour="var(--primary)">{section.display}</A>
+                    ))}
+                </span>
+                
             </NavInner>
         </NavBase>
     );

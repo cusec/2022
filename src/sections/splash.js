@@ -6,11 +6,19 @@ import { Button, Subtitle, A } from "components/elements";
 import TitleSVG from "../svgs/title/title";
 
 const Content = styled.div`
-    ${tw`p-12 h-screen sm:h-auto flex flex-col`}
+    ${tw`p-12 h-screen sm:h-auto flex flex-col relative`}
     max-width: 100vw;
     background: rgba(249, 222, 44, 0.25);
     box-shadow: 0px 0px 8px var(--shadow);
-    backdrop-filter: blur(0.5rem);
+
+    @supports not (-moz-appearance:none) {
+        backdrop-filter: blur(0.75rem);
+    }
+
+    .background {
+        ${tw`absolute w-full`}
+        filter: blur(0.5rem);
+    }
 `;
 
 const SPEAKERS_URL = "https://u023sc7h30b.typeform.com/to/KJe3hACf";

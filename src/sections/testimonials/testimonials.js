@@ -12,7 +12,6 @@ const Carousel = styled.div`
     ${tw`min-h-screen w-full relative py-4 flex flex-col justify-center items-center`}
     background-color: rgba(30, 30, 30, 0.9);
     color: var(--light);
-    backdrop-filter: blur(0.25rem) grayscale(100%);
 
     .carousel {
         width: 80vw;
@@ -26,6 +25,9 @@ const Img = styled.img`
     bottom: -30vh;
 
     right: -10vw;
+
+    filter: blur(0.5rem) grayscale(100%);
+
     @media (min-width: 640px) {
         right: -5vw;
     }

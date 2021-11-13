@@ -13,7 +13,7 @@ const NavBase = styled.nav`
     z-index: var(--z-nav);
     mix-blend-mode: difference;
 
-    @supports (backdrop-filter) {
+    @supports not (-moz-appearance:none) {
         backdrop-filter: blur(0.75rem);
     }
 `;

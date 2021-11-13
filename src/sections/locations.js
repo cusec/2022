@@ -8,7 +8,7 @@ import { CITIES } from "constants/cities";
 
 // Todo: move z-index to globals.css
 const Section = styled.section`
-    ${tw`min-h-screen w-full flex flex-col justify-center relative overflow-hidden`}
+    ${tw`min-h-screen w-full flex flex-col justify-center relative overflow-hidden z-0`}
     background-color: var(--secondary-highlight);
 
     .map {

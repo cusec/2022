@@ -8,7 +8,7 @@ import TitleSVG from "../svgs/title/title";
 const Content = styled.div`
     ${tw`p-12 h-screen sm:h-auto flex flex-col relative`}
     max-width: 100vw;
-    background: rgba(249, 222, 44, 0.25);
+    background: rgba(249, 222, 44, 0.3);
     box-shadow: 0px 0px 8px var(--shadow);
 
     @supports not (-moz-appearance:none) {
@@ -34,7 +34,7 @@ export default function Splash() {
                 </div>
                         
                 <h2 className="text-lg md:text-xl">Canadian University Software Engineering Conference</h2>
-                <Subtitle>January 14-16 | Virtual and in-person experience</Subtitle>
+                <Subtitle className="glow">January 14-16 | Virtual and in-person experience</Subtitle>
 
                 <div className="flex flex-col-reverse sm:flex-row justify-end items-center gap-4 mt-auto">
                     <A href={SPEAKERS_URL} className="font-bold">Speak at CUSEC</A>

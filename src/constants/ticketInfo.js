@@ -1,7 +1,9 @@
+import React from "react";
+
 export const TICKET_INFO = {
     basic: {
         title: "Basic",
-        price: "$2",
+        price: <><span className="line-through text-secondary">$2</span> Free!</>,
         perks: [
             "Hopin virtual conference",
             "Discord access",

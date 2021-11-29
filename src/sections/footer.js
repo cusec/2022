@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Modal from "react-modal";
 import styled from "styled-components";
 import tw from "twin.macro";
@@ -38,9 +38,16 @@ const Container = styled.section`
     }
 `;
 
+const CODE_OF_CONDUCT_HREF = "#codeOfConduct";
+
 export default function Footer() {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [modalContent, setModalContent] = useState(CODE_OF_CONDUCT);
+
+    useEffect(() =>{
+        const isLinked = window.location.hash == CODE_OF_CONDUCT_HREF;
+        setIsModalOpen(isLinked);
+    }, []);
 
     Modal.setAppElement("#__next");
 
@@ -88,6 +95,7 @@ export default function Footer() {
                     {/*<A lineColour="var(--light)">Open Source</A>
                 <A lineColour="var(--light)">Attributions</A>*/}
                     <A
+                        href={CODE_OF_CONDUCT_HREF}
                         lineColour="var(--light)"
                         onClick={() => setIsModalOpen(true)}
                         onKeyDown={handleKeyPress}

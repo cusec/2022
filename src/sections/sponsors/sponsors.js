@@ -10,11 +10,11 @@ const Section = styled.section`
     padding: 10vh 10vw;
 
     .GOLD, .SILVER, .BRONZE, .IN_KIND {
-        ${tw`flex gap-4 justify-end relative`}
+        ${tw`flex justify-center md:justify-end gap-4 flex-wrap relative`}
     }
 
     .GOLD {
-        ${tw`inline-flex ml-auto mr-4`}
+        ${tw`inline-flex md:ml-auto md:mr-4`}
     }
 
     .SILVER, .BRONZE, .IN_KIND {
@@ -22,11 +22,11 @@ const Section = styled.section`
     }
 
     .BRONZE {
-        ${tw`mr-28`}
+        ${tw`md:mr-28`}
     }
 
     .IN_KIND {
-        ${tw`mr-12`}
+        ${tw`md:mr-12`}
     }
 `;
 
@@ -45,9 +45,9 @@ const generateTierRow = (tier, tierData, divClassName) => {
 export default function Sponsors() {
     return (
         <Section>
-            <div className="flex">
+            <div className="flex flex-col md:flex-row">
                 <div className="inline-block m-8">
-                    <h2 className="text-2xl font-bold">Sponsors</h2>
+                    <h2 className="text-xl md:text-2xl font-bold">Sponsors</h2>
                     <p>Meet the companies making CUSEC possible.</p>
                 </div>
                 {

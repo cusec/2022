@@ -9,8 +9,9 @@ import DetailBoxes from "sections/detailBoxes/detailBoxes";
 import Locations from "sections/locations";
 import Descriptions from "sections/descriptions/descriptions";
 import Testimonials from "sections/testimonials/testimonials";
-import Faq from "sections/faq/faq";
 import Tickets from "sections/tickets/tickets";
+import Sponsors from "sections/sponsors/sponsors";
+import Faq from "sections/faq/faq";
 import Footer from "sections/footer";
 
 export default function Home() {
@@ -32,7 +33,8 @@ export default function Home() {
                 <Locations />
                 <Descriptions />
                 <Testimonials />
-                <Tickets/>
+                <Tickets />
+                <Sponsors />
                 <Faq />
                 <Footer />
             </main>

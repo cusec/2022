@@ -8,6 +8,8 @@ import Decagon from "svgs/decagon";
 
 import { testimonialsText } from "constants/testimonialText";
 
+import "pure-react-carousel/dist/react-carousel.es.css";
+
 const Carousel = styled.div`
     ${tw`min-h-screen w-full relative py-4 flex flex-col justify-center items-center`}
     background-color: rgba(30, 30, 30, 0.9);

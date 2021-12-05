@@ -38,7 +38,7 @@ export default function TicketBox ({ content, className }) {
 TicketBox.propTypes = {
     content: PropTypes.exact({
         title: PropTypes.string.isRequired,
-        price: PropTypes.string.isRequired,
+        price: PropTypes.oneOfType([PropTypes.string, PropTypes.object]).isRequired,
         perks: PropTypes.arrayOf(PropTypes.string)
     }).isRequired,
     className: PropTypes.string

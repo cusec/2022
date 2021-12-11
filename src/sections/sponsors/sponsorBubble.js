@@ -8,8 +8,8 @@ import { SPONSOR_TIERS } from "constants/sponsorsInfo";
 const BUBBLE_SIZES = {
     [SPONSOR_TIERS.GOLD]: "w-36 h-36 md:w-44 md:h-44",
     [SPONSOR_TIERS.SILVER]: "w-32 h-32 md:w-36 md:h-36",
-    [SPONSOR_TIERS.BRONZE]: "w-16",
-    [SPONSOR_TIERS.IN_KIND]: "w-16",
+    [SPONSOR_TIERS.BRONZE]: "w-16 h-16 md:w-20 md:h-20",
+    [SPONSOR_TIERS.IN_KIND]: "w-16 h-16 md:w-20 md:h-20",
 };
 
 const Bubble = styled.div`

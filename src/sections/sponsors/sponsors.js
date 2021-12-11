@@ -3,26 +3,24 @@ import styled from "styled-components";
 import tw from "twin.macro";
 import SponsorBubble from "./sponsorBubble";
 
-import { SPONSORS, SPONSOR_TIERS } from "constants/sponsorsInfo";
+import { SPONSORS } from "constants/sponsorsInfo";
 
 const Section = styled.section`
     ${tw`min-h-screen w-full bg-secondary-highlight`}
     padding: 10vh 10vw;
 
     .GOLD, .SILVER, .BRONZE, .IN_KIND {
-        ${tw`flex justify-center md:justify-end gap-4 flex-wrap relative`}
+        ${tw`flex justify-center md:justify-start gap-4 flex-wrap relative my-4`}
     }
 
     .GOLD {
-        ${tw`inline-flex md:ml-auto md:mr-4`}
     }
 
-    .SILVER, .BRONZE, .IN_KIND {
-        ${tw`flex my-4`}
+    .SILVER {
     }
 
     .BRONZE {
-        ${tw`md:mr-28`}
+        ${tw`md:float-left`}
     }
 
     .IN_KIND {
@@ -30,33 +28,28 @@ const Section = styled.section`
     }
 `;
 
-const generateTierRow = (tier, tierData, divClassName) => {
-    const bubbles = tierData.map(({ name, img, link }) => (
-        <SponsorBubble key={name} tier={tier} name={name} img={img} link={link} />
-    ));
-
-    return (
-        <div className={tier} key={tier}>
-            {bubbles}
-        </div>
-    );
-}
-
 export default function Sponsors() {
     return (
         <Section>
-            <div className="flex flex-col md:flex-row">
-                <div className="inline-block m-8">
-                    <h2 className="text-xl md:text-2xl font-bold">Sponsors</h2>
-                    <p>Meet the companies making CUSEC possible.</p>
-                </div>
+            <div className="bubbles">
                 {
-                    generateTierRow(SPONSOR_TIERS.GOLD, SPONSORS[SPONSOR_TIERS.GOLD])
+                    Object.keys(SPONSORS).map(tier => {
+                        const bubbles = SPONSORS[tier].map(({ name, img, link }) => (
+                            <SponsorBubble key={name} tier={tier} name={name} img={img} link={link} />
+                        ));
+                
+                        return (
+                            <div className={tier} key={tier}>
+                                {bubbles}
+                            </div>
+                        );
+                    })
                 }
             </div>
-            {
-                Object.keys(SPONSORS).slice(1).map(tier => generateTierRow(tier, SPONSORS[tier]))
-            }
+            <div className="inline-block m-8 float-right">
+                <h2 className="text-xl sm:text-2xl font-bold">Sponsors</h2>
+                <p>Meet the companies making CUSEC possible.</p>
+            </div>
         </Section>
     );
 }

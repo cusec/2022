@@ -11,6 +11,7 @@ import Descriptions from "sections/descriptions/descriptions";
 import Testimonials from "sections/testimonials/testimonials";
 import Faq from "sections/faq/faq";
 import Tickets from "sections/tickets/tickets";
+import Speakers from "sections/speakers/speakers";
 import Footer from "sections/footer";
 
 export default function Home() {
@@ -33,6 +34,7 @@ export default function Home() {
                 <Descriptions />
                 <Testimonials />
                 <Tickets/>
+                <Speakers />
                 <Faq />
                 <Footer />
             </main>

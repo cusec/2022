@@ -4,7 +4,7 @@ module.exports = {
     darkMode: false, // or 'media' or 'class'
     theme: {
         fontSize: {
-            "sm": "0.75rem",
+            "sm": ["0.75rem", "normal"],
             "base": "1rem",
             "lg": "1.5rem",
             "xl": "2rem",

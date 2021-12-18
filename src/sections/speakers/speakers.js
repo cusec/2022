@@ -13,7 +13,7 @@ const Section = styled.section`
 export default function Speakers() {
     return (
         <Section>
-            <div className="inline-block m-8">
+            <div className="inline-block m-8 sticky max-h-0 top-24">
                 <h2 className="text-xl font-bold">Speakers</h2>
                 <p>Meet the professionals speaking this year.</p>
             </div>

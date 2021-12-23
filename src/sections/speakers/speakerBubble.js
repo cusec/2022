@@ -28,7 +28,8 @@ const KeynoteBubble = ({ name, role, company, img }) => {
 
     return (
         <Bubble className={`flex ${BUBBLE_SIZES.KEYNOTE["h"]} m-4`}>
-            <div className={`rounded-full ${BUBBLE_SIZES.KEYNOTE["w"]} ${BUBBLE_SIZES.KEYNOTE["h"]} bg-light shadow-md`} style={{ marginLeft: `${Math.random() * 35}%` }}>
+            <div className={`rounded-full ${BUBBLE_SIZES.KEYNOTE["w"]} ${BUBBLE_SIZES.KEYNOTE["h"]} bg-light shadow-md overflow-hidden`} style={{ marginLeft: `${Math.random() * 35}%` }}>
+                <img src={`/speakers/${img}`} />
             </div>
             <div>
                 Keynote
@@ -53,7 +54,8 @@ const NormalBubble = ({ tier, name, role, company, img }) => {
         <div className={`inline-block relative box-content m-2 py-6 ${BUBBLE_SIZES[tier]["w"]} h-44 md:h-48`} style={{ paddingLeft: `${Math.random() * 4}rem` }}>
             <Bubble className={`inline-flex flex-col ${BUBBLE_SIZES[tier]["w"]} absolute`} style={{ top: `${Math.random() * 4}rem` }}>
                 {/*<div className={`${BUBBLE_SIZES[tier]["w"]}`}>*/}
-                <div className={`rounded-full ${BUBBLE_SIZES[tier]["w"]} ${BUBBLE_SIZES[tier]["h"]} bg-light shadow-md`}>
+                <div className={`rounded-full ${BUBBLE_SIZES[tier]["w"]} ${BUBBLE_SIZES[tier]["h"]} bg-light shadow-md overflow-hidden`}>
+                    <img src={`/speakers/${img}`} />
                 </div>
                 <p className="text-sm text-center">
                     {name}, {role}@{company}

@@ -10,7 +10,7 @@ export const SPEAKERS = {
             name: "Michael Seibel",
             role: "Founder",
             company: "Y Combinator",
-            img: ""
+            img: "MichaelSeibel.jpg"
         },
         {
             name: "Cindy Alvarez",
@@ -22,21 +22,15 @@ export const SPEAKERS = {
             name: "Jimena Almendares",
             role: "Product Executive",
             company: "Facebook",
-            img: ""
+            img: "JimenaAlmendares.jpg"
         }
     ],
     [SPEAKER_TIERS.SPEC]: [
         {
-            name: "Iris Wen",
+            name: "Fatima Taj",
             role: "SWE",
-            company: "Facebook",
-            img: ""
-        },
-        {
-            name: "Yulia Eskin",
-            role: "Founder",
-            company: "Career Coach for Software Engineers",
-            img: ""
+            company: "Yelp",
+            img: "FatimaTaj.jpeg"
         },
         {
             name: "Forest Anderson",
@@ -45,60 +39,78 @@ export const SPEAKERS = {
             img: ""
         },
         {
-            name: "Fatima Taj",
+            name: "Iris Wen",
             role: "SWE",
-            company: "Yelp",
-            img: ""
+            company: "Facebook",
+            img: "IrisWen.jpg"
+        },
+        {
+            name: "Jimoh Ovbiagele",
+            role: "Business Manager",
+            company: "Coinbase",
+            img: "JimohOvbiagele.jpeg"
+        },
+        {
+            name: "Yulia Eskin",
+            role: "Founder",
+            company: "Career Coach for Software Engineers",
+            img: "YuliaEskin.jpg"
         },
     ],
     [SPEAKER_TIERS.PANEL]: [
         {
-            name: "Alexa Liakovski",
-            role: "SWE",
-            company: "Datadog",
-            img: ""
-        },
-        {
             name: "Amar Jasarbasic",
             role: "SWE Team Lead",
             company: "Check",
-            img: ""
-        },
-        {
-            name: "Dawn Chandler",
-            role: "SWE",
-            company: "SkipTheDishes",
-            img: ""
-        },
-        {
-            name: "David Hew-wing",
-            role: "SWE Intern",
-            company: "Google",
-            img: ""
-        },
-        {
-            name: "Jenny Pan",
-            role: "Student",
-            company: "UBC",
-            img: ""
-        },
-        {
-            name: "Erin Gallagher",
-            role: "SWE",
-            company: "Uber",
-            img: ""
-        },
-        {
-            name: "Raymond Chung",
-            role: "Technical Educator",
-            company: "Shopify",
-            img: ""
+            img: "AmarJasarbasic.JPG"
         },
         {
             name: "Alex Cui",
             role: "Research Scientist",
             company: "Waabi",
-            img: ""
+            img: "AlexCui.jpg"
+        },
+        {
+            name: "Alexa Liaskovski",
+            role: "SWE",
+            company: "Datadog",
+            img: "AlexaLiaskovski.jpg"
+        },
+        {
+            name: "David Hew-wing",
+            role: "SWE Intern",
+            company: "Google",
+            img: "DavidHewwing.jpg"
+        },
+        {
+            name: "Dawn Chandler",
+            role: "SWE",
+            company: "SkipTheDishes",
+            img: "DawnChandler.jpg"
+        },
+        {
+            name: "Erin Gallagher",
+            role: "SWE",
+            company: "Uber",
+            img: "ErinGallagher.jpeg"
+        },
+        {
+            name: "Jenny Pan",
+            role: "Student",
+            company: "UBC",
+            img: "JennyPan.jpg"
+        },
+        {
+            name: "Raman Lally",
+            role: "Senior SWE",
+            company: "Shopify",
+            img: "RamanLally.jpeg"
+        },
+        {
+            name: "Raymond Chung",
+            role: "Technical Educator",
+            company: "Shopify",
+            img: "RaymondChung.jpg"
         }
     ]
 };

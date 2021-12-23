@@ -10,7 +10,7 @@ const Section = styled.section`
     padding: 10vh 10vw;
 
     .GOLD, .SILVER, .BRONZE, .IN_KIND {
-        ${tw`flex justify-center md:justify-start gap-4 flex-wrap relative my-4`}
+        ${tw`flex justify-center md:justify-start gap-8 flex-wrap relative my-8`}
     }
 
     .GOLD {
@@ -35,7 +35,7 @@ export default function Sponsors() {
                 {
                     Object.keys(SPONSORS).map(tier => {
                         const bubbles = SPONSORS[tier].map(({ name, img, link }) => (
-                            <SponsorBubble key={name} tier={tier} name={name} img={img} link={link} />
+                            <SponsorBubble key={name} tier={tier} name={name} img={`/sponsors/${img}`} link={link} />
                         ));
                 
                         return (

@@ -8,42 +8,52 @@ export const SPONSOR_TIERS = {
 export const SPONSORS = {
     [SPONSOR_TIERS.GOLD]: [
         {   
-            name: "test4",
-            img: "/logo.svg",
+            name: "Kinaxis",
+            img: "/Kinaxis.svg",
+            link: "https://www.kinaxis.com/en"
+        },
+        {   
+            name: "RBC",
+            img: "/RBC.svg",
             link: "https://www.example.com"
         },
         {   
-            name: "test42",
-            img: "/logo.svg",
-            link: "https://www.example.com"
-        },
-        {   
-            name: "test43",
-            img: "/logo.svg",
+            name: "Unity",
+            img: "/Unity.png",
             link: "https://www.example.com"
         }
     ],
     [SPONSOR_TIERS.SILVER]: [
         {   
-            name: "test",
-            img: "/logo.svg",
-            link: "https://www.example.com"
+            name: "Fellow.app",
+            img: "/Fellow.png",
+            link: "https://fellow.app/careers/"
         },
         {   
-            name: "test2",
-            img: "/logo.svg",
-            link: "https://www.example.com"
+            name: "Geotab",
+            img: "/Geotab.png",
+            link: "https://careers.geotab.com/campus/"
         },
         {   
-            name: "test21",
-            img: "/logo.svg",
+            name: "Nokia",
+            img: "/Nokia.svg",
             link: "https://www.example.com"
         }
     ],
     [SPONSOR_TIERS.BRONZE]: [
         {   
-            name: "test3",
-            img: "/logo.svg",
+            name: "Ciena",
+            img: "/Ciena.svg",
+            link: "https://www.example.com"
+        },
+        {   
+            name: "Diff Agency",
+            img: "/Diff.svg",
+            link: "https://www.example.com"
+        },
+        {   
+            name: "iQmetrix",
+            img: "/Iqmetrix.svg",
             link: "https://www.example.com"
         }
     ]/*,

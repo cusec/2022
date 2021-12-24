@@ -6,14 +6,14 @@ import SpeakerBubble from "./speakerBubble";
 import { SPEAKERS } from "constants/speakerInfo";
 
 const Section = styled.section`
-    ${tw`min-h-screen w-full bg-secondary-highlight flex`}
+    ${tw`min-h-screen w-full bg-secondary-highlight flex flex-col md:flex-row`}
     padding: 10vh 10vw;
 `;
 
 export default function Speakers() {
     return (
         <Section>
-            <div className="inline-block m-8 sticky max-h-0 top-48 mb-32 ">
+            <div className="inline-block m-8 md:sticky max-h-0 top-48 mb-32">
                 <h2 className="text-xl font-bold">Speakers</h2>
                 <p>Meet the professionals speaking this year.</p>
             </div>

@@ -16,7 +16,7 @@ export const SPEAKERS = {
             name: "Cindy Alvarez",
             role: "Director of Customer Research",
             company: "Github",
-            img: ""
+            img: "CindyAlvarez.jpg"
         },
         {
             name: "Jimena Almendares",
@@ -36,7 +36,7 @@ export const SPEAKERS = {
             name: "Forest Anderson",
             role: "Research Student",
             company: "Carleton",
-            img: ""
+            img: "ForestAnderson.jpg"
         },
         {
             name: "Iris Wen",

@@ -24,11 +24,10 @@ const Bubble = styled.div`
     ${tw`gap-2 items-center`};
 `;
 
-const KeynoteBubble = ({ name, role, company, img }) => {
-
+const KeynoteBubble = ({ name, role, company, img, offsetClasses }) => {
     return (
         <Bubble className={`flex ${BUBBLE_SIZES.KEYNOTE["h"]} m-4`}>
-            <div className={`${BUBBLE_SIZES.KEYNOTE["w"]} ${BUBBLE_SIZES.KEYNOTE["h"]} rounded-full bg-light shadow-md overflow-hidden flex-none`}>
+            <div className={`${BUBBLE_SIZES.KEYNOTE["w"]} ${BUBBLE_SIZES.KEYNOTE["h"]} rounded-full bg-light shadow-md overflow-hidden flex-none ${offsetClasses}`}>
                 <img src={`/speakers/${img}`} />
             </div >
             <div>
@@ -47,11 +46,13 @@ KeynoteBubble.propTypes = {
     role: PropTypes.string.isRequired,
     company: PropTypes.string.isRequired,
     img: PropTypes.string.isRequired,
+    offsetClasses: PropTypes.string
 };
 
-const NormalBubble = ({ tier, name, role, company, img }) => {
+const NormalBubble = ({ tier, name, role, company, img, offsetClasses }) => {
     return (
-        <div className={`inline-block relative box-content m-2 ${BUBBLE_SIZES[tier]["w"]} h-44 md:h-48`}>
+        <div
+            className={`inline-block relative box-content m-2 ${BUBBLE_SIZES[tier]["w"]} h-44 md:h-48 ${offsetClasses}`}>
             <Bubble className={`inline-flex flex-col ${BUBBLE_SIZES[tier]["w"]} absolute`} >
                 <div className={`rounded-full ${BUBBLE_SIZES[tier]["w"]} ${BUBBLE_SIZES[tier]["h"]} bg-light shadow-md overflow-hidden`}>
                     <img src={`/speakers/${img}`} />
@@ -70,14 +71,15 @@ NormalBubble.propTypes = {
     role: PropTypes.string.isRequired,
     company: PropTypes.string.isRequired,
     img: PropTypes.string.isRequired,
+    offsetClasses: PropTypes.string
 };
 
-export default function SpeakerBubble({ tier, name, role, company, img }) {
+export default function SpeakerBubble({ tier, name, role, company, img, offsetClasses }) {
     return (
         <>
             {tier === SPEAKER_TIERS.KEYNOTE ?
-                <KeynoteBubble name={name} role={role} company={company} img={img} /> :
-                <NormalBubble tier={tier} name={name} role={role} company={company} img={img} />
+                <KeynoteBubble name={name} role={role} company={company} img={img} offsetClasses={offsetClasses} /> :
+                <NormalBubble tier={tier} name={name} role={role} company={company} img={img} offsetClasses={offsetClasses} />
             }
         </>
     );
@@ -89,4 +91,5 @@ SpeakerBubble.propTypes = {
     role: PropTypes.string.isRequired,
     company: PropTypes.string.isRequired,
     img: PropTypes.string.isRequired,
+    offsetClasses: PropTypes.string
 };

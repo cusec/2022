@@ -10,8 +10,9 @@ const Section = styled.section`
     ${tw`min-h-screen w-full bg-secondary-highlight flex flex-col md:flex-row`}
     padding: 10vh 10vw;
 
-    .SPEC, .PANEL {
-        ${tw`inline-flex flex-col md:flex-row justify-center`}
+    .small-bubbles {
+        /*The horizontal offset effect on desktop doesn't work if display is flex*/
+        ${tw`flex flex-wrap justify-center md:block`}
     }
 `;
 
@@ -66,7 +67,7 @@ export default function Speakers() {
 
     return (
         <Section>
-            <div className="inline-block m-8 md:sticky max-h-0 top-48 mb-32">
+            <div className="inline-block mx-8 md:m-8 md:sticky md:max-h-0 top-48 md:mb-32">
                 <h2 className="text-xl font-bold">Speakers</h2>
                 <p>Meet the professionals speaking this year.</p>
             </div>

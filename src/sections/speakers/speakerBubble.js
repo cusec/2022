@@ -28,7 +28,7 @@ const KeynoteBubble = ({ name, role, company, img, offsetClasses }) => {
     return (
         <Bubble className={`flex ${BUBBLE_SIZES.KEYNOTE["h"]} m-4`}>
             <div className={`${BUBBLE_SIZES.KEYNOTE["w"]} ${BUBBLE_SIZES.KEYNOTE["h"]} rounded-full bg-light shadow-md overflow-hidden flex-none ${offsetClasses}`}>
-                <img src={`/speakers/${img}`} />
+                <img src={`/speakers/${img}`} alt={name} />
             </div >
             <div>
                 Keynote
@@ -55,7 +55,7 @@ const NormalBubble = ({ tier, name, role, company, img, offsetClasses }) => {
             className={`inline-block relative box-content m-2 ${BUBBLE_SIZES[tier]["w"]} h-44 md:h-48 ${offsetClasses}`}>
             <Bubble className={`inline-flex flex-col ${BUBBLE_SIZES[tier]["w"]} absolute`} >
                 <div className={`rounded-full ${BUBBLE_SIZES[tier]["w"]} ${BUBBLE_SIZES[tier]["h"]} bg-light shadow-md overflow-hidden`}>
-                    <img src={`/speakers/${img}`} />
+                    <img src={`/speakers/${img}`} alt={name} />
                 </div>
                 <p className="text-sm text-center">
                     {name}, {role}@{company}

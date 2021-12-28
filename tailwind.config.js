@@ -18,6 +18,9 @@ module.exports = {
             "dark": "var(--dark)",
             "light": "var(--light)"
         },
+        boxShadow: {
+            DEFAULT: "0 0.25rem 0.5rem rgba(30, 30, 30, 0.45)"
+        },
         extend: {
             height: {
                 "min": "min-content"

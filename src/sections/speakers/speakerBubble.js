@@ -20,24 +20,18 @@ const BUBBLE_SIZES = {
     }
 };
 
-const Bubble = styled.div`
-    ${tw`gap-2 items-center`};
-`;
-
 const KeynoteBubble = ({ name, role, company, img, offsetClasses }) => {
     return (
-        <Bubble className={`flex ${BUBBLE_SIZES.KEYNOTE["h"]} m-4`}>
-            <div className={`${BUBBLE_SIZES.KEYNOTE["w"]} ${BUBBLE_SIZES.KEYNOTE["h"]} rounded-full bg-light shadow-md overflow-hidden flex-none ${offsetClasses}`}>
+        <div className={`flex items-center gap-4 ${BUBBLE_SIZES.KEYNOTE["h"]} m-4 ${offsetClasses}`}>
+            <div className={`${BUBBLE_SIZES.KEYNOTE["w"]} ${BUBBLE_SIZES.KEYNOTE["h"]} rounded-full bg-light shadow overflow-hidden flex-none`}>
                 <img src={`/speakers/${img}`} alt={name} />
             </div >
             <div>
-                Keynote
+                <span className="font-bold text-lg">{name}</span>
                 <br />
-                {name}
-                <br />
-                {role}@{company}
+                {role}, {company}
             </div>
-        </Bubble>
+        </div>
     );
 };
 
@@ -53,14 +47,16 @@ const NormalBubble = ({ tier, name, role, company, img, offsetClasses }) => {
     return (
         <div
             className={`inline-block relative box-content m-2 ${BUBBLE_SIZES[tier]["w"]} h-44 md:h-48 ${offsetClasses}`}>
-            <Bubble className={`inline-flex flex-col ${BUBBLE_SIZES[tier]["w"]} absolute`} >
-                <div className={`rounded-full ${BUBBLE_SIZES[tier]["w"]} ${BUBBLE_SIZES[tier]["h"]} bg-light shadow-md overflow-hidden`}>
+            <div className={`inline-flex flex-col items-center gap-2 ${BUBBLE_SIZES[tier]["w"]} absolute`} >
+                <div className={`rounded-full ${BUBBLE_SIZES[tier]["w"]} ${BUBBLE_SIZES[tier]["h"]} bg-light shadow overflow-hidden`}>
                     <img src={`/speakers/${img}`} alt={name} />
                 </div>
                 <p className="text-sm text-center">
-                    {name}, {role}@{company}
+                    <span className="font-bold">{name}</span>
+                    <br />
+                    {role}, {company}
                 </p>
-            </Bubble>
+            </div>
         </div>
     );
 };

@@ -7,7 +7,7 @@ import { SPEAKERS, SPEAKER_TIERS } from "constants/speakerInfo";
 import { randNBoxMuller, LOW_PREFERRED_SKEW, HIGH_PREFERRED_SKEW } from "./rng";
 
 const Section = styled.section`
-    ${tw`min-h-screen w-full bg-secondary-highlight flex flex-col md:flex-row`}
+    ${tw`min-h-screen w-full bg-secondary-highlight flex flex-col md:flex-row gap-4`}
     padding: 10vh 10vw;
 
     .small-bubbles {
@@ -43,7 +43,7 @@ const generateSmallBubbleOffsets = () => {
     return offsets;
 };
 
-const BIG_OFFSETS = ["md:ml-0", "md:ml-4", "md:ml-8", "md:ml-12", "md:ml-16", "md:ml-20", "md:ml-24", "md:ml-28", "md:ml-32"];
+const BIG_OFFSETS = ["md:pl-0", "md:pl-4", "md:pl-8", "md:pl-12", "md:pl-16", "md:pl-20", "md:pl-24", "md:pl-28", "md:pl-32"];
 const generateBigBubbleOffsets = () => {
     const offsets = [];
     const totalSpeakers = SPEAKERS[SPEAKER_TIERS.KEYNOTE].length;
@@ -53,7 +53,7 @@ const generateBigBubbleOffsets = () => {
         const skew = isLowPreferred ? LOW_PREFERRED_SKEW : HIGH_PREFERRED_SKEW;
         const r = randNBoxMuller(0, BIG_OFFSETS.length, skew);
         const xOffset = BIG_OFFSETS[Math.floor(r)];
-        const flexDir = r > Math.floor(BIG_OFFSETS.length / 2) ? "md:flex-row-reverse": "flex-row";
+        const flexDir = i % 2 === 1 ? "md:flex-row-reverse": "flex-row";
         offsets.push(`${xOffset} ${flexDir}`);
         isLowPreferred = !isLowPreferred;
     }
@@ -67,7 +67,7 @@ export default function Speakers() {
 
     return (
         <Section>
-            <div className="inline-block mx-8 md:m-8 md:sticky md:max-h-0 top-48 md:mb-32">
+            <div className="inline-block md:sticky md:max-h-0 top-48 md:mb-32">
                 <h2 className="text-xl font-bold">Speakers</h2>
                 <p>Meet the professionals speaking this year.</p>
             </div>
@@ -77,7 +77,7 @@ export default function Speakers() {
                         <SpeakerBubble key={name} tier={SPEAKER_TIERS.KEYNOTE} name={name} role={role} company={company} img={img} offsetClasses={bigBubbleOffsets[i]} />
                     ))
                 }
-                <div className="small-bubbles">
+                <div className="small-bubbles max-w-4xl">
                     {
                         SPEAKERS[SPEAKER_TIERS.SPEC].concat(SPEAKERS[SPEAKER_TIERS.PANEL])
                             .map(({ name, role, company, img }, i) => {

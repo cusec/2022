@@ -78,16 +78,16 @@ export default function Footer() {
                     <ColourlessLogo /> CUSEC 2022
                 </span>
                 <span className="social-media flex gap-6 items-center justify-end">
-                    <A href={FACEBOOK} lineColour="var(--light)">
+                    <A href={FACEBOOK} lineColour="var(--light)" target="_blank" rel="noopener noreferrer">
                         <img src="/footer/facebook.svg" alt="Facebook" />
                     </A>
-                    <A href={YOUTUBE} lineColour="var(--light)">
+                    <A href={YOUTUBE} lineColour="var(--light)" target="_blank" rel="noopener noreferrer">
                         <img src="/footer/youtube.svg" alt="Youtube" />
                     </A>
-                    <A href={INSTAGRAM} lineColour="var(--light)">
+                    <A href={INSTAGRAM} lineColour="var(--light)" target="_blank" rel="noopener noreferrer">
                         <img src="/footer/instagram.svg" alt="Instagram" />
                     </A>
-                    <A href={LINKEDIN} lineColour="var(--light)">
+                    <A href={LINKEDIN} lineColour="var(--light)" target="_blank" rel="noopener noreferrer">
                         <img src="/footer/linkedin.svg" alt="LinkedIn" />
                     </A>
                 </span>

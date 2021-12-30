@@ -44,7 +44,7 @@ export const CODE_OF_CONDUCT = (
         <br/>
 
         <h2 className="font-bold">Enforcement</h2>
-        <p>Violations of the Code of Conduct may be reported by sending an email to <A lineColour="var(--primary)" className="text-primary">incidents@cusec.net</A>. All reports will be reviewed and investigated and will result in a response that is deemed necessary and appropriate to the circumstances.</p>
+        <p>Violations of the Code of Conduct may be reported by sending an email to <A lineColour="var(--primary)" className="text-primary"  target="_blank" rel="noopener noreferrer">incidents@cusec.net</A>. All reports will be reviewed and investigated and will result in a response that is deemed necessary and appropriate to the circumstances.</p>
 
         <p>Further details of specific enforcement policies may be posted separately. We hold the right and responsibility to remove comments or other contributions that are not aligned to this Code of Conduct, or to ban temporarily or permanently any members for other behaviours that they deem inappropriate, threatening, offensive, or harmful.</p>
     </>

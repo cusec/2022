@@ -44,7 +44,7 @@ export default function SponsorBubble({ tier, name, img, link }) {
 
     return (
         <Bubble tier={tier} ref={bubbleRef} className={BUBBLE_SIZES[tier]}>
-            <a className="h-full w-full flex justify-center items-center" href={link}>
+            <a className="h-full w-full flex justify-center items-center" href={link} target="_blank" rel="noopener noreferrer">
                 <img className="max-h-full" src={img} alt={name} />
             </a>
         </Bubble>

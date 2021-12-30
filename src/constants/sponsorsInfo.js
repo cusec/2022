@@ -15,12 +15,12 @@ export const SPONSORS = {
         {   
             name: "RBC",
             img: "/RBC.svg",
-            link: "https://www.example.com"
+            link: "https://www.rbc.com"
         },
         {   
             name: "Unity",
             img: "/Unity.png",
-            link: "https://www.example.com"
+            link: "https://unity.com/"
         }
     ],
     [SPONSOR_TIERS.SILVER]: [
@@ -37,24 +37,24 @@ export const SPONSORS = {
         {   
             name: "Nokia",
             img: "/Nokia.svg",
-            link: "https://www.example.com"
+            link: "https://www.nokia.com/"
         }
     ],
     [SPONSOR_TIERS.BRONZE]: [
         {   
             name: "Ciena",
             img: "/Ciena.svg",
-            link: "https://www.example.com"
+            link: "https://www.ciena.com/"
         },
         {   
-            name: "Diff Agency",
+            name: "Diff",
             img: "/Diff.svg",
-            link: "https://www.example.com"
+            link: "https://www.diffagency.com/"
         },
         {   
             name: "iQmetrix",
             img: "/Iqmetrix.svg",
-            link: "https://www.example.com"
+            link: "https://www.iqmetrix.com/"
         }
     ]/*,
     [SPONSOR_TIERS.IN_KIND]: [

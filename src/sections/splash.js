@@ -37,9 +37,9 @@ export default function Splash() {
                 <Subtitle className="glow">January 14-16 | Virtual and in-person experience</Subtitle>
 
                 <div className="flex flex-col-reverse sm:flex-row justify-end items-center gap-4 mt-auto">
-                    <A href={SPEAKERS_URL} className="font-bold">Speak at CUSEC</A>
+                    <A href={SPEAKERS_URL} className="font-bold" target="_blank" rel="noopener noreferrer">Speak at CUSEC</A>
                     <Button className="custom-shadow w-full sm:w-auto">
-                        <a href={DELEGATE_URL}>
+                        <a href={DELEGATE_URL} target="_blank" rel="noopener noreferrer">
                         Join us for 2022
                         </a>
                     </Button>

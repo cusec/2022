@@ -7,7 +7,7 @@ import { SPEAKERS, SPEAKER_TIERS } from "constants/speakerInfo";
 import { randNBoxMuller, LOW_PREFERRED_SKEW, HIGH_PREFERRED_SKEW } from "./rng";
 
 const Section = styled.section`
-    ${tw`min-h-screen w-full bg-secondary-highlight flex flex-col md:flex-row gap-4`}
+    ${tw`min-h-screen w-full bg-secondary flex flex-col md:flex-row gap-4`}
     padding: 10vh 10vw;
 
     .small-bubbles {

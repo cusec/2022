@@ -4,7 +4,7 @@ module.exports = {
     darkMode: false, // or 'media' or 'class'
     theme: {
         fontSize: {
-            "sm": "0.75rem",
+            "sm": ["0.75rem", "normal"],
             "base": "1rem",
             "lg": "1.5rem",
             "xl": "2rem",
@@ -17,6 +17,9 @@ module.exports = {
             "secondary-highlight": "var(--secondary-highlight)",
             "dark": "var(--dark)",
             "light": "var(--light)"
+        },
+        boxShadow: {
+            DEFAULT: "0 0.25rem 0.5rem rgba(30, 30, 30, 0.45)"
         },
         extend: {
             height: {

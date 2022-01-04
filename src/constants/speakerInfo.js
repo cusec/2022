@@ -8,7 +8,7 @@ export const SPEAKERS = {
     [SPEAKER_TIERS.KEYNOTE]: [
         {
             name: "Michael Seibel",
-            role: "Founder",
+            role: "CEO/Managing Director",
             company: "Y Combinator",
             img: "MichaelSeibel.jpg"
         },

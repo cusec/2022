@@ -16,7 +16,6 @@ export const TICKET_INFO = {
         price: "$35",
         perks: [
             "All perks from the basic tier",
-            "In-person event",
             "Exclusive CUSEC 2022 merch",
             "Food and snacks"
         ]

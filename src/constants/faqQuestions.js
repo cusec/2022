@@ -3,11 +3,11 @@ import React from "react";
 export const FaqQuestions = [
     {
         question: "Is CUSEC happening virtually this year?",
-        answer: "CUSEC 2022 will be held both in-person and virtually. We're working hard to bring small in-person meetups to cities all over the country, but the main events will be virtual."
+        answer: "Yes. Unfortunately, with the onset of the COVID-19 omicron variant, we are unable to host in-person meetups, but we have worked hard to make sure that the online event will be just as engaging and exciting!"
     },
     {
         question: "When and where will CUSEC 2022 be held?",
-        answer: "CUSEC 2022 will be held on January 14, 15, and 16. It'll be held in select cities and online."
+        answer: "CUSEC 2022 will be held on January 14, 15, and 16. It'll be held online."
     },
     {
         question: "What can I expect this year?",

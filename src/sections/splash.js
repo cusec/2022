@@ -34,7 +34,7 @@ export default function Splash() {
                 </div>
                         
                 <h2 className="text-lg md:text-xl">Canadian University Software Engineering Conference</h2>
-                <Subtitle className="glow">January 14-16 | Virtual and in-person experience</Subtitle>
+                <Subtitle className="glow">January 14-16 | Virtual experience</Subtitle>
 
                 <div className="flex flex-col-reverse sm:flex-row justify-end items-center gap-4 mt-auto">
                     <A href={SPEAKERS_URL} className="font-bold" target="_blank" rel="noopener noreferrer">Speak at CUSEC</A>

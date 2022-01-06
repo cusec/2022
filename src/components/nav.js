@@ -41,10 +41,18 @@ const SECTIONS = [
         id: "#about",
         display: "About"
     },
-    /*{
+    {
+        id: "https://hopin.com/events/cusec-2022#schedule",
+        display: "Schedule"
+    },
+    {
         id: "#sponsors",
         display: "Sponsors"
-    },*/
+    },
+    {
+        id: "#speakers",
+        display: "Speakers"
+    },
     {
         id: "#pricing",
         display: "Pricing"
@@ -70,7 +78,7 @@ export default function Nav() {
                 <NavLogo ref={logoRef} />
                 <span className="flex gap-4">
                     {SECTIONS.map(section => (
-                        <A href={section.id} key={section.id} lineColour="var(--primary)">{section.display}</A>
+                        <A href={section.id} key={section.id} lineColour="var(--primary)" target={section.id[0] === "#" ? "_self" : "_blank"} rel="noopener noreferrer">{section.display}</A>
                     ))}
                 </span>
                 

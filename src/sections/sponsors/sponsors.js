@@ -30,7 +30,7 @@ const Section = styled.section`
 
 export default function Sponsors() {
     return (
-        <Section>
+        <Section id="sponsors">
             <div className="bubbles">
                 {
                     Object.keys(SPONSORS).map(tier => {

@@ -66,7 +66,7 @@ export default function Speakers() {
     const bigBubbleOffsets = generateBigBubbleOffsets();
 
     return (
-        <Section>
+        <Section id="speakers">
             <div className="inline-block md:sticky md:max-h-0 top-48 md:mb-32">
                 <h2 className="text-xl font-bold">Speakers</h2>
                 <p>Meet the professionals speaking this year.</p>

@@ -33,13 +33,14 @@ const Subsection = styled.div`
     z-index: 0;
 
     .hds {
-        transition: height 0.25s linear, opacity 0.25s linear;
+        transition: height 0.25s ease, opacity 0.25s ease;
     }
 `;
 
 export default function Locations() {
     const [hovered, setHovered] = useState(null);
     const [selectedCity, setSelectedCity] = useState(null);
+    const [isOpen, setIsOpen] = useState(false);
 
     return (
         <Section>
@@ -59,13 +60,14 @@ export default function Locations() {
                                     <A
                                         className={classNames(`
                                             city-name 
-                                            ${selectedCity === cityKey && "font-bold"}
+                                            ${isOpen && selectedCity === cityKey && "font-bold"}
                                         `)}
                                         onMouseOver={() => setHovered(province)}
                                         onMouseLeave={() => setHovered(null)}
-                                        onClick={() => setSelectedCity(
-                                            selectedCity !== cityKey ? cityKey : null
-                                        )}
+                                        onClick={() => {
+                                            setIsOpen(!isOpen || selectedCity !== cityKey);
+                                            setSelectedCity(cityKey);
+                                        }}
                                     >
                                         {city}
                                     </A>
@@ -74,21 +76,24 @@ export default function Locations() {
                     }
                 </div>
                 <br />
-                <div className={`flex gap-16 hds ${selectedCity ? "h-20 opacity-100" : "h-0 opacity-0"}`}>
+                <div className={`flex gap-16 hds ${isOpen ? "h-24 opacity-100" : "h-0 opacity-0"}`}>
                     {selectedCity ? 
-                        CITIES[selectedCity].hds.map(({ name, uni, email }) => 
-                            <div key={name}>
-                                <span className="font-bold">{uni}</span>
-                                <br />
-                                {name}
-                                <br/>
-                                <A href={`mailto:${email}`}>{email}</A>
+                        CITIES[selectedCity].hds.map(({ name, uni, email, img }) => 
+                            <div className="flex gap-2 items-center" key={name}>
+                                <img src={`/headDelegates/${img}`} alt={name} className={`w-24 rounded-full shadow ${isOpen ? "h-24" : "h-0"}`} />
+                                <div>
+                                    <span className="font-bold">{uni}</span>
+                                    <br />
+                                    {name}
+                                    <br/>
+                                    <A href={`mailto:${email}`}>{email}</A>
+                                </div>
                             </div>
                         ) 
                         : 
                         ""}
                 </div>
-
+                
                 <br />
                 <p>Don't see your university? Reach out to <A href={`mailto:${EMAIL}`} className="font-bold">info@cusec.net</A>, and we'd be happy to answer your questions!</p>
             </Subsection>

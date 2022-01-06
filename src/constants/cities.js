@@ -13,7 +13,8 @@ export const CITIES = {
             {
                 name: "Safiya Mufti",
                 uni: "University of Waterloo",
-                email: "waterloo@cusec.net"
+                email: "waterloo@cusec.net",
+                img: "SafiyaMufti.jpg"
             }
         ]
     },
@@ -24,12 +25,14 @@ export const CITIES = {
             {
                 name: "Aaditya Chopra",
                 uni: "Carleton University",
-                email: "carleton@cusec.net"
+                email: "carleton@cusec.net",
+                img: "AadityaChopra.jpg"
             },
             {
                 name: "Emily Jiawei Chen",
                 uni: "University of Ottawa",
-                email: "ottawa@cusec.net"
+                email: "ottawa@cusec.net",
+                img: "EmilyChen.jpg"
             }
         ]
     },
@@ -40,7 +43,8 @@ export const CITIES = {
             {
                 name: "Mohanna Shahrad",
                 uni: "McGill University",
-                email: "mcgill@cusec.net"
+                email: "mcgill@cusec.net",
+                img: "MohannaShahrad.jpg"
             }
         ]
     },
@@ -51,7 +55,8 @@ export const CITIES = {
             {
                 name: "Ines Rosito",
                 uni: "University of Calgary",
-                email: "calgary@cusec.net"
+                email: "calgary@cusec.net",
+                img: "InesRosito.jpg"
             }
         ]
     },
@@ -62,7 +67,8 @@ export const CITIES = {
             {
                 name: "Kunal Rajpal",
                 uni: "University of Manitoba",
-                email: "manitoba@cusec.net"
+                email: "manitoba@cusec.net",
+                img: "KunalRajpal.jpg"
             }
         ]
     }

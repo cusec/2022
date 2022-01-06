@@ -31,7 +31,7 @@ export default function Home() {
             <main className="flex flex-col justify-center items-center min-h-screen">
                 <Splash />
                 <DetailBoxes />
-                {/*<Locations />*/}
+                <Locations />
                 <Descriptions />
                 <Testimonials />
                 <Tickets/>

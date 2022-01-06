@@ -16,7 +16,8 @@ module.exports = {
             "secondary": "var(--secondary)",
             "secondary-highlight": "var(--secondary-highlight)",
             "dark": "var(--dark)",
-            "light": "var(--light)"
+            "light": "var(--light)",
+            "shadow": "var(--shadow)"
         },
         boxShadow: {
             DEFAULT: "0 0.25rem 0.5rem rgba(30, 30, 30, 0.45)"

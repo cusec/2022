@@ -72,7 +72,8 @@ export default function Locations() {
                                     <A
                                         className={classNames(
                                             "city-name",
-                                            isOpen && selectedCity === cityKey && "font-bold"
+                                            "font-bold transition-colors",
+                                            isOpen && selectedCity !== cityKey && "text-shadow"
                                         )}
                                         onMouseOver={() => setHovered(province)}
                                         onMouseLeave={() => setHovered(null)}
@@ -95,7 +96,8 @@ export default function Locations() {
                                 <div 
                                     key={cityKey} 
                                     className={classNames(
-                                        "relative hds",
+                                        "hds",
+                                        "relative",
                                         isOpen && selectedCity === cityKey ? "h-28 opacity-100" : "h-0 opacity-0",
                                         isOpen && selectedCity === cityKey && "is-open"
                                     )}

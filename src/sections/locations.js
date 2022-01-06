@@ -29,11 +29,23 @@ const Section = styled.section`
 `;
 
 const Subsection = styled.div`
-    margin: 10vw;
+    margin: 10vh 10vw;
     z-index: 0;
 
     .hds {
-        transition: height 0.25s ease, opacity 0.25s ease;
+        transition: height 0.25s ease, opacity 0.25s;
+
+        .hd-inner {
+            ${tw`static left-0`}
+        }
+
+        &:not(.is-open) {
+            .hd-inner {
+                ${tw`absolute`}
+                left: -100vw;
+                transition: left 0s linear 0.25s;
+            }
+        }
     }
 `;
 
@@ -58,10 +70,10 @@ export default function Locations() {
                                 <React.Fragment key={cityKey}>
                                     {i > 0 && <span className="m-3">|</span>}
                                     <A
-                                        className={classNames(`
-                                            city-name 
-                                            ${isOpen && selectedCity === cityKey && "font-bold"}
-                                        `)}
+                                        className={classNames(
+                                            "city-name",
+                                            isOpen && selectedCity === cityKey && "font-bold"
+                                        )}
                                         onMouseOver={() => setHovered(province)}
                                         onMouseLeave={() => setHovered(null)}
                                         onClick={() => {
@@ -76,23 +88,39 @@ export default function Locations() {
                     }
                 </div>
                 <br />
-                <div className={`flex gap-16 hds ${isOpen ? "h-24 opacity-100" : "h-0 opacity-0"}`}>
-                    {selectedCity ? 
-                        CITIES[selectedCity].hds.map(({ name, uni, email, img }) => 
-                            <div className="flex gap-2 items-center" key={name}>
-                                <img src={`/headDelegates/${img}`} alt={name} className={`w-24 rounded-full shadow ${isOpen ? "h-24" : "h-0"}`} />
-                                <div>
-                                    <span className="font-bold">{uni}</span>
-                                    <br />
-                                    {name}
-                                    <br/>
-                                    <A href={`mailto:${email}`}>{email}</A>
+                <>
+                    {
+                        Object.entries(CITIES).map(
+                            ([cityKey, { hds }]) =>
+                                <div 
+                                    key={cityKey} 
+                                    className={classNames(
+                                        "relative hds",
+                                        isOpen && selectedCity === cityKey ? "h-28 opacity-100" : "h-0 opacity-0",
+                                        isOpen && selectedCity === cityKey && "is-open"
+                                    )}
+                                >
+                                    <div className="flex gap-16 hd-inner">
+                                        {hds.map(({ name, uni, email, img }) => 
+                                            <div className="flex gap-2" key={name}>
+                                                <img
+                                                    src={`/headDelegates/${img}`}
+                                                    alt={name}
+                                                    className={"h-28 w-28 rounded-full shadow hd-img"} />
+                                                <div className={"flex flex-col justify-center hd-text h-28"}>
+                                                    <span className="text-lg">{name}</span>
+                                                    <br />
+                                                    <span>{uni}</span>
+                                                    <br/>
+                                                    <A href={`mailto:${email}`} className="font-bold">{email}</A>
+                                                </div>
+                                            </div>
+                                        )}
+                                    </div>
                                 </div>
-                            </div>
-                        ) 
-                        : 
-                        ""}
-                </div>
+                        )
+                    }
+                </>
                 
                 <br />
                 <p>Don't see your university? Reach out to <A href={`mailto:${EMAIL}`} className="font-bold">info@cusec.net</A>, and we'd be happy to answer your questions!</p>

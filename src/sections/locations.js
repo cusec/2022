@@ -54,34 +54,44 @@ export default function Locations() {
     const [selectedCity, setSelectedCity] = useState(null);
     const [isOpen, setIsOpen] = useState(false);
 
+    const toggleBox = (cityKey) => {
+        setIsOpen(!isOpen || selectedCity !== cityKey);
+        setSelectedCity(cityKey);
+    };
+
+    const handleKeyPress = (e, cityKey) => {
+        if (e.key !== "Enter") return;
+
+        toggleBox(cityKey);
+    };
+
     return (
         <Section>
             <Canada className="map opacity-40 md:opacity-100" hovered={hovered} />
             <Subsection>
                 <h2 className="text-xl md:text-2xl font-bold custom-shadow">This year, join us virtually.</h2>
 
-                <p className="text-lg">Get in touch with your university's Head Delegate!</p>
+                <p className="md:text-lg">Get in touch with your university's Head Delegate!</p>
                 <br />
 
-                <div>
+                <div className="flex flex-wrap justify-center md:block">
                     {
                         Object.entries(CITIES).map(
                             ([cityKey, { name: city, province }], i) =>
                                 <React.Fragment key={cityKey}>
-                                    {i > 0 && <span className="m-3">|</span>}
+                                    {i > 0 && <span className="hidden md:inline">|</span>}
                                     <A
                                         className={classNames(
                                             "city-name",
-                                            "font-bold transition-colors",
+                                            "font-bold transition-colors inline-block mx-3 my-1",
                                             !isOpen && "shimmer",
                                             isOpen && selectedCity !== cityKey && "text-shadow"
                                         )}
                                         onMouseOver={() => setHovered(province)}
                                         onMouseLeave={() => setHovered(null)}
-                                        onClick={() => {
-                                            setIsOpen(!isOpen || selectedCity !== cityKey);
-                                            setSelectedCity(cityKey);
-                                        }}
+                                        onClick={() => toggleBox(cityKey)}
+                                        onKeyDown={(e) => handleKeyPress(e, cityKey)}
+                                        tabIndex="0"
                                     >
                                         {city}
                                     </A>
@@ -99,11 +109,14 @@ export default function Locations() {
                                     className={classNames(
                                         "hds",
                                         "relative",
-                                        isOpen && selectedCity === cityKey ? "h-28 opacity-100" : "h-0 opacity-0",
+                                        isOpen && selectedCity === cityKey ?
+                                            `${selectedCity === "OTTAWA" ? "h-60" : "h-28"} md:h-28 opacity-100`
+                                            : 
+                                            "h-0 opacity-0",
                                         isOpen && selectedCity === cityKey && "is-open"
                                     )}
                                 >
-                                    <div className="flex gap-16 hd-inner">
+                                    <div className="flex flex-col md:flex-row gap-4 md:gap-16 hd-inner">
                                         {hds.map(({ name, uni, email, img }) => 
                                             <div className="flex gap-2" key={name}>
                                                 <img
@@ -115,7 +128,13 @@ export default function Locations() {
                                                     <br />
                                                     <span>{uni}</span>
                                                     <br/>
-                                                    <A href={`mailto:${email}`} className="font-bold">{email}</A>
+                                                    <A
+                                                        href={`mailto:${email}`}
+                                                        className="font-bold"
+                                                        tabIndex={isOpen && selectedCity === cityKey ? 0 : -1}
+                                                    >
+                                                        {email}
+                                                    </A>
                                                 </div>
                                             </div>
                                         )}

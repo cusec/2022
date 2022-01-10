@@ -73,6 +73,7 @@ export default function Locations() {
                                         className={classNames(
                                             "city-name",
                                             "font-bold transition-colors",
+                                            !isOpen && "shimmer",
                                             isOpen && selectedCity !== cityKey && "text-shadow"
                                         )}
                                         onMouseOver={() => setHovered(province)}

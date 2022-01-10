@@ -6,20 +6,70 @@ export const PROVINCES = {
 };
 
 export const CITIES = {
+    WATERLOO: {
+        name: "Waterloo, ON",
+        province: PROVINCES.ONTARIO,
+        hds: [
+            {
+                name: "Safiya Mufti",
+                uni: "University of Waterloo",
+                email: "waterloo@cusec.net",
+                img: "SafiyaMufti.jpg"
+            }
+        ]
+    },
     OTTAWA: {
         name: "Ottawa, ON",
-        province: PROVINCES.ONTARIO
+        province: PROVINCES.ONTARIO,
+        hds: [
+            {
+                name: "Aaditya Chopra",
+                uni: "Carleton University",
+                email: "carleton@cusec.net",
+                img: "AadityaChopra.jpg"
+            },
+            {
+                name: "Emily Jiawei Chen",
+                uni: "University of Ottawa",
+                email: "ottawa@cusec.net",
+                img: "EmilyChen.jpg"
+            }
+        ]
     },
     MONTREAL: {
         name: "Montreal, QC",
-        province: PROVINCES.QUEBEC
+        province: PROVINCES.QUEBEC,
+        hds: [
+            {
+                name: "Mohanna Shahrad",
+                uni: "McGill University",
+                email: "mcgill@cusec.net",
+                img: "MohannaShahrad.jpg"
+            }
+        ]
     },
     CALGARY: {
         name: "Calgary, AB",
-        province: PROVINCES.ALBERTA
+        province: PROVINCES.ALBERTA,
+        hds: [
+            {
+                name: "Ines Rosito",
+                uni: "University of Calgary",
+                email: "calgary@cusec.net",
+                img: "InesRosito.jpg"
+            }
+        ]
     },
     WINNIPEG: { 
         name: "Winnipeg, MB",
-        province: PROVINCES.MANITOBA
+        province: PROVINCES.MANITOBA,
+        hds: [
+            {
+                name: "Kunal Rajpal",
+                uni: "University of Manitoba",
+                email: "manitoba@cusec.net",
+                img: "KunalRajpal.jpg"
+            }
+        ]
     }
 };

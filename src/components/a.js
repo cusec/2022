@@ -4,6 +4,20 @@ import tw from "twin.macro";
 const A = styled.a`
     ${tw`relative`}
 
+    @keyframes shimmer {
+        from {
+            color: inherit;
+        }
+
+        to {
+            color: ${props => props.shimmerColour || "var(--shadow)"};
+        }
+    }
+
+    &.shimmer {
+        animation: 1s infinite alternate shimmer;
+    }
+
     @media (hover: none) {
         text-decoration: ${props => props.disabled ? "none" : "underline"};
     }

@@ -27,6 +27,12 @@ export const SPEAKERS = {
     ],
     [SPEAKER_TIERS.SPEC]: [
         {
+            name: "Peter Moore",
+            role: "SVP/GM of Sports and Live Entertainment",
+            company: "Unity",
+            img: "PeterMoore.jpg"
+        },
+        {
             name: "Fatima Taj",
             role: "SWE",
             company: "Yelp",

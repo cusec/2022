@@ -55,6 +55,11 @@ export const SPONSORS = {
             name: "iQmetrix",
             img: "/Iqmetrix.svg",
             link: "https://www.iqmetrix.com/"
+        },
+        {
+            name: "D2L",
+            img: "/D2L.svg",
+            link: "https://www.d2l.com/"
         }
     ]/*,
     [SPONSOR_TIERS.IN_KIND]: [

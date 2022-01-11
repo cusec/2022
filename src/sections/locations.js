@@ -51,8 +51,8 @@ const Subsection = styled.div`
 
 export default function Locations() {
     const [hovered, setHovered] = useState(null);
-    const [selectedCity, setSelectedCity] = useState(null);
-    const [isOpen, setIsOpen] = useState(false);
+    const [selectedCity, setSelectedCity] = useState(Object.keys(CITIES)[0]);
+    const [isOpen, setIsOpen] = useState(true);
 
     const toggleBox = (cityKey) => {
         setIsOpen(!isOpen || selectedCity !== cityKey);
@@ -74,7 +74,7 @@ export default function Locations() {
                 <p className="md:text-lg">Get in touch with your university's Head Delegate!</p>
                 <br />
 
-                <div className="flex flex-wrap justify-center md:block">
+                <div className="flex flex-wrap justify-center md:justify-start gap-4">
                     {
                         Object.entries(CITIES).map(
                             ([cityKey, { name: city, province }], i) =>
@@ -83,7 +83,7 @@ export default function Locations() {
                                     <A
                                         className={classNames(
                                             "city-name",
-                                            "font-bold transition-colors inline-block mx-3 my-1",
+                                            "font-bold transition-colors inline-block",
                                             !isOpen && "shimmer",
                                             isOpen && selectedCity !== cityKey && "text-shadow"
                                         )}

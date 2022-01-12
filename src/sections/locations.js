@@ -124,17 +124,19 @@ export default function Locations() {
                                                     alt={name}
                                                     className={"h-28 w-28 rounded-full shadow hd-img"} />
                                                 <div className={"flex flex-col justify-center hd-text h-28"}>
-                                                    <span className="text-lg">{name}</span>
-                                                    <br />
-                                                    <span>{uni}</span>
-                                                    <br/>
-                                                    <A
-                                                        href={`mailto:${email}`}
-                                                        className="font-bold"
-                                                        tabIndex={isOpen && selectedCity === cityKey ? 0 : -1}
-                                                    >
-                                                        {email}
-                                                    </A>
+                                                    <div>
+                                                        <span className="text-lg">{name}</span>
+                                                        <br />
+                                                        <span>{uni}</span>
+                                                        <br/>
+                                                        <A
+                                                            href={`mailto:${email}`}
+                                                            className="font-bold flex-none"
+                                                            tabIndex={isOpen && selectedCity === cityKey ? 0 : -1}
+                                                        >
+                                                            {email}
+                                                        </A>
+                                                    </div>
                                                 </div>
                                             </div>
                                         )}

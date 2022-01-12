@@ -1,22 +1,20 @@
 import React from "react";
 import PropTypes from "prop-types";
-import styled from "styled-components";
-import tw from "twin.macro";
 
 import { SPEAKER_TIERS } from "constants/speakerInfo";
 
 const BUBBLE_SIZES = {
     [SPEAKER_TIERS.KEYNOTE]: {
         w: "w-36 md:w-44",
-        h: "h-36 md:h-44"
+        h: "md:h-44"
     },
     [SPEAKER_TIERS.SPEC]: {
         w: "w-32 md:w-36",
-        h: "h-32 md:h-36"
+        h: "md:h-36"
     },
     [SPEAKER_TIERS.PANEL]: {
         w: "w-32 md:w-36",
-        h: "h-32 md:h-36"
+        h: "md:h-36"
     }
 };
 
@@ -46,8 +44,8 @@ KeynoteBubble.propTypes = {
 const NormalBubble = ({ tier, name, role, company, img, offsetClasses }) => {
     return (
         <div
-            className={`inline-block relative box-content m-2 ${BUBBLE_SIZES[tier]["w"]} h-44 md:h-48 ${offsetClasses}`}>
-            <div className={`inline-flex flex-col items-center gap-2 ${BUBBLE_SIZES[tier]["w"]} absolute`} >
+            className={`inline-block relative box-content m-2 ${BUBBLE_SIZES[tier]["w"]} md:h-48 ${offsetClasses}`}>
+            <div className={`inline-flex flex-col items-center gap-2 ${BUBBLE_SIZES[tier]["w"]} md:absolute`} >
                 <div className={`rounded-full ${BUBBLE_SIZES[tier]["w"]} ${BUBBLE_SIZES[tier]["h"]} bg-light shadow overflow-hidden`}>
                     <img src={`/speakers/${img}`} alt={name} />
                 </div>

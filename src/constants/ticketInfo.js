@@ -17,7 +17,7 @@ export const TICKET_INFO = {
         perks: [
             "All perks from the basic tier",
             "Exclusive CUSEC 2022 merch",
-            "Food and snacks"
+            "Exclusive VIP-only networking opportunities"
         ]
     }
 };

@@ -10,19 +10,22 @@ export const SPEAKERS = {
             name: "Michael Seibel",
             role: "CEO/Managing Director",
             company: "Y Combinator",
-            img: "MichaelSeibel.jpg"
+            img: "MichaelSeibel.jpg",
+            site: "https://www.michaelseibel.com"
         },
         {
             name: "Cindy Alvarez",
             role: "Director of Customer Research",
             company: "Github",
-            img: "CindyAlvarez.jpg"
+            img: "CindyAlvarez.jpg",
+            site: "http://www.cindyalvarez.com/blog/"
         },
         {
             name: "Jimena Almendares",
             role: "Product Executive",
             company: "Facebook",
-            img: "JimenaAlmendares.jpg"
+            img: "JimenaAlmendares.jpg",
+            site: "http://www.jalmendares.com/"
         }
     ],
     [SPEAKER_TIERS.SPEC]: [
@@ -37,30 +40,35 @@ export const SPEAKERS = {
             role: "SWE",
             company: "Yelp",
             img: "FatimaTaj.jpeg"
+
         },
         {
             name: "Forest Anderson",
             role: "Research Student",
             company: "Carleton",
-            img: "ForestAnderson.jpg"
+            img: "ForestAnderson.jpg",
+            site: "https://www.forest-anderson.ca/"
         },
         {
             name: "Iris Wen",
             role: "SWE",
             company: "Facebook",
-            img: "IrisWen.jpg"
+            img: "IrisWen.jpg",
+            site: "https://twitter.com/new_siri"
         },
         {
             name: "Jimoh Ovbiagele",
             role: "Business Manager",
             company: "Coinbase",
-            img: "JimohOvbiagele.jpeg"
+            img: "JimohOvbiagele.jpeg",
+            site: "https://twitter.com/jimohovb"
         },
         {
             name: "Yulia Eskin",
             role: "Founder",
             company: "Career Coach for Software Engineers",
-            img: "YuliaEskin.jpg"
+            img: "YuliaEskin.jpg",
+            site: "https://www.leadersemerging.com/"
         },
     ],
     [SPEAKER_TIERS.PANEL]: [
@@ -68,25 +76,29 @@ export const SPEAKERS = {
             name: "Amar Jasarbasic",
             role: "SWE Team Lead",
             company: "Check",
-            img: "AmarJasarbasic.JPG"
+            img: "AmarJasarbasic.JPG",
+            site: "https://github.com/AmarJ"
         },
         {
             name: "Alex Cui",
             role: "Research Scientist",
             company: "Waabi",
-            img: "AlexCui.jpg"
+            img: "AlexCui.jpg",
+            site: "https://twitter.com/alexcdot"
         },
         {
             name: "Alexa Liaskovski",
             role: "SWE",
             company: "Datadog",
-            img: "AlexaLiaskovski.jpg"
+            img: "AlexaLiaskovski.jpg",
+            site: "https://twitter.com/alexaliaskovski"
         },
         {
             name: "David Hew-wing",
             role: "SWE Intern",
             company: "Google",
-            img: "DavidHewwing.jpg"
+            img: "DavidHewwing.jpg",
+            site: "https://davidhewwing.app/"
         },
         {
             name: "Dawn Chandler",
@@ -110,7 +122,8 @@ export const SPEAKERS = {
             name: "Raman Lally",
             role: "Senior SWE",
             company: "Shopify",
-            img: "RamanLally.jpeg"
+            img: "RamanLally.jpeg",
+            site: "https://twitter.com/rmnlly"
         },
         {
             name: "Raymond Chung",

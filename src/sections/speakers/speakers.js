@@ -73,8 +73,8 @@ export default function Speakers() {
             </div>
             <div className="bubbles">
                 {
-                    SPEAKERS[SPEAKER_TIERS.KEYNOTE].map(({ name, role, company, img }, i) => (
-                        <SpeakerBubble key={name} tier={SPEAKER_TIERS.KEYNOTE} name={name} role={role} company={company} img={img} offsetClasses={bigBubbleOffsets[i]} />
+                    SPEAKERS[SPEAKER_TIERS.KEYNOTE].map(({ name, role, company, img, site }, i) => (
+                        <SpeakerBubble key={name} tier={SPEAKER_TIERS.KEYNOTE} name={name} role={role} company={company} img={img} site={site} offsetClasses={bigBubbleOffsets[i]} />
                     ))
                 }
                 <div className="small-bubbles max-w-4xl">

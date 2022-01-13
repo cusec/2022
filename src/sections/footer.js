@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import Modal from "react-modal";
 import styled from "styled-components";
 import tw from "twin.macro";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faFacebookF, faYoutube, faInstagram, faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
 
 import { A } from "components/elements";
 import ColourlessLogo from "../svgs/colourlessLogo";
@@ -77,18 +79,18 @@ export default function Footer() {
                 <span className="name flex items-center gap-2">
                     <ColourlessLogo /> CUSEC 2022
                 </span>
-                <span className="social-media flex gap-6 items-center justify-end">
+                <span className="social-media flex gap-6 items-center justify-end text-base">
                     <A href={FACEBOOK} lineColour="var(--light)" target="_blank" rel="noopener noreferrer">
-                        <img src="/footer/facebook.svg" alt="Facebook" />
+                        <FontAwesomeIcon icon={faFacebookF} size="lg" alt="Facebook" />
                     </A>
                     <A href={YOUTUBE} lineColour="var(--light)" target="_blank" rel="noopener noreferrer">
-                        <img src="/footer/youtube.svg" alt="Youtube" />
+                        <FontAwesomeIcon icon={faYoutube} size="lg" alt="Youtube" />
                     </A>
                     <A href={INSTAGRAM} lineColour="var(--light)" target="_blank" rel="noopener noreferrer">
-                        <img src="/footer/instagram.svg" alt="Instagram" />
+                        <FontAwesomeIcon icon={faInstagram} size="lg" alt="Instagram" />
                     </A>
                     <A href={LINKEDIN} lineColour="var(--light)" target="_blank" rel="noopener noreferrer">
-                        <img src="/footer/linkedin.svg" alt="LinkedIn" />
+                        <FontAwesomeIcon icon={faLinkedinIn} size="lg" alt="LinkedIn" />
                     </A>
                 </span>
                 <span className="code-of-conduct flex gap-4 items-center justify-end">

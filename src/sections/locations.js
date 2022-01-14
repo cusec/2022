@@ -117,7 +117,7 @@ export default function Locations() {
                                     )}
                                 >
                                     <div className="flex flex-col md:flex-row gap-4 md:gap-16 hd-inner">
-                                        {hds.map(({ name, uni, email, img }) => 
+                                        {hds.map(({ name, uni, email, img, desc }) => 
                                             <div className="flex gap-2" key={name}>
                                                 <img
                                                     src={`/headDelegates/${img}`}
@@ -136,11 +136,19 @@ export default function Locations() {
                                                         >
                                                             {email}
                                                         </A>
+                                                        {
+                                                            desc &&
+                                                            <>
+                                                                <br />
+                                                                {desc}
+                                                            </>
+                                                        }
                                                     </div>
                                                 </div>
                                             </div>
                                         )}
                                     </div>
+                                    
                                 </div>
                         )
                     }

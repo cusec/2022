@@ -1,3 +1,6 @@
+import React from "react";
+import { A } from "components/elements";
+
 export const PROVINCES = {
     ONTARIO: "ON",
     QUEBEC: "QC",
@@ -14,7 +17,13 @@ export const CITIES = {
                 name: "Safiya Mufti",
                 uni: "University of Waterloo",
                 email: "waterloo@cusec.net",
-                img: "SafiyaMufti.jpg"
+                img: "SafiyaMufti.jpg",
+                desc: (
+                    <span className="text-sm">
+                        Funded by the <A href="https://uwaterloo.ca/math-endowment-fund/" target="_blank" rel="noopener noreferrer" className="font-bold">University of Waterloo's Mathematics Endowment Fund (MEF)</A>.
+                    </span>
+                )
+                    
             }
         ]
     },

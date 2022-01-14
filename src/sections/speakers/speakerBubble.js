@@ -28,13 +28,15 @@ const KeynoteBubble = ({ name, role, company, img, site, offsetClasses }) => {
         <div className={`flex flex-col sm:flex-row items-center gap-4 ${BUBBLE_SIZES.KEYNOTE["h"]} m-4 ${offsetClasses}`}>
             <div className={`${BUBBLE_SIZES.KEYNOTE["w"]} ${BUBBLE_SIZES.KEYNOTE["h"]} rounded-full bg-light shadow overflow-hidden flex-none`}>
                 <img src={`/speakers/${img}`} alt={name} />
-            </div >
+            </div>
             <div>
-                <div className="flex justify-start items-center gap-2">
+                <div className="flex items-center gap-2">
                     <span className="font-bold text-lg break-words">{name}</span>
-                    <A href={site} target="_blank" rel="noopener noreferrer">
-                        <FontAwesomeIcon icon={faExternalLinkAlt} />
-                    </A>
+                    {site &&
+                        <A href={site} target="_blank" rel="noopener noreferrer">
+                            <FontAwesomeIcon icon={faExternalLinkAlt} />
+                        </A>
+                    }
                 </div>
                 {role}, {company}
             </div>
@@ -51,7 +53,7 @@ KeynoteBubble.propTypes = {
     offsetClasses: PropTypes.string
 };
 
-const NormalBubble = ({ tier, name, role, company, img, offsetClasses }) => {
+const NormalBubble = ({ tier, name, role, company, img, site, offsetClasses }) => {
     return (
         <div
             className={`inline-block relative box-content m-2 ${BUBBLE_SIZES[tier]["w"]} md:h-48 ${offsetClasses}`}>
@@ -60,7 +62,14 @@ const NormalBubble = ({ tier, name, role, company, img, offsetClasses }) => {
                     <img src={`/speakers/${img}`} alt={name} />
                 </div>
                 <p className="text-sm text-center">
-                    <span className="font-bold">{name}</span>
+                    <div className="inline-flex items-center gap-2">
+                        <span className="font-bold">{name}</span>
+                        {site &&
+                            <A href={site} target="_blank" rel="noopener noreferrer">
+                                <FontAwesomeIcon icon={faExternalLinkAlt} />
+                            </A>
+                        }
+                    </div>
                     <br />
                     {role}, {company}
                 </p>

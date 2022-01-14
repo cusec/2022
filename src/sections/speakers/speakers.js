@@ -80,10 +80,10 @@ export default function Speakers() {
                 <div className="small-bubbles max-w-4xl">
                     {
                         SPEAKERS[SPEAKER_TIERS.SPEC].concat(SPEAKERS[SPEAKER_TIERS.PANEL])
-                            .map(({ name, role, company, img }, i) => {
+                            .map(({ name, role, company, img, site }, i) => {
                                 const tier = i < SPEAKERS[SPEAKER_TIERS.SPEC].length ? SPEAKER_TIERS.SPEC : SPEAKER_TIERS.PANEL;
 
-                                return <SpeakerBubble key={name} tier={tier} name={name} role={role} company={company} img={img} offsetClasses={smallBubbleOffsets[i]} />;
+                                return <SpeakerBubble key={name} tier={tier} name={name} role={role} company={company} img={img} site={site} offsetClasses={smallBubbleOffsets[i]} />;
                             })
                     }
                 </div>

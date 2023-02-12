@@ -38,7 +38,7 @@ NavLogo.displayName = "NavLogo";
 
 const SECTIONS = [
     {
-        id: "#about",
+        id: "./#about",
         display: "About"
     },
     {
@@ -46,19 +46,23 @@ const SECTIONS = [
         display: "Schedule"
     },
     {
-        id: "#sponsors",
+        id: "./#sponsors",
         display: "Sponsors"
     },
     {
-        id: "#speakers",
+        id: "./#speakers",
         display: "Speakers"
     },
     {
-        id: "#pricing",
+        id: "/team",
+        display: "Team"
+    },
+    {
+        id: "./#pricing",
         display: "Pricing"
     },
     {
-        id: "#faq",
+        id: "./#faq",
         display: "FAQ"
     }
 ];
@@ -78,10 +82,9 @@ export default function Nav() {
                 <NavLogo ref={logoRef} />
                 <span className="flex gap-4">
                     {SECTIONS.map(section => (
-                        <A href={section.id} key={section.id} lineColour="var(--primary)" target={section.id[0] === "#" ? "_self" : "_blank"} rel="noopener noreferrer">{section.display}</A>
+                        <A href={section.id} key={section.id} lineColour="var(--primary)" target={section.id[0] === "." || section.id[0] === "/" ? "_self" : "_blank"} rel="noopener noreferrer">{section.display}</A>
                     ))}
                 </span>
-                
             </NavInner>
         </NavBase>
     );

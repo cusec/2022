@@ -120,7 +120,7 @@ export default function Locations() {
                                         {hds.map(({ name, uni, email, img, desc }) => 
                                             <div className="flex gap-2" key={name}>
                                                 <img
-                                                    src={`/headDelegates/${img}`}
+                                                    src={`/team/${img}`}
                                                     alt={name}
                                                     className={"h-28 w-28 rounded-full shadow hd-img"} />
                                                 <div className={"flex flex-col justify-center hd-text h-28"}>

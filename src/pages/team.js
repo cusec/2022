@@ -42,7 +42,7 @@ export default function Team() {
     return (
         <Page>
             <Section>
-                <div className="inline-block md:sticky md:max-h-0 top-48 md:mb-32">
+                <div className="inline-block md:sticky md:max-h-0 top-48 md:mb-44">
                     <h2 className="text-xl font-bold">Team Members</h2>
                     <p>Meet the people who made CUSEC 2022 possible.</p>
                 </div>
